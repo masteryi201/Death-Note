@@ -1,0 +1,496 @@
+   android/meterpreter/reverse_http   			Android Meterpreter, Android Reverse HTTP Stager
+   android/meterpreter/reverse_https  			Android Meterpreter, Android Reverse HTTPS Stager
+   android/meterpreter/reverse_tcp   			Android Meterpreter, Android Reverse TCP Stager
+   android/meterpreter_reverse_http   			Android Meterpreter Shell, Reverse HTTP Inline
+   android/meterpreter_reverse_https  			Android Meterpreter Shell, Reverse HTTPS Inline
+   android/meterpreter_reverse_tcp    			Android Meterpreter Shell, Reverse TCP Inline
+   android/shell/reverse_http         			Command Shell, Android Reverse HTTP Stager
+   android/shell/reverse_https        			Command Shell, Android Reverse HTTPS Stager
+   android/shell/reverse_tcp          			Command Shell, Android Reverse TCP Stager
+   apple_ios/aarch64/meterpreter_reverse_http   	Apple_iOS Meterpreter, Reverse HTTP Inline
+   apple_ios/aarch64/meterpreter_reverse_https  	Apple_iOS Meterpreter, Reverse HTTPS Inline
+   apple_ios/aarch64/meterpreter_reverse_tcp    	Apple_iOS Meterpreter, Reverse TCP Inline
+   apple_ios/aarch64/shell_reverse_tcp			Apple iOS aarch64 Command Shell, Reverse TCP Inline
+   bsd/sparc/shell_bind_tcp           			BSD Command Shell, Bind TCP Inline
+   bsd/sparc/shell_reverse_tcp        			BSD Command Shell, Reverse TCP Inline
+   bsd/x64/exec      					BSD x64 Execute Command
+   bsd/x64/shell_bind_ipv6_tcp        			BSD x64 Command Shell, Bind TCP Inline (IPv6)
+   bsd/x64/shell_bind_tcp             			BSD x64 Shell Bind TCP
+   bsd/x64/shell_bind_tcp_small       			BSD x64 Command Shell, Bind TCP Inline
+   bsd/x64/shell_reverse_ipv6_tcp     			BSD x64 Command Shell, Reverse TCP Inline (IPv6)
+   bsd/x64/shell_reverse_tcp          			BSD x64 Shell Reverse TCP
+   bsd/x64/shell_reverse_tcp_small    			BSD x64 Command Shell, Reverse TCP Inline
+   bsd/x86/exec      					BSD Execute Command
+   bsd/x86/metsvc_bind_tcp            			FreeBSD Meterpreter Service, Bind TCP
+   bsd/x86/metsvc_reverse_tcp         			FreeBSD Meterpreter Service, Reverse TCP Inline
+   bsd/x86/shell/bind_ipv6_tcp        			BSD Command Shell, Bind TCP Stager (IPv6)
+   bsd/x86/shell/bind_tcp             			BSD Command Shell, Bind TCP Stager
+   bsd/x86/shell/reverse_ipv6_tcp     			BSD Command Shell, Reverse TCP Stager (IPv6)
+   bsd/x86/shell/reverse_tcp          			BSD Command Shell, Reverse TCP Stager
+   bsd/x86/shell_bind_tcp             			BSD Command Shell, Bind TCP Inline
+   bsd/x86/shell_bind_tcp_ipv6        			BSD Command Shell, Bind TCP Inline (IPv6)
+   bsd/x86/shell_reverse_tcp          			BSD Command Shell, Reverse TCP Inline
+   bsd/x86/shell_reverse_tcp_ipv6     			BSD Command Shell, Reverse TCP Inline (IPv6)
+   cmd/mainframe/apf_privesc_jcl      			JCL to Escalate Privileges
+   cmd/mainframe/bind_shell_jcl       			Z/OS (MVS) Command Shell, Bind TCP
+   cmd/mainframe/generic_jcl          			Generic JCL Test for Mainframe Exploits
+   cmd/mainframe/reverse_shell_jcl    			Z/OS (MVS) Command Shell, Reverse TCP
+   cmd/unix/bind_awk 					Unix Command Shell, Bind TCP (via AWK)
+   cmd/unix/bind_busybox_telnetd      			Unix Command Shell, Bind TCP (via BusyBox telnetd)
+   cmd/unix/bind_lua 					Unix Command Shell, Bind TCP (via Lua)
+   cmd/unix/bind_netcat               			Unix Command Shell, Bind TCP (via netcat)
+   cmd/unix/bind_netcat_gaping        			Unix Command Shell, Bind TCP (via netcat -e)
+   cmd/unix/bind_netcat_gaping_ipv6   			Unix Command Shell, Bind TCP (via netcat -e) IPv6
+   cmd/unix/bind_nodejs               			Unix Command Shell, Bind TCP (via nodejs)
+   cmd/unix/bind_perl					Unix Command Shell, Bind TCP (via Perl)
+   cmd/unix/bind_perl_ipv6            			Unix Command Shell, Bind TCP (via perl) IPv6
+   cmd/unix/bind_r   					Unix Command Shell, Bind TCP (via R)
+   cmd/unix/bind_ruby					Unix Command Shell, Bind TCP (via Ruby)
+   cmd/unix/bind_ruby_ipv6            			Unix Command Shell, Bind TCP (via Ruby) IPv6
+   cmd/unix/bind_socat_udp            			Unix Command Shell, Bind UDP (via socat)
+   cmd/unix/bind_stub					Unix Command Shell, Bind TCP (stub)
+   cmd/unix/bind_zsh 					Unix Command Shell, Bind TCP (via Zsh)
+   cmd/unix/generic  					Unix Command, Generic Command Execution
+   cmd/unix/reverse  					Unix Command Shell, Double Reverse TCP (telnet)
+   cmd/unix/reverse_awk               			Unix Command Shell, Reverse TCP (via AWK)
+   cmd/unix/reverse_bash              			Unix Command Shell, Reverse TCP (/dev/tcp)
+   cmd/unix/reverse_bash_telnet_ssl   			Unix Command Shell, Reverse TCP SSL (telnet)
+   cmd/unix/reverse_ksh               			Unix Command Shell, Reverse TCP (via Ksh)
+   cmd/unix/reverse_lua               			Unix Command Shell, Reverse TCP (via Lua)
+   cmd/unix/reverse_ncat_ssl          			Unix Command Shell, Reverse TCP (via ncat)
+   cmd/unix/reverse_netcat            			Unix Command Shell, Reverse TCP (via netcat)
+   cmd/unix/reverse_netcat_gaping     			Unix Command Shell, Reverse TCP (via netcat -e)
+   cmd/unix/reverse_nodejs            			Unix Command Shell, Reverse TCP (via nodejs)
+   cmd/unix/reverse_openssl           			Unix Command Shell, Double Reverse TCP SSL (openssl)
+   cmd/unix/reverse_perl              			Unix Command Shell, Reverse TCP (via Perl)
+   cmd/unix/reverse_perl_ssl          			Unix Command Shell, Reverse TCP SSL (via perl)
+   cmd/unix/reverse_php_ssl           			Unix Command Shell, Reverse TCP SSL (via php)
+   cmd/unix/reverse_python            			Unix Command Shell, Reverse TCP (via Python)
+   cmd/unix/reverse_python_ssl        			Unix Command Shell, Reverse TCP SSL (via python)
+   cmd/unix/reverse_r					Unix Command Shell, Reverse TCP (via R)
+   cmd/unix/reverse_ruby              			Unix Command Shell, Reverse TCP (via Ruby)
+   cmd/unix/reverse_ruby_ssl          			Unix Command Shell, Reverse TCP SSL (via Ruby)
+   cmd/unix/reverse_socat_udp         			Unix Command Shell, Reverse UDP (via socat)
+   cmd/unix/reverse_ssl_double_telnet 			Unix Command Shell, Double Reverse TCP SSL (telnet)
+   cmd/unix/reverse_stub              			Unix Command Shell, Reverse TCP (stub)
+   cmd/unix/reverse_zsh               			Unix Command Shell, Reverse TCP (via Zsh)
+   cmd/windows/adduser                			Windows Execute net user /ADD CMD
+   cmd/windows/bind_lua               			Windows Command Shell, Bind TCP (via Lua)
+   cmd/windows/bind_perl              			Windows Command Shell, Bind TCP (via Perl)
+   cmd/windows/bind_perl_ipv6         			Windows Command Shell, Bind TCP (via perl) IPv6
+   cmd/windows/bind_ruby              			Windows Command Shell, Bind TCP (via Ruby)
+   cmd/windows/download_eval_vbs      			Windows Executable Download and Evaluate VBS
+   cmd/windows/download_exec_vbs      			Windows Executable Download and Execute (via .vbs)
+   cmd/windows/generic                			Windows Command, Generic Command Execution
+   cmd/windows/powershell_bind_tcp    			Windows Interactive Powershell Session, Bind TCP
+   cmd/windows/powershell_reverse_tcp 			Windows Interactive Powershell Session, Reverse TCP
+   cmd/windows/reverse_lua            			Windows Command Shell, Reverse TCP (via Lua)
+   cmd/windows/reverse_perl           			Windows Command, Double Reverse TCP Connection (via Perl)
+   cmd/windows/reverse_powershell     			Windows Command Shell, Reverse TCP (via Powershell)
+   cmd/windows/reverse_ruby           			Windows Command Shell, Reverse TCP (via Ruby)
+   generic/custom    					Custom Payload
+   generic/debug_trap					Generic x86 Debug Trap
+   generic/shell_bind_tcp             			Generic Command Shell, Bind TCP Inline
+   generic/shell_reverse_tcp          			Generic Command Shell, Reverse TCP Inline
+   generic/tight_loop					Generic x86 Tight Loop
+   java/jsp_shell_bind_tcp            			Java JSP Command Shell, Bind TCP Inline
+   java/jsp_shell_reverse_tcp         			Java JSP Command Shell, Reverse TCP Inline
+   java/meterpreter/bind_tcp          			Java Meterpreter, Java Bind TCP Stager
+   java/meterpreter/reverse_http      			Java Meterpreter, Java Reverse HTTP Stager
+   java/meterpreter/reverse_https     			Java Meterpreter, Java Reverse HTTPS Stager
+   java/meterpreter/reverse_tcp       			Java Meterpreter, Java Reverse TCP Stager
+   java/shell/bind_tcp                			Command Shell, Java Bind TCP Stager
+   java/shell/reverse_tcp             			Command Shell, Java Reverse TCP Stager
+   java/shell_reverse_tcp             			Java Command Shell, Reverse TCP Inline
+   linux/aarch64/meterpreter/reverse_tcp        	Linux Meterpreter, Reverse TCP Stager
+   linux/aarch64/meterpreter_reverse_http       	Linux Meterpreter, Reverse HTTP Inline
+   linux/aarch64/meterpreter_reverse_https      	Linux Meterpreter, Reverse HTTPS Inline
+   linux/aarch64/meterpreter_reverse_tcp        	Linux Meterpreter, Reverse TCP Inline
+   linux/aarch64/shell/reverse_tcp    			Linux dup2 Command Shell, Reverse TCP Stager
+   linux/aarch64/shell_reverse_tcp    			Linux Command Shell, Reverse TCP Inline
+   linux/armbe/meterpreter_reverse_http         	Linux Meterpreter, Reverse HTTP Inline
+   linux/armbe/meterpreter_reverse_https        	Linux Meterpreter, Reverse HTTPS Inline
+   linux/armbe/meterpreter_reverse_tcp			Linux Meterpreter, Reverse TCP Inline
+   linux/armbe/shell_bind_tcp         			Linux ARM Big Endian Command Shell, Bind TCP Inline
+   linux/armle/exec  					Linux Execute Command
+   linux/armle/meterpreter/bind_tcp   			Linux Meterpreter, Bind TCP Stager
+   linux/armle/meterpreter/reverse_tcp			Linux Meterpreter, Reverse TCP Stager
+   linux/armle/meterpreter_reverse_http         	Linux Meterpreter, Reverse HTTP Inline
+   linux/armle/meterpreter_reverse_https        	Linux Meterpreter, Reverse HTTPS Inline
+   linux/armle/meterpreter_reverse_tcp			Linux Meterpreter, Reverse TCP Inline
+   linux/armle/shell/bind_tcp         			Linux dup2 Command Shell, Bind TCP Stager
+   linux/armle/shell/reverse_tcp      			Linux dup2 Command Shell, Reverse TCP Stager
+   linux/armle/shell_bind_tcp         			Linux Command Shell, Reverse TCP Inline
+   linux/armle/shell_reverse_tcp      			Linux Command Shell, Reverse TCP Inline
+   linux/mips64/meterpreter_reverse_http        	Linux Meterpreter, Reverse HTTP Inline
+   linux/mips64/meterpreter_reverse_https       	Linux Meterpreter, Reverse HTTPS Inline
+   linux/mips64/meterpreter_reverse_tcp         	Linux Meterpreter, Reverse TCP Inline
+   linux/mipsbe/exec 					Linux Execute Command
+   linux/mipsbe/meterpreter/reverse_tcp         	Linux Meterpreter, Reverse TCP Stager
+   linux/mipsbe/meterpreter_reverse_http        	Linux Meterpreter, Reverse HTTP Inline
+   linux/mipsbe/meterpreter_reverse_https       	Linux Meterpreter, Reverse HTTPS Inline
+   linux/mipsbe/meterpreter_reverse_tcp         	Linux Meterpreter, Reverse TCP Inline
+   linux/mipsbe/reboot                			Linux Reboot
+   linux/mipsbe/shell/reverse_tcp     			Linux Command Shell, Reverse TCP Stager
+   linux/mipsbe/shell_bind_tcp        			Linux Command Shell, Bind TCP Inline
+   linux/mipsbe/shell_reverse_tcp     			Linux Command Shell, Reverse TCP Inline
+   linux/mipsle/exec 					Linux Execute Command
+   linux/mipsle/meterpreter/reverse_tcp         	Linux Meterpreter, Reverse TCP Stager
+   linux/mipsle/meterpreter_reverse_http        	Linux Meterpreter, Reverse HTTP Inline
+   linux/mipsle/meterpreter_reverse_https       	Linux Meterpreter, Reverse HTTPS Inline
+   linux/mipsle/meterpreter_reverse_tcp         	Linux Meterpreter, Reverse TCP Inline
+   linux/mipsle/reboot                			Linux Reboot
+   linux/mipsle/shell/reverse_tcp     			Linux Command Shell, Reverse TCP Stager
+   linux/mipsle/shell_bind_tcp        			Linux Command Shell, Bind TCP Inline
+   linux/mipsle/shell_reverse_tcp     			Linux Command Shell, Reverse TCP Inline
+   linux/ppc/meterpreter_reverse_http 			Linux Meterpreter, Reverse HTTP Inline
+   linux/ppc/meterpreter_reverse_https			Linux Meterpreter, Reverse HTTPS Inline
+   linux/ppc/meterpreter_reverse_tcp  			Linux Meterpreter, Reverse TCP Inline
+   linux/ppc/shell_bind_tcp           			Linux Command Shell, Bind TCP Inline
+   linux/ppc/shell_reverse_tcp        			Linux Command Shell, Reverse TCP Inline
+   linux/ppc64/shell_bind_tcp         			Linux Command Shell, Bind TCP Inline
+   linux/ppc64/shell_reverse_tcp      			Linux Command Shell, Reverse TCP Inline
+   linux/ppc64le/meterpreter_reverse_http       	Linux Meterpreter, Reverse HTTP Inline
+   linux/ppc64le/meterpreter_reverse_https      	Linux Meterpreter, Reverse HTTPS Inline
+   linux/ppc64le/meterpreter_reverse_tcp        	Linux Meterpreter, Reverse TCP Inline
+   linux/ppce500v2/meterpreter_reverse_http     	Linux Meterpreter, Reverse HTTP Inline
+   linux/ppce500v2/meterpreter_reverse_https    	Linux Meterpreter, Reverse HTTPS Inline
+   linux/ppce500v2/meterpreter_reverse_tcp      	Linux Meterpreter, Reverse TCP Inline
+   linux/x64/exec    					Linux Execute Command
+   linux/x64/meterpreter/bind_tcp     			Linux Mettle x64, Bind TCP Stager
+   linux/x64/meterpreter/reverse_tcp  			Linux Mettle x64, Reverse TCP Stager
+   linux/x64/meterpreter_reverse_http 			Linux Meterpreter, Reverse HTTP Inline
+   linux/x64/meterpreter_reverse_https			Linux Meterpreter, Reverse HTTPS Inline
+   linux/x64/meterpreter_reverse_tcp  			Linux Meterpreter, Reverse TCP Inline
+   linux/x64/shell/bind_tcp           			Linux Command Shell, Bind TCP Stager
+   linux/x64/shell/reverse_tcp        			Linux Command Shell, Reverse TCP Stager
+   linux/x64/shell_bind_tcp           			Linux Command Shell, Bind TCP Inline
+   linux/x64/shell_bind_tcp_random_port         	Linux Command Shell, Bind TCP Random Port Inline
+   linux/x64/shell_reverse_tcp        			Linux Command Shell, Reverse TCP Inline
+   linux/x86/chmod   					Linux Chmod
+   linux/x86/exec    					Linux Execute Command
+   linux/x86/meterpreter/bind_ipv6_tcp			Linux Mettle x86, Bind IPv6 TCP Stager (Linux x86)
+   linux/x86/meterpreter/bind_ipv6_tcp_uuid     	Linux Mettle x86, Bind IPv6 TCP Stager with UUID Support (Linux x86)
+   linux/x86/meterpreter/bind_nonx_tcp			Linux Mettle x86, Bind TCP Stager
+   linux/x86/meterpreter/bind_tcp     			Linux Mettle x86, Bind TCP Stager (Linux x86)
+   linux/x86/meterpreter/bind_tcp_uuid			Linux Mettle x86, Bind TCP Stager with UUID Support (Linux x86)
+   linux/x86/meterpreter/reverse_ipv6_tcp       	Linux Mettle x86, Reverse TCP Stager (IPv6)
+   linux/x86/meterpreter/reverse_nonx_tcp       	Linux Mettle x86, Reverse TCP Stager
+   linux/x86/meterpreter/reverse_tcp  			Linux Mettle x86, Reverse TCP Stager
+   linux/x86/meterpreter/reverse_tcp_uuid       	Linux Mettle x86, Reverse TCP Stager
+   linux/x86/meterpreter_reverse_http 			Linux Meterpreter, Reverse HTTP Inline
+   linux/x86/meterpreter_reverse_https			Linux Meterpreter, Reverse HTTPS Inline
+   linux/x86/meterpreter_reverse_tcp  			Linux Meterpreter, Reverse TCP Inline
+   linux/x86/metsvc_bind_tcp          			Linux Meterpreter Service, Bind TCP
+   linux/x86/metsvc_reverse_tcp       			Linux Meterpreter Service, Reverse TCP Inline
+   linux/x86/read_file                			Linux Read File
+   linux/x86/shell/bind_ipv6_tcp      			Linux Command Shell, Bind IPv6 TCP Stager (Linux x86)
+   linux/x86/shell/bind_ipv6_tcp_uuid 			Linux Command Shell, Bind IPv6 TCP Stager with UUID Support (Linux x86)
+   linux/x86/shell/bind_nonx_tcp      			Linux Command Shell, Bind TCP Stager
+   linux/x86/shell/bind_tcp           			Linux Command Shell, Bind TCP Stager (Linux x86)
+   linux/x86/shell/bind_tcp_uuid      			Linux Command Shell, Bind TCP Stager with UUID Support (Linux x86)
+   linux/x86/shell/reverse_ipv6_tcp   			Linux Command Shell, Reverse TCP Stager (IPv6)
+   linux/x86/shell/reverse_nonx_tcp   			Linux Command Shell, Reverse TCP Stager
+   linux/x86/shell/reverse_tcp        			Linux Command Shell, Reverse TCP Stager
+   linux/x86/shell/reverse_tcp_uuid   			Linux Command Shell, Reverse TCP Stager
+   linux/x86/shell_bind_ipv6_tcp      			Linux Command Shell, Bind TCP Inline (IPv6)
+   linux/x86/shell_bind_tcp           			Linux Command Shell, Bind TCP Inline
+   linux/x86/shell_bind_tcp_random_port         	Linux Command Shell, Bind TCP Random Port Inline
+   linux/x86/shell_reverse_tcp        			Linux Command Shell, Reverse TCP Inline
+   linux/x86/shell_reverse_tcp_ipv6   			Linux Command Shell, Reverse TCP Inline (IPv6)
+   linux/zarch/meterpreter_reverse_http         	Linux Meterpreter, Reverse HTTP Inline
+   linux/zarch/meterpreter_reverse_https        	Linux Meterpreter, Reverse HTTPS Inline
+   linux/zarch/meterpreter_reverse_tcp			Linux Meterpreter, Reverse TCP Inline
+   mainframe/shell_reverse_tcp        			Z/OS (MVS) Command Shell, Reverse TCP Inline
+   multi/meterpreter/reverse_http     			Architecture-Independent Meterpreter Stage, Reverse HTTP Stager (Mulitple Architectures)
+   multi/meterpreter/reverse_https    			Architecture-Independent Meterpreter Stage, Reverse HTTPS Stager (Mulitple Architectures)
+   nodejs/shell_bind_tcp              			Command Shell, Bind TCP (via nodejs)
+   nodejs/shell_reverse_tcp           			Command Shell, Reverse TCP (via nodejs)
+   nodejs/shell_reverse_tcp_ssl       			Command Shell, Reverse TCP SSL (via nodejs)
+   osx/armle/execute/bind_tcp         			OS X Write and Execute Binary, Bind TCP Stager
+   osx/armle/execute/reverse_tcp      			OS X Write and Execute Binary, Reverse TCP Stager
+   osx/armle/shell/bind_tcp           			OS X Command Shell, Bind TCP Stager
+   osx/armle/shell/reverse_tcp        			OS X Command Shell, Reverse TCP Stager
+   osx/armle/shell_bind_tcp           			Apple iOS Command Shell, Bind TCP Inline
+   osx/armle/shell_reverse_tcp        			Apple iOS Command Shell, Reverse TCP Inline
+   osx/armle/vibrate 					Apple iOS iPhone Vibrate
+   osx/ppc/shell/bind_tcp             			OS X Command Shell, Bind TCP Stager
+   osx/ppc/shell/reverse_tcp          			OS X Command Shell, Reverse TCP Stager
+   osx/ppc/shell_bind_tcp             			OS X Command Shell, Bind TCP Inline
+   osx/ppc/shell_reverse_tcp          			OS X Command Shell, Reverse TCP Inline
+   osx/x64/dupandexecve/bind_tcp      			OS X dup2 Command Shell, Bind TCP Stager
+   osx/x64/dupandexecve/reverse_tcp   			OS X dup2 Command Shell, Reverse TCP Stager
+   osx/x64/exec      					OS X x64 Execute Command
+   osx/x64/meterpreter/bind_tcp       			OSX Meterpreter, Bind TCP Stager
+   osx/x64/meterpreter/reverse_tcp    			OSX Meterpreter, Reverse TCP Stager
+   osx/x64/meterpreter_reverse_http   			OSX Meterpreter, Reverse HTTP Inline
+   osx/x64/meterpreter_reverse_https  			OSX Meterpreter, Reverse HTTPS Inline
+   osx/x64/meterpreter_reverse_tcp    			OSX Meterpreter, Reverse TCP Inline
+   osx/x64/say       					OS X x64 say Shellcode
+   osx/x64/shell_bind_tcp             			OS X x64 Shell Bind TCP
+   osx/x64/shell_reverse_tcp          			OS X x64 Shell Reverse TCP
+   osx/x86/bundleinject/bind_tcp      			Mac OS X Inject Mach-O Bundle, Bind TCP Stager
+   osx/x86/bundleinject/reverse_tcp   			Mac OS X Inject Mach-O Bundle, Reverse TCP Stager
+   osx/x86/exec      					OS X Execute Command
+   osx/x86/isight/bind_tcp            			Mac OS X x86 iSight Photo Capture, Bind TCP Stager
+   osx/x86/isight/reverse_tcp         			Mac OS X x86 iSight Photo Capture, Reverse TCP Stager
+   osx/x86/shell_bind_tcp             			OS X Command Shell, Bind TCP Inline
+   osx/x86/shell_reverse_tcp          			OS X Command Shell, Reverse TCP Inline
+   osx/x86/vforkshell/bind_tcp        			OS X (vfork) Command Shell, Bind TCP Stager
+   osx/x86/vforkshell/reverse_tcp     			OS X (vfork) Command Shell, Reverse TCP Stager
+   osx/x86/vforkshell_bind_tcp        			OS X (vfork) Command Shell, Bind TCP Inline
+   osx/x86/vforkshell_reverse_tcp     			OS X (vfork) Command Shell, Reverse TCP Inline
+   php/bind_perl     					PHP Command Shell, Bind TCP (via Perl)
+   php/bind_perl_ipv6					PHP Command Shell, Bind TCP (via perl) IPv6
+   php/bind_php      					PHP Command Shell, Bind TCP (via PHP)
+   php/bind_php_ipv6 					PHP Command Shell, Bind TCP (via php) IPv6
+   php/download_exec 					PHP Executable Download and Execute
+   php/exec          					PHP Execute Command 
+   php/meterpreter/bind_tcp           			PHP Meterpreter, Bind TCP Stager
+   php/meterpreter/bind_tcp_ipv6      			PHP Meterpreter, Bind TCP Stager IPv6
+   php/meterpreter/bind_tcp_ipv6_uuid 			PHP Meterpreter, Bind TCP Stager IPv6 with UUID Support
+   php/meterpreter/bind_tcp_uuid      			PHP Meterpreter, Bind TCP Stager with UUID Support
+   php/meterpreter/reverse_tcp        			PHP Meterpreter, PHP Reverse TCP Stager
+   php/meterpreter/reverse_tcp_uuid   			PHP Meterpreter, PHP Reverse TCP Stager
+   php/meterpreter_reverse_tcp        			PHP Meterpreter, Reverse TCP Inline
+   php/reverse_perl  					PHP Command, Double Reverse TCP Connection (via Perl)
+   php/reverse_php   					PHP Command Shell, Reverse TCP (via PHP)
+   python/meterpreter/bind_tcp        			Python Meterpreter, Python Bind TCP Stager
+   python/meterpreter/bind_tcp_uuid   			Python Meterpreter, Python Bind TCP Stager with UUID Support
+   python/meterpreter/reverse_http    			Python Meterpreter, Python Reverse HTTP Stager
+   python/meterpreter/reverse_https   			Python Meterpreter, Python Reverse HTTPS Stager
+   python/meterpreter/reverse_tcp     			Python Meterpreter, Python Reverse TCP Stager
+   python/meterpreter/reverse_tcp_ssl 			Python Meterpreter, Python Reverse TCP SSL Stager
+   python/meterpreter/reverse_tcp_uuid			Python Meterpreter, Python Reverse TCP Stager with UUID Support
+   python/meterpreter_bind_tcp        			Python Meterpreter Shell, Bind TCP Inline
+   python/meterpreter_reverse_http    			Python Meterpreter Shell, Reverse HTTP Inline
+   python/meterpreter_reverse_https   			Python Meterpreter Shell, Reverse HTTPS Inline
+   python/meterpreter_reverse_tcp     			Python Meterpreter Shell, Reverse TCP Inline
+   python/shell_bind_tcp              			Command Shell, Bind TCP (via python)
+   python/shell_reverse_tcp           			Command Shell, Reverse TCP (via python)
+   python/shell_reverse_tcp_ssl       			Command Shell, Reverse TCP SSL (via python)
+   python/shell_reverse_udp           			Command Shell, Reverse UDP (via python)
+   ruby/shell_bind_tcp                			Ruby Command Shell, Bind TCP
+   ruby/shell_bind_tcp_ipv6           			Ruby Command Shell, Bind TCP IPv6
+   ruby/shell_reverse_tcp             			Ruby Command Shell, Reverse TCP
+   ruby/shell_reverse_tcp_ssl         			Ruby Command Shell, Reverse TCP SSL
+   solaris/sparc/shell_bind_tcp       			Solaris Command Shell, Bind TCP Inline
+   solaris/sparc/shell_reverse_tcp    			Solaris Command Shell, Reverse TCP Inline
+   solaris/x86/shell_bind_tcp         			Solaris Command Shell, Bind TCP Inline
+   solaris/x86/shell_reverse_tcp      			Solaris Command Shell, Reverse TCP Inline
+   tty/unix/interact 					Unix TTY, Interact with Established Connection
+   windows/dllinject/bind_hidden_ipknock_tcp    	Reflective DLL Injection, Hidden Bind Ipknock TCP Stager
+   windows/dllinject/bind_hidden_tcp  			Reflective DLL Injection, Hidden Bind TCP Stager
+   windows/dllinject/bind_ipv6_tcp    			Reflective DLL Injection, Bind IPv6 TCP Stager (Windows x86)
+   windows/dllinject/bind_ipv6_tcp_uuid         	Reflective DLL Injection, Bind IPv6 TCP Stager with UUID Support (Windows x86)
+   windows/dllinject/bind_named_pipe  			Reflective DLL Injection, Windows x86 Bind Named Pipe Stager
+   windows/dllinject/bind_nonx_tcp    			Reflective DLL Injection, Bind TCP Stager (No NX or Win7)
+   windows/dllinject/bind_tcp         			Reflective DLL Injection, Bind TCP Stager (Windows x86)
+   windows/dllinject/bind_tcp_rc4     			Reflective DLL Injection, Bind TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/dllinject/bind_tcp_uuid    			Reflective DLL Injection, Bind TCP Stager with UUID Support (Windows x86)
+   windows/dllinject/reverse_hop_http 			Reflective DLL Injection, Reverse Hop HTTP/HTTPS Stager
+   windows/dllinject/reverse_http     			Reflective DLL Injection, Windows Reverse HTTP Stager (wininet)
+   windows/dllinject/reverse_http_proxy_pstore  	Reflective DLL Injection, Reverse HTTP Stager Proxy
+   windows/dllinject/reverse_ipv6_tcp 			Reflective DLL Injection, Reverse TCP Stager (IPv6)
+   windows/dllinject/reverse_nonx_tcp 			Reflective DLL Injection, Reverse TCP Stager (No NX or Win7)
+   windows/dllinject/reverse_ord_tcp  			Reflective DLL Injection, Reverse Ordinal TCP Stager (No NX or Win7)
+   windows/dllinject/reverse_tcp      			Reflective DLL Injection, Reverse TCP Stager
+   windows/dllinject/reverse_tcp_allports       	Reflective DLL Injection, Reverse All-Port TCP Stager
+   windows/dllinject/reverse_tcp_dns  			Reflective DLL Injection, Reverse TCP Stager (DNS)
+   windows/dllinject/reverse_tcp_rc4  			Reflective DLL Injection, Reverse TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/dllinject/reverse_tcp_rc4_dns        	Reflective DLL Injection, Reverse TCP Stager (RC4 Stage Encryption DNS, Metasm)
+   windows/dllinject/reverse_tcp_uuid 			Reflective DLL Injection, Reverse TCP Stager with UUID Support
+   windows/dllinject/reverse_udp      			Reflective DLL Injection, Reverse UDP Stager with UUID Support
+   windows/dllinject/reverse_winhttp  			Reflective DLL Injection, Windows Reverse HTTP Stager (winhttp)
+   windows/dns_txt_query_exec         			DNS TXT Record Payload Download and Execution
+   windows/download_exec              			Windows Executable Download (http,https,ftp) and Execute
+   windows/exec      					Windows Execute Command
+   windows/loadlibrary                			Windows LoadLibrary Path
+   windows/messagebox					Windows MessageBox
+   windows/meterpreter/bind_hidden_ipknock_tcp  	Windows Meterpreter (Reflective Injection), Hidden Bind Ipknock TCP Stager
+   windows/meterpreter/bind_hidden_tcp			Windows Meterpreter (Reflective Injection), Hidden Bind TCP Stager
+   windows/meterpreter/bind_ipv6_tcp  			Windows Meterpreter (Reflective Injection), Bind IPv6 TCP Stager (Windows x86)
+   windows/meterpreter/bind_ipv6_tcp_uuid       	Windows Meterpreter (Reflective Injection), Bind IPv6 TCP Stager with UUID Support (Windows x86)
+   windows/meterpreter/bind_named_pipe			Windows Meterpreter (Reflective Injection), Windows x86 Bind Named Pipe Stager
+   windows/meterpreter/bind_nonx_tcp  			Windows Meterpreter (Reflective Injection), Bind TCP Stager (No NX or Win7)
+   windows/meterpreter/bind_tcp       			Windows Meterpreter (Reflective Injection), Bind TCP Stager (Windows x86)
+   windows/meterpreter/bind_tcp_rc4   			Windows Meterpreter (Reflective Injection), Bind TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/meterpreter/bind_tcp_uuid  			Windows Meterpreter (Reflective Injection), Bind TCP Stager with UUID Support (Windows x86)
+   windows/meterpreter/reverse_hop_http         	Windows Meterpreter (Reflective Injection), Reverse Hop HTTP/HTTPS Stager
+   windows/meterpreter/reverse_http   			Windows Meterpreter (Reflective Injection), Windows Reverse HTTP Stager (wininet)
+   windows/meterpreter/reverse_http_proxy_pstore	Windows Meterpreter (Reflective Injection), Reverse HTTP Stager Proxy
+   windows/meterpreter/reverse_https  			Windows Meterpreter (Reflective Injection), Windows Reverse HTTPS Stager (wininet)
+   windows/meterpreter/reverse_https_proxy      	Windows Meterpreter (Reflective Injection), Reverse HTTPS Stager with Support for Custom Proxy
+   windows/meterpreter/reverse_ipv6_tcp         	Windows Meterpreter (Reflective Injection), Reverse TCP Stager (IPv6)
+   windows/meterpreter/reverse_named_pipe       	Windows Meterpreter (Reflective Injection), Windows x86 Reverse Named Pipe (SMB) Stager
+   windows/meterpreter/reverse_nonx_tcp         	Windows Meterpreter (Reflective Injection), Reverse TCP Stager (No NX or Win7)
+   windows/meterpreter/reverse_ord_tcp			Windows Meterpreter (Reflective Injection), Reverse Ordinal TCP Stager (No NX or Win7)
+   windows/meterpreter/reverse_tcp    			Windows Meterpreter (Reflective Injection), Reverse TCP Stager
+   windows/meterpreter/reverse_tcp_allports     	Windows Meterpreter (Reflective Injection), Reverse All-Port TCP Stager
+   windows/meterpreter/reverse_tcp_dns			Windows Meterpreter (Reflective Injection), Reverse TCP Stager (DNS)
+   windows/meterpreter/reverse_tcp_rc4			Windows Meterpreter (Reflective Injection), Reverse TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/meterpreter/reverse_tcp_rc4_dns      	Windows Meterpreter (Reflective Injection), Reverse TCP Stager (RC4 Stage Encryption DNS, Metasm)
+   windows/meterpreter/reverse_tcp_uuid         	Windows Meterpreter (Reflective Injection), Reverse TCP Stager with UUID Support
+   windows/meterpreter/reverse_udp    			Windows Meterpreter (Reflective Injection), Reverse UDP Stager with UUID Support
+   windows/meterpreter/reverse_winhttp			Windows Meterpreter (Reflective Injection), Windows Reverse HTTP Stager (winhttp)
+   windows/meterpreter/reverse_winhttps         	Windows Meterpreter (Reflective Injection), Windows Reverse HTTPS Stager (winhttp)
+   windows/meterpreter_bind_named_pipe			Windows Meterpreter Shell, Bind Named Pipe Inline
+   windows/meterpreter_bind_tcp       			Windows Meterpreter Shell, Bind TCP Inline
+   windows/meterpreter_reverse_http   			Windows Meterpreter Shell, Reverse HTTP Inline
+   windows/meterpreter_reverse_https  			Windows Meterpreter Shell, Reverse HTTPS Inline
+   windows/meterpreter_reverse_ipv6_tcp         	Windows Meterpreter Shell, Reverse TCP Inline (IPv6)
+   windows/meterpreter_reverse_tcp    			Windows Meterpreter Shell, Reverse TCP Inline
+   windows/metsvc_bind_tcp            			Windows Meterpreter Service, Bind TCP
+   windows/metsvc_reverse_tcp         			Windows Meterpreter Service, Reverse TCP Inline
+   windows/patchupdllinject/bind_hidden_ipknock_tcp	Windows Inject DLL, Hidden Bind Ipknock TCP Stager
+   windows/patchupdllinject/bind_hidden_tcp     	Windows Inject DLL, Hidden Bind TCP Stager
+   windows/patchupdllinject/bind_ipv6_tcp       	Windows Inject DLL, Bind IPv6 TCP Stager (Windows x86)
+   windows/patchupdllinject/bind_ipv6_tcp_uuid  	Windows Inject DLL, Bind IPv6 TCP Stager with UUID Support (Windows x86)
+   windows/patchupdllinject/bind_named_pipe     	Windows Inject DLL, Windows x86 Bind Named Pipe Stager
+   windows/patchupdllinject/bind_nonx_tcp       	Windows Inject DLL, Bind TCP Stager (No NX or Win7)
+   windows/patchupdllinject/bind_tcp  			Windows Inject DLL, Bind TCP Stager (Windows x86)
+   windows/patchupdllinject/bind_tcp_rc4        	Windows Inject DLL, Bind TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/patchupdllinject/bind_tcp_uuid       	Windows Inject DLL, Bind TCP Stager with UUID Support (Windows x86)
+   windows/patchupdllinject/reverse_ipv6_tcp    	Windows Inject DLL, Reverse TCP Stager (IPv6)
+   windows/patchupdllinject/reverse_nonx_tcp    	Windows Inject DLL, Reverse TCP Stager (No NX or Win7)
+   windows/patchupdllinject/reverse_ord_tcp     	Windows Inject DLL, Reverse Ordinal TCP Stager (No NX or Win7)
+   windows/patchupdllinject/reverse_tcp         	Windows Inject DLL, Reverse TCP Stager
+   windows/patchupdllinject/reverse_tcp_allports	Windows Inject DLL, Reverse All-Port TCP Stager
+   windows/patchupdllinject/reverse_tcp_dns     	Windows Inject DLL, Reverse TCP Stager (DNS)
+   windows/patchupdllinject/reverse_tcp_rc4     	Windows Inject DLL, Reverse TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/patchupdllinject/reverse_tcp_rc4_dns 	Windows Inject DLL, Reverse TCP Stager (RC4 Stage Encryption DNS, Metasm)
+   windows/patchupdllinject/reverse_tcp_uuid    	Windows Inject DLL, Reverse TCP Stager with UUID Support
+   windows/patchupdllinject/reverse_udp         	Windows Inject DLL, Reverse UDP Stager with UUID Support
+   windows/patchupmeterpreter/bind_hidden_ipknock_tcp	Windows Meterpreter (skape/jt Injection), Hidden Bind Ipknock TCP Stager
+   windows/patchupmeterpreter/bind_hidden_tcp   	Windows Meterpreter (skape/jt Injection), Hidden Bind TCP Stager
+   windows/patchupmeterpreter/bind_ipv6_tcp     	Windows Meterpreter (skape/jt Injection), Bind IPv6 TCP Stager (Windows x86)
+   windows/patchupmeterpreter/bind_ipv6_tcp_uuid	Windows Meterpreter (skape/jt Injection), Bind IPv6 TCP Stager with UUID Support (Windows x86)
+   windows/patchupmeterpreter/bind_named_pipe   	Windows Meterpreter (skape/jt Injection), Windows x86 Bind Named Pipe Stager
+   windows/patchupmeterpreter/bind_nonx_tcp     	Windows Meterpreter (skape/jt Injection), Bind TCP Stager (No NX or Win7)
+   windows/patchupmeterpreter/bind_tcp			Windows Meterpreter (skape/jt Injection), Bind TCP Stager (Windows x86)
+   windows/patchupmeterpreter/bind_tcp_rc4      	Windows Meterpreter (skape/jt Injection), Bind TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/patchupmeterpreter/bind_tcp_uuid     	Windows Meterpreter (skape/jt Injection), Bind TCP Stager with UUID Support (Windows x86)
+   windows/patchupmeterpreter/reverse_ipv6_tcp  	Windows Meterpreter (skape/jt Injection), Reverse TCP Stager (IPv6)
+   windows/patchupmeterpreter/reverse_nonx_tcp  	Windows Meterpreter (skape/jt Injection), Reverse TCP Stager (No NX or Win7)
+   windows/patchupmeterpreter/reverse_ord_tcp   	Windows Meterpreter (skape/jt Injection), Reverse Ordinal TCP Stager (No NX or Win7)
+   windows/patchupmeterpreter/reverse_tcp       	Windows Meterpreter (skape/jt Injection), Reverse TCP Stager
+   windows/patchupmeterpreter/reverse_tcp_allports	Windows Meterpreter (skape/jt Injection), Reverse All-Port TCP Stager
+   windows/patchupmeterpreter/reverse_tcp_dns   	Windows Meterpreter (skape/jt Injection), Reverse TCP Stager (DNS)
+   windows/patchupmeterpreter/reverse_tcp_rc4   	Windows Meterpreter (skape/jt Injection), Reverse TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/patchupmeterpreter/reverse_tcp_rc4_dns	Windows Meterpreter (skape/jt Injection), Reverse TCP Stager (RC4 Stage Encryption DNS, Metasm)
+   windows/patchupmeterpreter/reverse_tcp_uuid  	Windows Meterpreter (skape/jt Injection), Reverse TCP Stager with UUID Support
+   windows/patchupmeterpreter/reverse_udp       	Windows Meterpreter (skape/jt Injection), Reverse UDP Stager with UUID Support
+   windows/powershell_bind_tcp        			Windows Interactive Powershell Session, Bind TCP
+   windows/powershell_reverse_tcp     			Windows Interactive Powershell Session, Reverse TCP
+   windows/shell/bind_hidden_ipknock_tcp        	Windows Command Shell, Hidden Bind Ipknock TCP Stager
+   windows/shell/bind_hidden_tcp      			Windows Command Shell, Hidden Bind TCP Stager
+   windows/shell/bind_ipv6_tcp        			Windows Command Shell, Bind IPv6 TCP Stager (Windows x86)
+   windows/shell/bind_ipv6_tcp_uuid   			Windows Command Shell, Bind IPv6 TCP Stager with UUID Support (Windows x86)
+   windows/shell/bind_named_pipe      			Windows Command Shell, Windows x86 Bind Named Pipe Stager
+   windows/shell/bind_nonx_tcp        			Windows Command Shell, Bind TCP Stager (No NX or Win7)
+   windows/shell/bind_tcp             			Windows Command Shell, Bind TCP Stager (Windows x86)
+   windows/shell/bind_tcp_rc4         			Windows Command Shell, Bind TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/shell/bind_tcp_uuid        			Windows Command Shell, Bind TCP Stager with UUID Support (Windows x86)
+   windows/shell/reverse_ipv6_tcp     			Windows Command Shell, Reverse TCP Stager (IPv6)
+   windows/shell/reverse_nonx_tcp     			Windows Command Shell, Reverse TCP Stager (No NX or Win7)
+   windows/shell/reverse_ord_tcp      			Windows Command Shell, Reverse Ordinal TCP Stager (No NX or Win7)
+   windows/shell/reverse_tcp          			Windows Command Shell, Reverse TCP Stager
+   windows/shell/reverse_tcp_allports 			Windows Command Shell, Reverse All-Port TCP Stager
+   windows/shell/reverse_tcp_dns      			Windows Command Shell, Reverse TCP Stager (DNS)
+   windows/shell/reverse_tcp_rc4      			Windows Command Shell, Reverse TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/shell/reverse_tcp_rc4_dns  			Windows Command Shell, Reverse TCP Stager (RC4 Stage Encryption DNS, Metasm)
+   windows/shell/reverse_tcp_uuid     			Windows Command Shell, Reverse TCP Stager with UUID Support
+   windows/shell/reverse_udp          			Windows Command Shell, Reverse UDP Stager with UUID Support
+   windows/shell_bind_tcp             			Windows Command Shell, Bind TCP Inline
+   windows/shell_bind_tcp_xpfw        			Windows Disable Windows ICF, Command Shell, Bind TCP Inline
+   windows/shell_hidden_bind_tcp      			Windows Command Shell, Hidden Bind TCP Inline
+   windows/shell_reverse_tcp          			Windows Command Shell, Reverse TCP Inline
+   windows/speak_pwned                			Windows Speech API - Say "You Got Pwned!"
+   windows/upexec/bind_hidden_ipknock_tcp       	Windows Upload/Execute, Hidden Bind Ipknock TCP Stager
+   windows/upexec/bind_hidden_tcp     			Windows Upload/Execute, Hidden Bind TCP Stager
+   windows/upexec/bind_ipv6_tcp       			Windows Upload/Execute, Bind IPv6 TCP Stager (Windows x86)
+   windows/upexec/bind_ipv6_tcp_uuid  			Windows Upload/Execute, Bind IPv6 TCP Stager with UUID Support (Windows x86)
+   windows/upexec/bind_named_pipe     			Windows Upload/Execute, Windows x86 Bind Named Pipe Stager
+   windows/upexec/bind_nonx_tcp       			Windows Upload/Execute, Bind TCP Stager (No NX or Win7)
+   windows/upexec/bind_tcp            			Windows Upload/Execute, Bind TCP Stager (Windows x86)
+   windows/upexec/bind_tcp_rc4        			Windows Upload/Execute, Bind TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/upexec/bind_tcp_uuid       			Windows Upload/Execute, Bind TCP Stager with UUID Support (Windows x86)
+   windows/upexec/reverse_ipv6_tcp    			Windows Upload/Execute, Reverse TCP Stager (IPv6)
+   windows/upexec/reverse_nonx_tcp    			Windows Upload/Execute, Reverse TCP Stager (No NX or Win7)
+   windows/upexec/reverse_ord_tcp     			Windows Upload/Execute, Reverse Ordinal TCP Stager (No NX or Win7)
+   windows/upexec/reverse_tcp         			Windows Upload/Execute, Reverse TCP Stager
+   windows/upexec/reverse_tcp_allports			Windows Upload/Execute, Reverse All-Port TCP Stager
+   windows/upexec/reverse_tcp_dns     			Windows Upload/Execute, Reverse TCP Stager (DNS)
+   windows/upexec/reverse_tcp_rc4     			Windows Upload/Execute, Reverse TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/upexec/reverse_tcp_rc4_dns 			Windows Upload/Execute, Reverse TCP Stager (RC4 Stage Encryption DNS, Metasm)
+   windows/upexec/reverse_tcp_uuid    			Windows Upload/Execute, Reverse TCP Stager with UUID Support
+   windows/upexec/reverse_udp         			Windows Upload/Execute, Reverse UDP Stager with UUID Support
+   windows/vncinject/bind_hidden_ipknock_tcp    	VNC Server (Reflective Injection), Hidden Bind Ipknock TCP Stager
+   windows/vncinject/bind_hidden_tcp  			VNC Server (Reflective Injection), Hidden Bind TCP Stager
+   windows/vncinject/bind_ipv6_tcp    			VNC Server (Reflective Injection), Bind IPv6 TCP Stager (Windows x86)
+   windows/vncinject/bind_ipv6_tcp_uuid         	VNC Server (Reflective Injection), Bind IPv6 TCP Stager with UUID Support (Windows x86)
+   windows/vncinject/bind_named_pipe  			VNC Server (Reflective Injection), Windows x86 Bind Named Pipe Stager
+   windows/vncinject/bind_nonx_tcp    			VNC Server (Reflective Injection), Bind TCP Stager (No NX or Win7)
+   windows/vncinject/bind_tcp         			VNC Server (Reflective Injection), Bind TCP Stager (Windows x86)
+   windows/vncinject/bind_tcp_rc4     			VNC Server (Reflective Injection), Bind TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/vncinject/bind_tcp_uuid    			VNC Server (Reflective Injection), Bind TCP Stager with UUID Support (Windows x86)
+   windows/vncinject/reverse_hop_http 			VNC Server (Reflective Injection), Reverse Hop HTTP/HTTPS Stager
+   windows/vncinject/reverse_http     			VNC Server (Reflective Injection), Windows Reverse HTTP Stager (wininet)
+   windows/vncinject/reverse_http_proxy_pstore  	VNC Server (Reflective Injection), Reverse HTTP Stager Proxy
+   windows/vncinject/reverse_ipv6_tcp 			VNC Server (Reflective Injection), Reverse TCP Stager (IPv6)
+   windows/vncinject/reverse_nonx_tcp 			VNC Server (Reflective Injection), Reverse TCP Stager (No NX or Win7)
+   windows/vncinject/reverse_ord_tcp  			VNC Server (Reflective Injection), Reverse Ordinal TCP Stager (No NX or Win7)
+   windows/vncinject/reverse_tcp      			VNC Server (Reflective Injection), Reverse TCP Stager
+   windows/vncinject/reverse_tcp_allports       	VNC Server (Reflective Injection), Reverse All-Port TCP Stager
+   windows/vncinject/reverse_tcp_dns  			VNC Server (Reflective Injection), Reverse TCP Stager (DNS)
+   windows/vncinject/reverse_tcp_rc4  			VNC Server (Reflective Injection), Reverse TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/vncinject/reverse_tcp_rc4_dns        	VNC Server (Reflective Injection), Reverse TCP Stager (RC4 Stage Encryption DNS, Metasm)
+   windows/vncinject/reverse_tcp_uuid 			VNC Server (Reflective Injection), Reverse TCP Stager with UUID Support
+   windows/vncinject/reverse_udp      			VNC Server (Reflective Injection), Reverse UDP Stager with UUID Support
+   windows/vncinject/reverse_winhttp  			VNC Server (Reflective Injection), Windows Reverse HTTP Stager (winhttp)
+   windows/x64/exec  					Windows x64 Execute Command
+   windows/x64/loadlibrary            			Windows x64 LoadLibrary Path
+   windows/x64/messagebox             			Windows MessageBox x64
+   windows/x64/meterpreter/bind_ipv6_tcp        	Windows Meterpreter (Reflective Injection x64), Windows x64 IPv6 Bind TCP Stager
+   windows/x64/meterpreter/bind_ipv6_tcp_uuid   	Windows Meterpreter (Reflective Injection x64), Windows x64 IPv6 Bind TCP Stager with UUID Support
+   windows/x64/meterpreter/bind_named_pipe      	Windows Meterpreter (Reflective Injection x64), Windows x64 Bind Named Pipe Stager
+   windows/x64/meterpreter/bind_tcp   			Windows Meterpreter (Reflective Injection x64), Windows x64 Bind TCP Stager
+   windows/x64/meterpreter/bind_tcp_uuid        	Windows Meterpreter (Reflective Injection x64), Bind TCP Stager with UUID Support (Windows x64)
+   windows/x64/meterpreter/reverse_http         	Windows Meterpreter (Reflective Injection x64), Windows x64 Reverse HTTP Stager (wininet)
+   windows/x64/meterpreter/reverse_https        	Windows Meterpreter (Reflective Injection x64), Windows x64 Reverse HTTP Stager (wininet)
+   windows/x64/meterpreter/reverse_named_pipe   	Windows Meterpreter (Reflective Injection x64), Windows x64 Reverse Named Pipe (SMB) Stager
+   windows/x64/meterpreter/reverse_tcp			Windows Meterpreter (Reflective Injection x64), Windows x64 Reverse TCP Stager
+   windows/x64/meterpreter/reverse_tcp_rc4      	Windows Meterpreter (Reflective Injection x64), Reverse TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/x64/meterpreter/reverse_tcp_uuid     	Windows Meterpreter (Reflective Injection x64), Reverse TCP Stager with UUID Support (Windows x64)
+   windows/x64/meterpreter/reverse_winhttp      	Windows Meterpreter (Reflective Injection x64), Windows x64 Reverse HTTP Stager (winhttp)
+   windows/x64/meterpreter/reverse_winhttps     	Windows Meterpreter (Reflective Injection x64), Windows x64 Reverse HTTPS Stager (winhttp)
+   windows/x64/meterpreter_bind_named_pipe      	Windows Meterpreter Shell, Bind Named Pipe Inline (x64)
+   windows/x64/meterpreter_bind_tcp   			Windows Meterpreter Shell, Bind TCP Inline (x64)
+   windows/x64/meterpreter_reverse_http         	Windows Meterpreter Shell, Reverse HTTP Inline (x64)
+   windows/x64/meterpreter_reverse_https        	Windows Meterpreter Shell, Reverse HTTPS Inline (x64)
+   windows/x64/meterpreter_reverse_ipv6_tcp     	Windows Meterpreter Shell, Reverse TCP Inline (IPv6) (x64)
+   windows/x64/meterpreter_reverse_tcp			Windows Meterpreter Shell, Reverse TCP Inline x64
+   windows/x64/powershell_bind_tcp    			Windows Interactive Powershell Session, Bind TCP
+   windows/x64/powershell_reverse_tcp 			Windows Interactive Powershell Session, Reverse TCP
+   windows/x64/shell/bind_ipv6_tcp    			Windows x64 Command Shell, Windows x64 IPv6 Bind TCP Stager
+   windows/x64/shell/bind_ipv6_tcp_uuid         	Windows x64 Command Shell, Windows x64 IPv6 Bind TCP Stager with UUID Support
+   windows/x64/shell/bind_named_pipe  			Windows x64 Command Shell, Windows x64 Bind Named Pipe Stager
+   windows/x64/shell/bind_tcp         			Windows x64 Command Shell, Windows x64 Bind TCP Stager
+   windows/x64/shell/bind_tcp_uuid    			Windows x64 Command Shell, Bind TCP Stager with UUID Support (Windows x64)
+   windows/x64/shell/reverse_tcp      			Windows x64 Command Shell, Windows x64 Reverse TCP Stager
+   windows/x64/shell/reverse_tcp_rc4  			Windows x64 Command Shell, Reverse TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/x64/shell/reverse_tcp_uuid 			Windows x64 Command Shell, Reverse TCP Stager with UUID Support (Windows x64)
+   windows/x64/shell_bind_tcp         			Windows x64 Command Shell, Bind TCP Inline
+   windows/x64/shell_reverse_tcp      			Windows x64 Command Shell, Reverse TCP Inline
+   windows/x64/vncinject/bind_ipv6_tcp			Windows x64 VNC Server (Reflective Injection), Windows x64 IPv6 Bind TCP Stager
+   windows/x64/vncinject/bind_ipv6_tcp_uuid     	Windows x64 VNC Server (Reflective Injection), Windows x64 IPv6 Bind TCP Stager with UUID Support
+   windows/x64/vncinject/bind_named_pipe        	Windows x64 VNC Server (Reflective Injection), Windows x64 Bind Named Pipe Stager
+   windows/x64/vncinject/bind_tcp     			Windows x64 VNC Server (Reflective Injection), Windows x64 Bind TCP Stager
+   windows/x64/vncinject/bind_tcp_uuid			Windows x64 VNC Server (Reflective Injection), Bind TCP Stager with UUID Support (Windows x64)
+   windows/x64/vncinject/reverse_http 			Windows x64 VNC Server (Reflective Injection), Windows x64 Reverse HTTP Stager (wininet)
+   windows/x64/vncinject/reverse_https			Windows x64 VNC Server (Reflective Injection), Windows x64 Reverse HTTP Stager (wininet)
+   windows/x64/vncinject/reverse_tcp  			Windows x64 VNC Server (Reflective Injection), Windows x64 Reverse TCP Stager
+   windows/x64/vncinject/reverse_tcp_rc4        	Windows x64 VNC Server (Reflective Injection), Reverse TCP Stager (RC4 Stage Encryption, Metasm)
+   windows/x64/vncinject/reverse_tcp_uuid       	Windows x64 VNC Server (Reflective Injection), Reverse TCP Stager with UUID Support (Windows x64)
+   windows/x64/vncinject/reverse_winhttp        	Windows x64 VNC Server (Reflective Injection), Windows x64 Reverse HTTP Stager (winhttp)
+   windows/x64/vncinject/reverse_winhttps       	Windows x64 VNC Server (Reflective Injection), Windows x64 Reverse HTTPS Stager (winhttp)

