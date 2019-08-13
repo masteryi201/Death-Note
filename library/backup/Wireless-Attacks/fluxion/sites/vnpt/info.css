@@ -1,0 +1,90 @@
+body {background:url(background.png) repeat-x scroll 0% 0% transparent;font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;font-size: 15px;}
+
+
+/*==================index.html==============*/
+/*========panel_content=========*/
+#panel_content{width: auto;max-height:1000px;min-height:650px;}
+
+
+
+/*content*/
+#content{width: 1600px;height: 85px;}
+#logo{width: 399px;height: 85px;float: left;}
+#null{width: auto;height: 85px;float: right;color: blue;}
+
+
+
+
+/*thread*/
+#thread {width: 1600px;height: 3px;background-color: #0000b3;}
+
+/*site*/
+#site{width: 1600px;height: 700px;}
+
+
+/*sitebar*/
+#sitebar{width: 250px;height: 600px;background-color:#3385ff;float: left;}
+#sitebar ul{width: 150px;height: 700px;margin: 0;padding: 0;}
+#sitebar ul li{width: 250px;height: 30px;list-style-type: none;padding: 10px 0 0 0;text-align: left;}
+#sitebar ul li a{color: white;font-size: 110%;text-decoration: none;padding:0 0 0 30px;}
+#sitebar ul li:hover {background-color: #003d99;}
+
+
+/*warning-content*/
+#warning-content {width:auto;height: 700px;float: right;}
+
+/*==========================================*/
+/*==============info.html===================*/
+
+#info-body{width: auto;height: 600px;background-color: white;}
+#null1{width: auto;height: 70px;}
+
+/*info-header*/
+#info-header {height: auto;line-height: 20px;width: 1000px;}
+#info-header {overflow: auto;}
+#null2{width: 35px;height:500px;;float: left;}
+#info-content{width:900px;height: 500px;float: right;max-width: 1300px;min-width: 850px;}
+#warning{font-size: 30px;color: red;}
+.button{width:300px;}
+#ayuda {padding: 0 0 20px 350px;color:red ;}
+#ayuda a {text-decoration: none;}
+#ayuda a :hover{background-color: red;}
+
+
+
+/*=================ayuda.html=================*/
+#ayuda-container{width: 1200px;height: 600px;}
+#content1 {width: 1150px;height:600px;background-color:white;}
+#tieu-de {font-size: 20px;font-weight:700;text-decoration:underline;color: red;text-align: center;}
+#khai-niem {width: 850px;height:420px;margin: 0 auto;font-size: 16px;}
+.attacks-name {font-weight: 700;}
+#index{width: 100px;height: auto;margin: 0 auto;}
+#index a{text-decoration: none;padding: 0 30px 0 0;}
+#index a :hover{color: red;}
+
+
+
+/*==============error.html===================*/
+#error-body {width: 1200px;height: 600px;background-color: white;}
+#error-content{width: 1000px;height: auto;padding: 30px 0 0 80px;}
+#error{color: red;font-size: 20px;font-weight: bold;}
+
+
+
+
+/*==============error1.html==================*/
+#error1-container {width: 1000px;height: 500px;margin: 0 auto;line-height: 20px;}
+#error1 {font-size: 50px;color: red;}
+#error-content {font-size: 20px;color: black;}
+#buttonBig {width: 250px;}
+
+
+/*====final-page===*/
+#final-page {width: 1200px;height: 600px;background-color: white;}
+#sori-content p{font-size: 20px;color:#127eea;}
+
+
+/*======================================END====================================================*/
+
+
+

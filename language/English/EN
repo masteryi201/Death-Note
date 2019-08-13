@@ -1,0 +1,51 @@
+
+##################################### Death-Note ############
+return_choose="Back"
+SetupMode="Setup Mode"
+input_choose="Select one of the following styles: "
+WAchoose_option1="Attacks wireless networks"
+WAchoose_option2="Attacks Bluetooth networks"
+WAanser="Do you want to use tool?"
+Choose_Tools="Do you want to use on any tool ?"
+GenMess="1) Automatically create and listen backdoor"
+############### Install Tools ##############################
+Installed="Installed"
+NotInstalled="Not installed"
+install_parameter="Select the Tool you want to install: "
+###################################   AutoListerning.sh + Listerning.sh   ####################################
+ipv4=" Your IPv4 address is :"
+ipv6=" Your IPv4 address is :"
+wanip=" Your public IP address is:"
+hostname=" Your host name is :"
+choose=" Chose Payload :"
+message1=" Chose Payload other"
+message2=" Please enter LHOST:"
+message3=" Please enter RHOST :"
+message4=" Please enter LPORT :"
+message5=' 		Would you like to add a script? - Please enter "yes" or "no" :'
+message6=" Import Script :"
+message7=' Do you want to add parameters to Payload? (eg RHOST 192.168.1.15) - Please enter "yes" or "no":'
+message8=" please enter "exploit" or "run" to start listening"
+error1=" Invalid option !"
+different_script=" Chose script other ?"
+StartMulti="[*] Start Multi-Handler .."
+Newport=" Please enter Port listen:"
+Path_wallpaper="Please enter a path to the file :"
+Path_youtube="Please enter the YouTube link :"
+Quality="Image quality :"
+import_payload=" Enter Payload you want to listen to :"
+ask_enable_encoding="Do you want to encrypt SSL data ? "
+all_script="Use all scripts"
+custom_script="Use custom scripts :"
+ask_choose_script="Select the scripts you want :"
+ask1="Do you want to add parameters to the script?"
+########## Migrate #############
+choose_answer="Select one of the following migrate types :"
+question_aname="Do you want change ANAME (Default svchost.exe) ANAME maybe lsass.exe,wininit.exe,svchost.exe,service.exe,winlogon.exe:"
+import_aname="Nhập ANAME :"
+question_name="Do you want change NAME (Default explorer.exe) ANAME maybe explorer.exe,notepad.exe...:"
+import_name="Import NAME :"
+########### remote dekstop ##########
+use="User name to add :"
+pass="password to add :"
+#############################################################################################################

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Death-Note
+Name[ja]=デスノート
+Comment=All Tools In One
+Exec=gnome-terminal -t "Death-Note" --geometry=98x30 -e "bash -c 'Death-Note';-bash"
+Icon=/usr/share/icons/Death-Note.ico
+Terminal=true
+Type=Application
+StartupNotify=false

