@@ -7,14 +7,14 @@ config="$Work_dir/Bin/config"
 dump_file="$Work_dir/Bin/DataDump"
 bin="$Work_dir/Bin"
 CSVDB=dump-01.csv
-rm $bin/* > /dev/null 2>&1
-touch $config
 check_folder_bin=`find  -name Bin -type d | grep -w "./Bin"`
 if [ "$check_folder_bin" = "./Bin" ]; then
 	echo ""
 else
 	mkdir -p Bin
 fi
+rm $bin/* > /dev/null 2>&1
+touch $config
 #############################
 ######## Color ##############
 cyan='\e[0;36m'
