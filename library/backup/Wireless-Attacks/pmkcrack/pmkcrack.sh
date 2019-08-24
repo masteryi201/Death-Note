@@ -87,8 +87,9 @@ function choose_hardware {
 	if [[ $check1 == "1" ]] && [[ $check2 == "1" ]] && [[ $check3 == "1" ]]; then
 		iwconfig 2>&1 | grep -w "ESSID" | awk '{print "		"NR ": "$1}'
 		iwconfig 2>&1 | grep -w "ESSID" | awk '{print "interface" NR "=" $1}' >> $config
-		iwconfig 2>&1 | grep -w "Monitor" | awk '{print "		"NR ": "$1}'
-		iwconfig 2>&1 | grep -w "Monitor" | awk '{print "interface" NR "=" $1}' >> $config
+		num=`wc $config | cut -d' ' -f2`
+		iwconfig 2>&1 | grep -w "Monitor" | awk '{print "		"NR+'$num' ": "$1}'
+		iwconfig 2>&1 | grep -w "Monitor" | awk '{print "interface" NR+'$num' "=" $1}' >> $config
 		echo ""
 		source $config
 		echo -ne "- $input_interface"
