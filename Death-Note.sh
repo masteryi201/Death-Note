@@ -72,7 +72,7 @@ echo  -ne "$input_choose"
 while true; do
 	read parameter
 	case $parameter in
-
+		1 ) echo $not_yet_developed;;
 		2 )	clear
 			Banner
 			cd Modules/Vuln/
@@ -95,6 +95,8 @@ while true; do
 			esac
 			done
 			break;;
+		4 ) echo $not_yet_developed;;
+		5 ) echo $not_yet_developed;;
 		6 )
 			echo " 1) $WAchoose_option1 "
 			echo " 2) $WAchoose_option2 "
@@ -111,6 +113,8 @@ while true; do
 			esac
 			done
 			break;;
+		7 ) echo $not_yet_developed;;
+		8 ) echo $not_yet_developed;;
 		i )
 			install_table
 			echo  -ne "$input_choose"
@@ -161,6 +165,7 @@ while true; do
 		echo "	$not_internet"
 		echo ""
                 fi; sleep 2; clear; Banner; order; break;;
+
 		* ) echo  "$error1";
 	esac
 	echo  -ne "$input_choose"
@@ -307,7 +312,9 @@ function WiFiAttacks {
 		echo  -ne "$input_choose"
 		while true; do 
 		read parameter
-		case $parameter in 
+		case $parameter in
+				1 )	echo $not_yet_developed;;
+				2 ) 	echo $not_yet_developed;;
 				3 )     cd $Work_dir/Tools/Wireless-Attacks/pmkcrack/;
 					./pmkcrack.sh; clear; Banner; order; break;;
 				4 ) 	cd $Work_dir/Tools/Wireless-Attacks/wifiphisher/;
@@ -316,11 +323,17 @@ function WiFiAttacks {
 					./airgeddon.sh; clear; Banner; order; break;;
 				6 ) 	cd $Work_dir/Tools/Wireless-Attacks/fluxion/
 					./fluxion.sh; clear; Banner; order; break;;
+				7 ) echo $not_yet_developed;;
+				8 ) echo $not_yet_developed;;
 				99 ) clear; Banner; order; break;;
 				* ) echo -e "$error1";
 				echo  -ne "$input_choose";;
 		esac
 		done
+}
+function BluetoothAttacks {
+echo $not_yet_developed
+order
 }
 check_privilegies
 check_folder
