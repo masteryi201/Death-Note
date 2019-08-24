@@ -55,15 +55,15 @@ function checktools {
 	sleep 0.5
 	banner
 	cd $tools_dir
-	check_hcxtools_tool=`find  -name hcxtools -type d | grep -w "./hcxtools"`
-	if [ "$check_hcxtools_tool" = "./hcxtools" ]; then
+	check_hcxtools_tool=`hcxpcaptool --version | grep hcxpcaptool`
+	if [ "$check_hcxtools_tool" != "" ]; then
 		echo -e "[ ✔ ]   hcxtools ${white}   .......... ${yellow}$Installed ${RESET}"
 		check1="1"
 	else    echo -e "[ ! ]   hcxtools ${white}   .......... ${red}$NotInstalled ${RESET}"
 		check1="0"	
 	fi
-	check_hcxdumptool_tool=`find  -name hcxdumptool -type d | grep -w "./hcxdumptool"`
-	if [ "$check_hcxdumptool_tool" = "./hcxdumptool" ]; then
+	check_hcxdumptool_tool=`hcxdumptool --version | grep hcxdumptool`
+	if [ "$check_hcxdumptool_tool" != "" ]; then
 		echo -e "[ ✔ ]   hcxdumptool ${white}.......... ${yellow}$Installed ${RESET}"
 		check2="1"
 	else    echo -e "[ ! ]   hcxdumptool ${white}.......... ${red}$NotInstalled ${RESET}"
@@ -85,10 +85,13 @@ function choose_hardware {
 	sleep 0.5
 	banner
 	if [[ $check1 == "1" ]] && [[ $check2 == "1" ]] && [[ $check3 == "1" ]]; then
+		iwconfig 2>&1 | grep -w "ESSID" | awk '{print "		"NR ": "$1}'
 		iwconfig 2>&1 | grep -w "ESSID" | awk '{print "interface" NR "=" $1}' >> $config
-		iwconfig 2>&1 | grep -w "ESSID" | awk '{print "Mode:Monitor" NR "=" $1}' >> $config
+		iwconfig 2>&1 | grep -w "Monitor" | awk '{print "		"NR ": "$1}'
+		iwconfig 2>&1 | grep -w "Monitor" | awk '{print "interface" NR "=" $1}' >> $config
+		echo ""
 		source $config
-		echo -ne "	- $input_interface"
+		echo -ne "- $input_interface"
 		read value
 		case $value in
 			1) INTERFACE=$interface1;;
@@ -289,7 +292,7 @@ function crack_hash {
 function function_exit {
 rm $bin/* > /dev/null 2>&1
 airmon-ng stop $INTERFACE_monitor > /dev/null 2>&1
-echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $author : ${red}Thanh Tu${RESET}"
+echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $author : ${red}Ryuk-shinigami${RESET}"
 echo -e "${BlueF}[${RESET} ${red}! ${BlueF}]${RESET} $exit_display"
 echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $thank"
 echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $see_again"
