@@ -652,8 +652,18 @@ function hashcat {
 		echo -e "[ ✔ ]   hashcat ${white}............. ${yellow}$Installed ${RESET}"
         fi
 }
+############# pmkid tool ################
 ############# hcxtools and hcxdumptools ################
-function hcxtool {
+function pmkcrack {
+pmkcrack_tool=`find $Folder_WIFITools -name pmkcrack -type d | grep -w "Tools/Wireless-Attacks/pmkcrack"`
+	if [ "$pmkcrack_tool" = "Tools/Wireless-Attacks/pmkcrack" ]; then
+		echo -e "[ ✔ ]   pmkcrack ${white}............ ${yellow}$Installed ${RESET}"
+	else    echo -e "[ ! ]   pmkcrack ${white}............ ${red}$NotInstalled ${RESET}"
+		cp -r $Work_dir/$dirbackup_WIFIbackup/pmkcrack $Work_dir/$Folder_WIFITools/pmkcrack
+		echo -e "[ ✔ ]   pmkcrack ${white}............ ${yellow}$Installed ${RESET}"
+		cd $Work_dir
+	fi
+
 hcxtools=`find $Folder_WIFITools -name hcxtools -type d | grep -w "Tools/Wireless-Attacks/hcxtools"`
 	if [ "$hcxtools" = "Tools/Wireless-Attacks/hcxtools" ]; then
 		echo -e "[ ✔ ]   hcxtools ${white}............ ${yellow}$Installed ${RESET}"
@@ -871,7 +881,7 @@ sleep 0.5
 		wifiphisher
 		airgeddon
 		hashcat
-		hcxtool
+		pmkcrack
 		mdk4
 	}
 function ShowWIFITable {
@@ -884,7 +894,7 @@ cat << !
 |----+-------------------------------|----+-------------------------------|
 | 3  | Airgeddon 	             | 4  | Hashcat                       |
 |----+-------------------------------|----+-------------------------------|
-| 5  | Hcxtool   		     | 6  | Mdk4   		          |
+| 5  | Pmkcrack   		     | 6  | Mdk4   		          |
 |----+-------------------------------|----+-------------------------------|
 | 7  | ALL tools		     | 99 | $return_choose                       |
  ------------------------------------------------------------------------- 
@@ -899,7 +909,7 @@ ShowWIFITable
 		2) wifiphisher;;
 		3) airgeddon;;
 		4) hashcat;;
-		5) hcxtool;;
+		5) pmkcrack;;
 		6) mdk4;;
 		7) all_wifi_tools;;
 		99) break;;
