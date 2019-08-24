@@ -2,7 +2,7 @@
 #########################
 #########################
 vesion=1.0
-revision=2
+revision=3 # Add pmkcrack tool
 Work_dir=`pwd`
 scriptname="Death-Note.sh"
 config_language="$Work_dir/config/config-language"
