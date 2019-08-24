@@ -9,7 +9,12 @@ bin="$Work_dir/Bin"
 CSVDB=dump-01.csv
 rm $bin/* > /dev/null 2>&1
 touch $config
-resize -s 30 98 > /dev/null
+check_folder_bin=`find  -name Bin -type d | grep -w "./Bin"`
+if [ "$check_folder_bin" = "./Bin" ]; then
+	echo ""
+else
+	mkdir -p Bin
+fi
 #############################
 ######## Color ##############
 cyan='\e[0;36m'
@@ -24,43 +29,12 @@ RESET="\033[00m" #normal
 orange='\e[38;5;166m'
 ############################
 ######## language ##########
-Installed="Đã cài đặt"
-NotInstalled="Chưa cài đặt"
-install_mess="Phải cài các chương trình trên mới có thể sử dụng"
-input_interface="Chon interface de hack: "
-capturing="Bắt gói tin"
-input_choose="Bạn muốn chọn cái gì nào: "
-exit_choose="Thoát"
-hardware_error="Phần cứng không được chương trình hỗ trợ để hack wifi"
-error1=" Tùy chọn không hợp lệ !"
-pmkid_check="Kiểm tra file PMKID"
-not_found="Không tìm thấy PMKID trong file"
-return_choose="Trở lại"
-return_capture="Tiếp tục bắt PMKID của wifi hiện tại"
-capture_another_wifi="Bắt PMKID của wifi khác"
-input_dic="Nhập từ điển cần dò"
-cre_dic="Tạo từ điển"
-dictionary="Dùng phương pháp dò bằng từ điển"
-path_dic="Nhập file từ điển: "
-brute="Dùng phương pháp véc cạn khóa"
-not_yet_developed="chưa được phát triển"
-author="Tác giả"
-exit_display="Thoát chương trình"
-thank="Cảm ơn đã sử dụng chương trình này"
-see_again="Hẹn gặp lại"
-bye="tạm biệt"
-check_folder_bin=`find  -name Bin -type d | grep -w "./Bin"`
-if [ "$check_folder_bin" = "./Bin" ]; then
-	echo ""
-else
-	mkdir -p Bin
+source $Work_dir/../../../config/config-language
+if [ "$language" = "VN" ]; then
+source $Work_dir/../../../language/VietNamese/VN
+elif [ "$language" = "EN" ]; then
+source $Work_dir/../../../language/English/EN
 fi
-#source $Work_dir/../../../Modules/configLanguage
-#if [ "$language" = "VN" ]; then
-#source $Work_dir/../../../language/VietNamese/VN
-#elif [ "$language" = "EN" ]; then
-#source $Work_dir/../../../language/English/EN
-#fi
 ############################
 ####### function ###########
 function banner {
