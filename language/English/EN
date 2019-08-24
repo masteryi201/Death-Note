@@ -1,13 +1,19 @@
-
-##################################### Death-Note ############
+#################################### Death-Note ############
 return_choose="Back"
-SetupMode="Setup Mode"
 input_choose="Select one of the following styles: "
 WAchoose_option1="Attacks wireless networks"
 WAchoose_option2="Attacks Bluetooth networks"
 WAanser="Do you want to use tool?"
 Choose_Tools="Do you want to use on any tool ?"
 GenMess="1) Automatically create and listen backdoor"
+SetupMode="Setup Mode"
+found_newvesion="The program has a newer version."
+update_ask="Do you want to update the new version ? "
+updated_the_latest="This is the latest version of the program."
+downloading_update="Installing the update, please do not turn off the program."
+not_internet="No internet connection, please check your internet connection."
+updated="The program has updated to the latest version."
+not_yet_developed="This item has not been developed yet, I will try to develop them as soon as possible."
 ############### Install Tools ##############################
 Installed="Installed"
 NotInstalled="Not installed"
@@ -48,4 +54,30 @@ import_name="Import NAME :"
 ########### remote dekstop ##########
 use="User name to add :"
 pass="password to add :"
+## upload_injectCA
+input_path_lfile="Enter the file location: "
+input_path_rfile="Rename the file after uploading (Enter to preserve the file name): "
+input_proxy="Enter your public IP:"
+input_port="Enter the listening port on burp suite:"
+
+###############  PMKcrack  ####################################
+install_mess="New programs must be installed to be used."
+input_interface="Select interface card to hack: "
+capturing="Capturing"
+exit_choose="Exit"
+hardware_error="Hardware is not supported by the program to hack wifi"
+pmkid_check="Check the PMKID file"
+not_found="No PMKID found in the file"
+return_capture="Continue to capturing PMKID of the current wifi"
+capture_another_wifi="Capturing PMKID of other wifi"
+input_dic="Enter the dictionary to search"
+cre_dic="Create a dictionary"
+dictionary="Use the dictionary method"
+path_dic="Enter dictionary file: "
+brute="Use the brute force method"
+author="Author"
+exit_display="Exit the program"
+thank="Thanks for using this program"
+see_again="See you again"
+bye="Bye"
 #############################################################################################################
