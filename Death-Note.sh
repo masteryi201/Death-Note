@@ -121,20 +121,24 @@ while true; do
 			while true; do
 			read parameter
 			case $parameter in
+				1) echo $not_yet_developed;;
 				2) cleanup;
 				   ShowAndInstall_ExploitTools; clear; Banner; order; break;;
 				3) cleanup;
 				   ShowAndInstall_MalwareTools; clear; Banner; order; break;;
-
+				4) echo $not_yet_developed;;
+				5) echo $not_yet_developed;;
 				6) cleanup;
 				   ShowAndInstall_WiFiTools; clear; Banner; order; break;;
+				7) echo $not_yet_developed;;
 				8)
 				   add_module_metasploits; clear; Banner; order; break;;
 				9)
 				   create_shotcut; clear; Banner; order; break;;
 
-				*) cleanup;
+				0) cleanup;
 				   ShowAndInstall_ALLTools; clear; Banner; order; break;;
+				* ) echo  "$error1";
 			esac
 			done
 			break;;
