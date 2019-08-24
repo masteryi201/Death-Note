@@ -307,6 +307,8 @@ function WiFiAttacks {
 		while true; do 
 		read parameter
 		case $parameter in 
+				3 )     cd $Work_dir/Tools/Wireless-Attacks/pmkcrack/;
+					./pmkcrack.sh; clear; Banner; order; break;;
 				4 ) 	cd $Work_dir/Tools/Wireless-Attacks/wifiphisher/;
 						clear; Banner; order; break;;
 				5 ) 	cd $Work_dir/Tools/Wireless-Attacks/airgeddon/
