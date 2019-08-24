@@ -670,7 +670,7 @@ hcxtools=`find $Folder_WIFITools -name hcxtools -type d | grep -w "Tools/Wireles
 	else    echo -e "[ ! ]   hcxtools ${white}............ ${red}$NotInstalled ${RESET}"
 	cd $Folder_WIFITools
 		xterm $BOTTOMRIGHT -bg "#000000" -fg "#FFFFFF" -title "=> Download hcxtools <=" -e git clone https://github.com/ZerBea/hcxtools.git
-		xterm $BOTTOMRIGHT -bg "#000000" -fg "#FFFFFF" -title "=> Installing hcxtools library <=" -e apt-get install libssl-dev libz-dev libpcap-dev libcurl4-openssl-dev -y
+		xterm $BOTTOMRIGHT -bg "#000000" -fg "#FFFFFF" -title "=> Installing hcxtools library <=" -e apt-get install libssl-dev libz-dev libpcap-dev libcurl4-openssl-dev --allow-unauthenticated -y
 		cd hcxtools
 		xterm $BOTTOMRIGHT -bg "#000000" -fg "#FFFFFF" -title "=> Installing hcxtools <=" -e  make
 				xterm $BOTTOMRIGHT -bg "#000000" -fg "#FFFFFF" -title "=> Installing hcxtools <=" -e sudo make install
