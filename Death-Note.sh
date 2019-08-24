@@ -119,8 +119,9 @@ while true; do
 			case $parameter in
 				2) cleanup;
 				   ShowAndInstall_ExploitTools; clear; Banner; order; break;;
-				4) cleanup;
+				3) cleanup;
 				   ShowAndInstall_MalwareTools; clear; Banner; order; break;;
+
 				6) cleanup;
 				   ShowAndInstall_WiFiTools; clear; Banner; order; break;;
 				8)
