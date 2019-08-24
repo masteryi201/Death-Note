@@ -49,6 +49,12 @@ exit_display="Thoát chương trình"
 thank="Cảm ơn đã sử dụng chương trình này"
 see_again="Hẹn gặp lại"
 bye="tạm biệt"
+check_folder_bin=`find  -name Bin -type d | grep -w "./Bin"`
+if [ "$check_folder_bin" = "./Bin" ]; then
+	echo ""
+else
+	mkdir -p Bin
+fi
 #source $Work_dir/../../../Modules/configLanguage
 #if [ "$language" = "VN" ]; then
 #source $Work_dir/../../../language/VietNamese/VN
