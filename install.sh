@@ -664,8 +664,8 @@ pmkcrack_tool=`find $Folder_WIFITools -name pmkcrack -type d | grep -w "Tools/Wi
 		cd $Work_dir
 	fi
 
-hcxtools=`find $Folder_WIFITools -name hcxtools -type d | grep -w "Tools/Wireless-Attacks/hcxtools"`
-	if [ "$hcxtools" = "Tools/Wireless-Attacks/hcxtools" ]; then
+hcxtools=`hcxpcaptool --version | grep hcxpcaptool`
+	if [ "$hcxtools" != "" ]; then
 		echo -e "[ ✔ ]   hcxtools ${white}............ ${yellow}$Installed ${RESET}"
 	else    echo -e "[ ! ]   hcxtools ${white}............ ${red}$NotInstalled ${RESET}"
 	cd $Folder_WIFITools
@@ -680,8 +680,8 @@ hcxtools=`find $Folder_WIFITools -name hcxtools -type d | grep -w "Tools/Wireles
 		cd $Work_dir
 	fi
 
-hcxdumptool=`find $Folder_WIFITools -name hcxdumptool -type d | grep -w "Tools/Wireless-Attacks/hcxdumptool"`
-	if [ "$hcxdumptool" = "Tools/Wireless-Attacks/hcxdumptool" ]; then
+hcxdumptool=`hcxdumptool --version | grep hcxdumptool`
+	if [ "$hcxdumptool" != "" ]; then
 		echo -e "[ ✔ ]   hcxdumptool ${white}......... ${yellow}$Installed ${RESET}"
 	else    echo -e "[ ! ]   hcxdumptool ${white}......... ${red}$NotInstalled ${RESET}"
 	cd $Folder_WIFITools
