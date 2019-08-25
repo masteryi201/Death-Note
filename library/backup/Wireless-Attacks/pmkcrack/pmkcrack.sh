@@ -84,7 +84,7 @@ function choose_hardware {
 	clear
 	sleep 0.5
 	banner
-	if true; then
+	if [[ $check1 == "1" ]] && [[ $check2 == "1" ]] && [[ $check3 == "1" ]]; then
 		iwconfig 2>&1 | grep -w "ESSID" | awk '{print "		"NR ": "$1}'
 		iwconfig 2>&1 | grep -w "ESSID" | awk '{print "interface" NR "=" $1}' >> $config
 		num=`wc $config | cut -d' ' -f2`
