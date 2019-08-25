@@ -38,6 +38,7 @@ cp -r Death-Note/library/ $Work_dir > /dev/null 2>&1
 cp -r Death-Note/Modules/ $Work_dir > /dev/null 2>&1
 cp -r Death-Note/README.md $Work_dir > /dev/null 2>&1
 cd  $Work_dir
+cp $Work_dir/library/backup/Wireless-Attacks/pmkcrack/pmkcrack.sh $Work_dir/Tools/Wireless-Attacks/pmkcrack/pmkcrack.sh > /dev/null 2>&1
 		script_file_downloaded=1
 
 		fi
