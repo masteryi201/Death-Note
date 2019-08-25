@@ -145,7 +145,9 @@ function action {
 
 		LINEAS_WIFIS_CSV=`find -name dump-01.csv` > /dev/null
 		if [ "$LINEAS_WIFIS_CSV" == "" ];then
+			echo ""
 		        echo -e ""$red"["$yellow"!"$red"]"$transparent" $hardware_error "
+			sleep 2
 			exit
 		fi
 
