@@ -84,7 +84,7 @@ function choose_hardware {
 	clear
 	sleep 0.5
 	banner
-	if [[ $check1 == "1" ]] && [[ $check2 == "1" ]] && [[ $check3 == "1" ]]; then
+	if true; then
 		iwconfig 2>&1 | grep -w "ESSID" | awk '{print "		"NR ": "$1}'
 		iwconfig 2>&1 | grep -w "ESSID" | awk '{print "interface" NR "=" $1}' >> $config
 		num=`wc $config | cut -d' ' -f2`
@@ -135,11 +135,15 @@ function action {
 		1)
 		airmon-ng start $INTERFACE > /dev/null
 		airmon-ng check kill > /dev/null
-		INTERFACE_monitor=$INTERFACE"mon" >> $config
+		check_mon=`echo $INTERFACE | grep "mon"`
+		if [ "$check_mon" != "" ]; then
+			INTERFACE_monitor=$INTERFACE >> $config
+		else
+			INTERFACE_monitor=$INTERFACE"mon" >> $config
+		fi
 		xterm -title "Capturing data" -bg "#000000" -fg "#008000" -e airodump-ng $INTERFACE_monitor -w $bin/dump
 
 		LINEAS_WIFIS_CSV=`find -name dump-01.csv` > /dev/null
-
 		if [ "$LINEAS_WIFIS_CSV" == "" ];then
 		        echo -e ""$red"["$yellow"!"$red"]"$transparent" $hardware_error "
 			exit
@@ -293,6 +297,7 @@ function crack_hash {
 function function_exit {
 rm $bin/* > /dev/null 2>&1
 airmon-ng stop $INTERFACE_monitor > /dev/null 2>&1
+service network-manager restart
 echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $author : ${red}Ryuk-shinigami${RESET}"
 echo -e "${BlueF}[${RESET} ${red}! ${BlueF}]${RESET} $exit_display"
 echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $thank"
