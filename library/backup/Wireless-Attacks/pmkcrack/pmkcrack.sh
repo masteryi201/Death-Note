@@ -300,11 +300,6 @@ function function_exit {
 rm $bin/* > /dev/null 2>&1
 airmon-ng stop $INTERFACE_monitor > /dev/null 2>&1
 service network-manager restart
-echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $author : ${red}Ryuk-shinigami${RESET}"
-echo -e "${BlueF}[${RESET} ${red}! ${BlueF}]${RESET} $exit_display"
-echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $thank"
-echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $see_again"
-echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $bye"
 exit
 }
 checktools
