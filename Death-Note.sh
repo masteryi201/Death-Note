@@ -169,7 +169,7 @@ while true; do
 		echo "	$not_internet"
 		echo ""
                 fi; sleep 2; clear; Banner; order; break;;
-
+		e ) function_exit;;
 		* ) echo  "$error1";
 	esac
 	echo  -ne "$input_choose"
@@ -339,6 +339,17 @@ function BluetoothAttacks {
 echo $not_yet_developed
 order
 }
+function function_exit {
+service postgresql stop
+echo ""
+echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $author : ${red}Ryuk-shinigami${RESET}"
+echo -e "${BlueF}[${RESET} ${red}! ${BlueF}]${RESET} $exit_display"
+echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $thank"
+echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $see_again"
+echo -e "${BlueF}[${RESET} * ${BlueF}]${RESET} $bye"
+sleep 0.5
+exit
+} 
 check_privilegies
 check_folder
 language
