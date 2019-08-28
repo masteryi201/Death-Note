@@ -145,247 +145,26 @@ cat << !
  _____________________________________________________________________________________________________
 | ID | 	   Tools name     |                    Description                                            |
 |----+--------------------+---------------------------------------------------------------------------|
-| 1  | AirCrack & Airolib | Use dictionary to unlock wpa/wpa2 used AirCrack-ng and Airolib-ng.        |
+| 1  | AirCrack & Airolib | Use dictionary to unlock wpa/wpa2 using AirCrack-ng and Airolib-ng.       |
 |----+--------------------+---------------------------------------------------------------------------|
-| 2  | Cowpatty & Genpmk  | Use dictionary to unlockkhóa wpa/wpa2 used Cowpatty & Genpmk.             |
+| 2  | Cowpatty & Genpmk  | Use dictionary to unlockkhóa wpa/wpa2 using Cowpatty & Genpmk.            |
 |----+--------------------+---------------------------------------------------------------------------|
-| 3  | hcxtools & hashcat | Use the new attack PMKID to detect passwords.			      |
+| 3  | AirCrack & Hashcat | Crack wpa/wpa2 using AirCrack-ng và Hashcat.			      |
 |----+--------------------+---------------------------------------------------------------------------|
-| 4  |	WIFI phisher      | Wifiphisher is a security tool that performs Wi-Fi auto-link attacks      |
+| 4  |  PMKcrack 	  | Use the new attack PMKID to detect passwords.			      |
+|----+--------------------+---------------------------------------------------------------------------|
+| 5  |	WIFI phisher      | Wifiphisher is a security tool that performs Wi-Fi auto-link attacks      |
 |    |                    | to force wireless clients to inadvertently connect to an access point     |
 |    |			  | controlled by an attacker.						      |
 |----+--------------------+---------------------------------------------------------------------------|
-| 5  |	Airgeddon         | This is a versatile bash script for Linux systems to test wireless network|
+| 6  |	Airgeddon         | This is a versatile bash script for Linux systems to test wireless network|
 |----+--------------------+---------------------------------------------------------------------------|
-| 6  |	Fluxion           | This is an upgrade of linset, which creates an evil twin attack to 	      |
+| 7  |	Fluxion v2.0      | This is an upgrade of linset, which creates an evil twin attack to 	      |
 |    | 		 	  | steal passwords 							      |
 |----+--------------------+---------------------------------------------------------------------------|
-| 7  |	MDK4              | Pentest  Network is not equal to mkd4 (upgrade of mdk3).	              |
+| 8  |	Fluxion v5.9      | Upgrade of fluxion 2.0	 				    	      |
 |----+--------------------+---------------------------------------------------------------------------|
-| 99 |	back              | return               					              |
- -----------------------------------------------------------------------------------------------------
-!
-}
-function table {
-cat << ! 
- ______________________________________________________________________________________________________
-|    | 		      |										       |
-| ID |  Module name   |       			Description                                            |
-|----+----------------+--------------------------------------------------------------------------------|
-| 1  | Persistence    | This module will install a load that is executed during startup.               |
-|    |                | It will be executed when the user logs on or boots the system.                 |
-|----+----------------+--------------------------------------------------------------------------------|
-| 2  | Migrate	      | This module will move a Meterpreter session to another process.                |
-|----+----------------+--------------------------------------------------------------------------------|
-| 3  | Killav	      | This module will disable the Anti-Virus.                                       |
-|----+----------------+--------------------------------------------------------------------------------|
-| 4  | Enable EPD     | This module will enable Remote Desktop and add a user on the victim machine.   |
-|----+----------------+--------------------------------------------------------------------------------|
-| 5  | Enable VNC     | This module will enable the human"'"s tracking screen of victim.	       |
-|----+----------------+--------------------------------------------------------------------------------|
-| 6  | Check VM	      | This module will check if victim is a virtual environment.            	       |
-|----+----------------+--------------------------------------------------------------------------------|
-| 7  |Change Wallpaper| This module change the background image of the victim machine (not recommended)|
-|----+----------------+--------------------------------------------------------------------------------|
-| 8  |Auto run COMMAND| This module will run the command on cmd.                                       |
-|----+----------------+--------------------------------------------------------------------------------|
-| 9  | Auto Add Proxy | This module will add a proxy and Trust Certificate for public key 	       |
-|    |                |  and Trust CA on victim to exploit HTTPS on the Burp suite. 		       |
-|----+----------------+--------------------------------------------------------------------------------|
-| 10 | OS environment | This module in the operating environment environment variable.                 |
-|----+----------------+--------------------------------------------------------------------------------|
-| 11 |			
-|----+----------------+--------------------------------------------------------------------------------|
-| 12 |  Enum shares   | This module will list configuration and files used for recent sharing	       |
-|----+----------------+--------------------------------------------------------------------------------|
-| 13 |  Enum APPs     |	This module will list all installed applications                               |
-|----+----------------+--------------------------------------------------------------------------------|
-| 14 | Enum Powershell|	This module will list the Microsoft Powershell settings                        |
-|----+----------------+--------------------------------------------------------------------------------|
-| 15 |
-|----+----------------+--------------------------------------------------------------------------------|
-| 16 | Wlan Geolocate |	List wireless networks. Locate the target by collecting local wireless networks| 
-|    |                |  and performing searches for Google APIs.				       |
-|----+----------------+--------------------------------------------------------------------------------|
-| 17 | Play Youtube   | This module will play YouTube video on victim in full screen mode.             |
-|----+----------------+--------------------------------------------------------------------------------|
-| 18 | 		      | This module will detect installed webcams and take snapshots with the webca    |
-|----+----------------+--------------------------------------------------------------------------------|	
-| 99 |  Starting      |	 listenning....                                                                |
- ------------------------------------------------------------------------------------------------------
-!
-}
-function migrate_table {
-cat << !
- _____________________________________________________________________________________________________________
-| ID | 	Module name  |           Description                                                                  |
-|----+---------------+----------------------------------------------------------------------------------------|
-| a  |	migrate	     |	This module will move Meterpreter from one process to another.		              |
-|----+---------------+----------------------------------------------------------------------------------------|
-| b  |		     | This module checks to see if the architecture is similar to the operating system       |
-|    |  archmigrate  | architecture.If it is not compatible, it will generate a new process with accurate     |
-|    |	  	     | architecture and move into that process		   			              |
-|----+---------------+----------------------------------------------------------------------------------------|
-| c  |  priv_migrate | This module will move the Meterpreter session based on the privilege session.          |
-|    |               | It will do everything possible to move, including generating a new user-level process. |
- -------------------------------------------------------------------------------------------------------------
-!
-}
-#!/usr/bin/env bash
-
-####### function ########
-function order_table {
-cat << !
- _________________________________________________ 
-|    |						  |
-| ID | Attack Type 				  |
-|----+--------------------------------------------|
-| 1  |Information gathering and scanning(on-going)|
-|----+--------------------------------------------|
-| 2  | Scan and exploit (on-going) 		  |
-|----+--------------------------------------------|
-| 3  | Exploit the Office(on-going)     	  |
-|----+--------------------------------------------|
-| 4  | Malware and Threats                        |
-|----+--------------------------------------------|
-| 5  | Password attack				  |
-|----+--------------------------------------------|
-| 6  | Wireless attack				  |
-|----+--------------------------------------------|
-| 7  | Sniffing and spoofing attack 		  |
-|----+--------------------------------------------|
-| 8  | Install tools				  |
-|----+--------------------------------------------|
-| #  | Tu404 and MeoSully			  |
- -------------------------------------------------
-!
-}
-function install_table {
-cat << !
- _____________________________________________________________ 
-|    |	     						      |
-| ID | Type of attack tool	               		      |
-|----+--------------------------------------------------------|
-| 1  | Tools Information gathering and scanning (on-going)    |
-|----+--------------------------------------------------------|
-| 2  | Tools Scan and exploit (on-going)  	              |
-|----+--------------------------------------------------------|
-| 3  | Tools Exploit the Office(on-going)	              |
-|----+--------------------------------------------------------|
-| 4  | Tools Malware and Threats                              |
-|----+--------------------------------------------------------|
-| 5  | Tools Password attack  		                      |
-|----+--------------------------------------------------------|
-| 6  | Tools Wireless attack 		                      |
-|----+--------------------------------------------------------|
-| 7  | Tools Sniffing and spoofing attack  		      |
-|----+--------------------------------------------------------|
-| 8  | Add module Metasploit	  		              |
-|----+--------------------------------------------------------|
-| 9  | Intall all tools		  		              |
- ------------------------------------------------------------- 
-!
-}
-function gen_backdoor_table {
-cat << !
- _____________________________________________________________________________________________________
-| ID | 	   Tools name     |                    Description                                            |
-|----+--------------------+---------------------------------------------------------------------------|
-| 1  |	Dr0p1t-Framework  |         								      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 2  |	DKMC   	          | DKMC (Don't kill my cat) is an obfuscated shellcode creation tool that is |
-|    |			  |  stored inside the polygon image that helps to avoid sandbox analysis.    |
-|----+--------------------+---------------------------------------------------------------------------|
-| 3  |  Thefatrat         | The tool easily creates backdoor tools .      		              |
-|----+--------------------+---------------------------------------------------------------------------|
-| 4  |  Msfpc(*)          | Msfpc (MSFvenom Payload Creator) The tool generates various basic "Meter" | 
-|			  | loads via msfvenom quickly.						      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 5  |  Winpayloads       | BypassAV,UAC...							      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 6  |  Astroid           | This tool create the Shellcodes with metasploit, decode by Avet 	      |
-|                         | & compile to the application .exe					      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 7  |  Phantom-Evasion   | Phantom-Evasion is a python-based BypassAV tool capable of executing FUD  |
-|    |			  | executable even with 32-bit msfvenom load.				      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 8  |  TopHat            | 									      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 9  |  MPM(*)            | MPM (Meterpreter_Paranoid_Mode-SSL) help create backdoor                  |
-|			  | with a certificate SSL or get certificate from internet ..		      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 10 |  venom             |      							              |
-|----+--------------------+---------------------------------------------------------------------------|
-| 11 |  HERCULES          | 									      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 12 |  Zirikatu(*)       | 									      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 13 |  CHAOS             | 									      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 14 |  NXcrypt           | 		Crypt with python					      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 15 |  Reverse0x1        | 									      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 16 | TheBackdoorFactory | 									      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 17 |  Trolo(*)          | Tool Easy support ByPass Antivirus 				              |
-|----+--------------------+---------------------------------------------------------------------------|
-| 18 | Metasploitavevasion| Metasploit payload generator avoids most Anti-Virus.      		      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 19 |  Terminator        | Create a file contains Payload with Metasploit			      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 20 |  HackTheWorld      | A Python Script to Create Payloads bypassing all Antivirus.	              |
-|----+--------------------+---------------------------------------------------------------------------|
-| 21 |  Avet              | AVET tools AntiVirus Evasion.	    			              |
-|----+--------------------+---------------------------------------------------------------------------|
-| 22 |  ZeroDoor          | 									      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 23 |  Andspoilt         | Exploit android by creating payloads with Metasploit Framework.           |
-|----+--------------------+---------------------------------------------------------------------------|
-| 24 |  Koadic            | As a post-attack rootkit similar to Meterpreter and Powershell	      |
-|    |                    | Empire performs most of its operations with the Windows Script Host.      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 25 |  Mkvenom           | As a Bash script generates a selection of the usual load of 	      |
-|                         | the Metasploit Framework for a particular target machine		      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 99 |	back              | return    (MeoSully)						      |
- -----------------------------------------------------------------------------------------------------
-!
-}
-function gen_malware_table {
-cat << !
- _____________________________________________________________________________________________________
-| ID | 	 Tools name       |                    Description                                            |
-|----+--------------------+---------------------------------------------------------------------------|
-| 1  |  BeeLogger	  | 									      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 2  |  sAINT             | 									      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 99 |	back              | return               					              |
- -----------------------------------------------------------------------------------------------------
-!
-}
-function tools_ATWifi_table {
-cat << !
- _____________________________________________________________________________________________________
-| ID | 	   Tools name     |                    Description                                            |
-|----+--------------------+---------------------------------------------------------------------------|
-| 1  | AirCrack & Airolib | Use dictionary to unlock wpa/wpa2 used AirCrack-ng and Airolib-ng.        |
-|----+--------------------+---------------------------------------------------------------------------|
-| 2  | Cowpatty & Genpmk  | Use dictionary to unlockkhóa wpa/wpa2 used Cowpatty & Genpmk.             |
-|----+--------------------+---------------------------------------------------------------------------|
-| 3  | hcxtools & hashcat | Use the new attack PMKID to detect passwords.			      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 4  |	WIFI phisher      | Wifiphisher is a security tool that performs Wi-Fi auto-link attacks      |
-|    |                    | to force wireless clients to inadvertently connect to an access point     |
-|    |			  | controlled by an attacker.						      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 5  |	Airgeddon         | This is a versatile bash script for Linux systems to test wireless network|
-|----+--------------------+---------------------------------------------------------------------------|
-| 6  |	Fluxion           | This is an upgrade of linset, which creates an evil twin attack to 	      |
-|    | 		 	  | steal passwords 							      |
-|----+--------------------+---------------------------------------------------------------------------|
-| 7  |	MDK4              | Pentest  Network is not equal to mkd4 (upgrade of mdk3).	              |
+| 9  |	MDK4              | Pentest  Network is not equal to mkd4 (upgrade of mdk3).	              |
 |----+--------------------+---------------------------------------------------------------------------|
 | 99 |	back              | return               					              |
  -----------------------------------------------------------------------------------------------------
