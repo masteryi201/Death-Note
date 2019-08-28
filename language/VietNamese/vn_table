@@ -152,19 +152,23 @@ cat << !
 |----+--------------------+---------------------------------------------------------------------------|
 | 2  | Cowpatty & Genpmk  | dùng từ điển để  bẻ khóa wpa/wpa2 sử dụng Cowpatty & Genpmk.              |
 |----+--------------------+---------------------------------------------------------------------------|
-| 3  | hcxtools & hashcat | sử dụng cách tấn công mới PMKID để dò mật khẩu.	 	              |
+| 3  | AirCrack & Hashcat | bẻ khóa mạng wpa/wpa2 sử dụng AirCrack-ng và Hashcat.		      |
 |----+--------------------+---------------------------------------------------------------------------|
-| 4  |	WIFI phisher      | Wifiphisher là một công cụ bảo mật thực hiện các cuộc tấn công liên kết   | 
+| 4  |  PMKcrack 	  | sử dụng cách tấn công mới PMKID để dò mật khẩu.	 	              |
+|----+--------------------+---------------------------------------------------------------------------|
+| 5  |	WIFI phisher      | Wifiphisher là một công cụ bảo mật thực hiện các cuộc tấn công liên kết   | 
 |    |                    | tự động Wi-Fi để buộc các máy khách không dây vô tình kết nối với điểm    |
 |    |			  | truy cập được kiểm soát bởi kẻ tấn công.       			      |
 |----+--------------------+---------------------------------------------------------------------------|
-| 5  |	Airgeddon         | Đây là tập lệnh bash đa dụng cho các hệ thống Linux để kiểm tra           |
+| 6  |	Airgeddon         | Đây là tập lệnh bash đa dụng cho các hệ thống Linux để kiểm tra           |
 |    |	                  | các mạng không dây.        						      |
 |----+--------------------+---------------------------------------------------------------------------|
-| 6  |	Fluxion           | là bản nâng cấp của linset,tạo ra cuộc tấn công evil twin 	    	      |
+| 7  |	Fluxion v2.0      | là bản nâng cấp của linset,tạo ra cuộc tấn công evil twin 	    	      |
 |    |			  | để tấn công WPA/WPA2 						      |
 |----+--------------------+---------------------------------------------------------------------------|
-| 7  |	MDK4              | Pentest  mạng không đây bằng mkd4 (bản nâng cấp của mdk3).	              |
+| 8  |	Fluxion v5.9      | là bản nâng cấp của fluxion 2.0 				    	      |
+|----+--------------------+---------------------------------------------------------------------------|
+| 9  |	MDK4              | Pentest  mạng không đây bằng mkd4 (bản nâng cấp của mdk3).	              |
 |----+--------------------+---------------------------------------------------------------------------|
 | 99 |	back              | trở về               					              |
  -----------------------------------------------------------------------------------------------------
