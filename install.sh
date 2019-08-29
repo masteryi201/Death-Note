@@ -600,6 +600,10 @@ fluxion=`find $Folder_WIFITools -name fluxion -type d | grep -w "Tools/Wireless-
 		cd install
 		chmod 755 *.sh		
 		xterm $BOTTOMRIGHT -bg "#000000" -fg "#FFFFFF" -title "=> Installing Fluxion <=" -e ./install.sh
+		xterm $BOTTOMRIGHT -bg "#000000" -fg "#FFFFFF" -title "=> Installing Fluxion <=" -e apt-get install isc-dhcp-server -y --allow-unauthenticated
+		xterm $BOTTOMRIGHT -bg "#000000" -fg "#FFFFFF" -title "=> Installing Fluxion <=" -e apt-get install hostapd -y --allow-unauthenticated
+		xterm $BOTTOMRIGHT -bg "#000000" -fg "#FFFFFF" -title "=> Installing Fluxion <=" -e apt-get install lighttpd -y --allow-unauthenticated
+		xterm $BOTTOMRIGHT -bg "#000000" -fg "#FFFFFF" -title "=> Installing Fluxion <=" -e apt-get install php-cgi -y --allow-unauthenticated
 		cd $Work_dir
 		cp $dirbackup_WIFIbackup/fluxion/fluxion.sh $Folder_WIFITools/fluxion/
 		cp -r $dirbackup_WIFIbackup/fluxion/sites/* $Folder_WIFITools/fluxion/sites/
