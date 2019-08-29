@@ -2871,7 +2871,7 @@ cat << !
 						done
 				echo "exploit -j -z" >> $script_listerning;;
 			3)
-				echo -ne " ${red}=>${white} Enter the location file backdoor (Linux run file): ${transparent}"
+				echo -ne " ${red}=>${white} Enter the location file backdoor (Mac OS run file): ${transparent}"
 				read folder
 				file_backdoor=`echo "$folder" | cut -d "'" -f2` > /dev/null 2>&1
 				backdoor_name_mac=${file_backdoor##*/}
@@ -2897,7 +2897,7 @@ cat << !
 						done
 				echo "exploit -j -z" >> $script_listerning;;
 			4)
-				echo -ne " ${red}=>${white} Enter the location file backdoor (Linux run file): ${transparent}"
+				echo -ne " ${red}=>${white} Enter the location file backdoor (Android run file): ${transparent}"
 				read folder
 				file_backdoor=`echo "$folder" | cut -d "'" -f2` > /dev/null 2>&1
 				backdoor_name_android=${file_backdoor##*/}
