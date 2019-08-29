@@ -319,16 +319,16 @@ function WiFiAttacks {
 		case $parameter in
 				1 )	echo $not_yet_developed;;
 				2 ) 	echo $not_yet_developed;;
-				3 )     cd $Work_dir/Tools/Wireless-Attacks/pmkcrack/;
+				4 )     cd $Work_dir/Tools/Wireless-Attacks/pmkcrack/;
 					./pmkcrack.sh; clear; Banner; order; break;;
-				4 ) 	cd $Work_dir/Tools/Wireless-Attacks/wifiphisher/;
+				5 ) 	cd $Work_dir/Tools/Wireless-Attacks/wifiphisher/;
 						clear; Banner; order; break;;
-				5 ) 	cd $Work_dir/Tools/Wireless-Attacks/airgeddon/
+				6 ) 	cd $Work_dir/Tools/Wireless-Attacks/airgeddon/
 					./airgeddon.sh; clear; Banner; order; break;;
-				6 ) 	cd $Work_dir/Tools/Wireless-Attacks/fluxion/
+				7 ) 	cd $Work_dir/Tools/Wireless-Attacks/fluxion/
 					./fluxion.sh; clear; Banner; order; break;;
-				7 ) echo $not_yet_developed;;
 				8 ) echo $not_yet_developed;;
+				9 ) echo $not_yet_developed;;
 				99 ) clear; Banner; order; break;;
 				* ) echo -e "$error1";
 				echo  -ne "$input_choose";;
