@@ -112,6 +112,7 @@ cve201711882_sh=`find $direxploit_expframework/exploit/windows/fileformat -name 
 		cd CVE-2017-11882
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2017-11882/CVE-2017-11882.py CVE-2017-11882.py
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2017-11882/shellcode.c shellcode.c
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2017-11882/powershellcode powershellcode
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2017-11882/CVE-2017-11882_office_rce.sh $Work_dir/$direxploit_expframework/exploit/windows/fileformat/CVE-2017-11882_office_rce.sh
 		echo -e "[ ✔ ]   CVE-2017-11882 tool ${white}................ ${yellow}$Installed ${RESET}"
 		cd $Work_dir
