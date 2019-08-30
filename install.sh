@@ -125,9 +125,10 @@ cve20170199_sh=`find $direxploit_expframework/exploit/windows/fileformat -name C
 		echo -e "[ ✔ ]   CVE-2017-0199 tool ${white}................ ${yellow}$Installed ${RESET}"
 	else    echo -e "[ ! ]   CVE-2017-0199 tool ${white}................ ${red}$NotInstalled ${RESET}"
 		cd $Folder_exploitTools
-		xterm $BOTTOMRIGHT -bg "#000000" -fg "#FFFFFF" -title "=> Download CVE-2017-0199 tool <=" -e git clone https://github.com/bhdresh/CVE-2017-0199.git
-		cd CVE-2017-0199		
-		chmod 755 *.py
+		mkdir CVE-2017-0199
+		cd CVE-2017-0199
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2017-0199/cve-2017-0199_toolkit.py cve-2017-0199_toolkit.py
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2017-0199/template.ppsx template.ppsx
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2017-0199/CVE-2017-0199_office_rce.sh $Work_dir/$direxploit_expframework/exploit/windows/fileformat/CVE-2017-0199_office_rce.sh
 		echo -e "[ ✔ ]   CVE-2017-0199 tool ${white}................ ${yellow}$Installed ${RESET}"
 		cd $Work_dir
