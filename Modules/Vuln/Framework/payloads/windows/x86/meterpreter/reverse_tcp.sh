@@ -14,7 +14,7 @@ lhost_lenght=`echo "$lhost" | awk '{print length}'`
 function set_payload {
 		if [[ "$new_processing_variables" = "lhost" ]] || [[ "$new_processing_variables" = "LHOST" ]] || [[ "$new_processing_variables" = "Lhost" ]]; then
 			unset lhost
-			lhost=$module_set
+			lhost="$module_set"
 		elif [[ "$new_processing_variables" = "lport" ]] || [[ "$new_processing_variables" = "LPORT" ]] || [[ "$new_processing_variables" = "Lport" ]]; then
 			unset lport
 			lport="$module_set"
