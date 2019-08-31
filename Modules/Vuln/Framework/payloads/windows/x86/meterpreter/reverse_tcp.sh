@@ -117,54 +117,58 @@ payload_banner_2
 }
 function payload_banner_1 {
 if [ "$language" = "VN" ]; then
-yes="  Có "
+yes="   Có   "
+no="   Không "
 cat << !
 Các tùy chọn của tải trọng (windows/meterpreter/reverse_tcp):
 
    Tên            Thiết lập hiện tại  Yêu cầu   Miêu tả
    ----           ----------------    --------  -----------
-   EXITFUNC       $exitfunc$yes       Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none)
-   LHOST          $lhost$yes       Địa chỉ lắng nghe
-   LPORT          $lport$yes       Cổng lắng nghe
+   EXITFUNC       $exitfunc$no   Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none)
+   LHOST          $lhost$yes    Địa chỉ lắng nghe
+   LPORT          $lport$yes    Cổng lắng nghe
 
 !
 elif [ "$language" = "EN" ]; then
-yes="  yes"
+yes="yes"
+no="no "
 cat << !
 Payload options (windows/meterpreter/reverse_tcp):
 
    Name           Current Setting  Required  Description
    ----           ---------------  --------  -----------
-   EXITFUNC       $exitfunc$yes    Exit technique (Accepted: '', seh, thread, process, none)
-   LHOST          $lhost$yes    The listen address
-   LPORT          $lport$yes    The listen port
+   EXITFUNC       $exitfunc$no      Exit technique (Accepted: '', seh, thread, process, none)
+   LHOST          $lhost$yes      The listen address
+   LPORT          $lport$yes      The listen port
 
 !
 fi
 }
 function payload_banner_2 {
 if [ "$language" = "VN" ]; then
-yes="  Có  "
+yes="   Có  "
+no="   Không "
 cat << !
 Các tùy chọn của tải trọng (windows/meterpreter/reverse_tcp):
 
    Tên            Thiết lập hiện tại	       Yêu cầu    Miêu tả
    ----      	  ---------------  	       --------  -----------
-   EXITFUNC       $exitfunc$yes       Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none)
-   LHOST          $lhost$yes       Địa chỉ lắng nghe
-   LPORT          $lport$yes       Cổng lắng nghe
+   EXITFUNC       $exitfunc$no   Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none)
+   LHOST          $lhost$yes     Địa chỉ lắng nghe
+   LPORT          $lport$yes     Cổng lắng nghe
 
 !
 elif [ "$language" = "EN" ]; then
-yes="  yes"
+yes="   yes"
+no="   no "
 cat << !
 Payload options (windows/meterpreter/reverse_tcp):
 
    Name           Current Setting  	       Required  Description
    ----           ---------------  	       --------  -----------
-   EXITFUNC       $exitfunc$yes       Exit technique (Accepted: '', seh, thread, process, none)
-   LHOST          $lhost$yes       The listen address
-   LPORT          $lport$yes       The listen port
+   EXITFUNC       $exitfunc$no      Exit technique (Accepted: '', seh, thread, process, none)
+   LHOST          $lhost$yes      The listen address
+   LPORT          $lport$yes      The listen port
 
 !
 fi
