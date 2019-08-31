@@ -104,7 +104,7 @@ echo -e "${cyan}	Clean and Update System${RESET}"
 function cve201711882 {	
 cve201711882=`find $Folder_exploitTools -name CVE-2017-11882 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2017-11882"`
 cve201711882_sh=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2017-11882 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-11882_office_rce.sh"`
-	if [[ "$cve201711882" = "Tools/Vulnerability-Exploit/CVE-2017-11882" ]] || [[ "$cve201711882" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-11882_office_rce.sh" ]]; then
+	if [[ "$cve201711882" = "Tools/Vulnerability-Exploit/CVE-2017-11882" ]] || [[ "$cve201711882_sh" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-11882_office_rce.sh" ]]; then
 		echo -e "[ ✔ ]   CVE-2017-11882 tool ${white}................ ${yellow}$Installed ${RESET}"
 	else    echo -e "[ ! ]   CVE-2017-11882 tool ${white}................ ${red}$NotInstalled ${RESET}"
 		cd $Folder_exploitTools
@@ -121,7 +121,7 @@ cve201711882_sh=`find $direxploit_expframework/exploit/windows/fileformat -name 
 function cve20170199 {	
 cve20170199=`find $Folder_exploitTools -name CVE-2017-0199 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2017-0199"`
 cve20170199_sh=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2017-0199 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-0199_office_rce.sh"`
-	if [[ "$cve20170199" = "Tools/Vulnerability-Exploit/CVE-2017-0199" ]] || [[ "$cve20170199" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-0199_office_rce.sh" ]]; then
+	if [[ "$cve20170199" = "Tools/Vulnerability-Exploit/CVE-2017-0199" ]] || [[ "$cve20170199_sh" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-0199_office_rce.sh" ]]; then
 		echo -e "[ ✔ ]   CVE-2017-0199 tool ${white}................ ${yellow}$Installed ${RESET}"
 	else    echo -e "[ ! ]   CVE-2017-0199 tool ${white}................ ${red}$NotInstalled ${RESET}"
 		cd $Folder_exploitTools
@@ -134,20 +134,24 @@ cve20170199_sh=`find $direxploit_expframework/exploit/windows/fileformat -name C
 		cd $Work_dir
 	fi
 }
-#function cve20178570 {	
-#cve20178570=`find $Folder_exploitTools -name CVE-2017-8570 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2017-8570"`
-#	if [ "$cve20178570" = "Tools/Vulnerability-Exploit/CVE-2017-8570" ]; then
-#		echo -e "[ ✔ ]   CVE-2017-8570 tool ${white}................ ${yellow}$Installed ${RESET}"
-#	else    echo -e "[ ! ]   CVE-2017-8570 tool ${white}................ ${red}$NotInstalled ${RESET}"
-#		cd $Folder_exploitTools
-#		#xterm $BOTTOMRIGHT -bg "#000000" -fg "#FFFFFF" -title "=> Download CVE-2017-8570 tool <=" -e git clone https://github.com/bhdresh/CVE-2017-0199.git
-#		cd CVE-2017-8570
-#		chmod 755 *.py
-#		cp $dirbackup_vulexploit/CVE-2017-8570_office_rce.sh $direxploit_expframework/windows/fileformat/CVE-2017-8570_office_rce.sh
-#		echo -e "[ ✔ ]   CVE-2017-8570 tool ${white}................ ${yellow}$Installed ${RESET}"
-##		cd $Work_dir
-#	fi
-#}
+function cve20178570 {	
+cve20178570=`find $Folder_exploitTools -name CVE-2017-8570 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2017-8570"`
+cve20178570_sh=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2017-8570 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-8570_office_rce.sh"`
+	if [[ "$cve20178570" = "Tools/Vulnerability-Exploit/CVE-2017-8570" ]] || [[ "$cve20178570_sh" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-8570_office_rce.sh" ]]; then
+		echo -e "[ ✔ ]   CVE-2017-8570 tool ${white}................ ${yellow}$Installed ${RESET}"
+	else    echo -e "[ ! ]   CVE-2017-8570 tool ${white}................ ${red}$NotInstalled ${RESET}"
+		cd $Folder_exploitTools
+		mkdir CVE-2017-8570
+		cd CVE-2017-8570
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2017-8570/cve-2017-8570_ppsx.py cve-2017-8570_ppsx.py
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2017-8570/cve-2017-8570_rtf.py cve-2017-8570_rtf.py
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2017-8570/template.ppsx template.ppsx
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2017-8570/calc.txt calc.txt
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2017-8570/CVE-2017-8570_office_rce.sh $Work_dir/$direxploit_expframework/exploit/windows/fileformat/CVE-2017-8570_office_rce.sh
+		echo -e "[ ✔ ]   CVE-2017-8570 tool ${white}................ ${yellow}$Installed ${RESET}"
+		cd $Work_dir
+	fi
+}
 function cve20180802 {	
 cve20180802=`find $Folder_exploitTools -name CVE-2018-0802 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2018-0802"`
 cve20180802_sh=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2018-0802 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2018-0802_office_rce.sh"`
@@ -846,7 +850,8 @@ sleep 0.5
 
 function all_exploit_tools {
 	cve20170199
-	cve20180802	
+	cve20180802
+	cve20178570
 	}
 function ShowVunlTable {
 cat << !
@@ -868,6 +873,7 @@ ShowVunlTable
 		case $parameter in
 		1) cve201711882;;
 		2) cve20170199;;
+		3) cve20178570;;
 		4) cve20180802;;
 		6) all_exploit_tools;;
 		99) break;;
