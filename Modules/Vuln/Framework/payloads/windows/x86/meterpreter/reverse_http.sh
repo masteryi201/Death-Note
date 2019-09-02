@@ -13,16 +13,32 @@ lhost_lenght=`echo "$lhost" | awk '{print length}'`
 	fi
 }
 function set_payload {
-		if [[ "$new_processing_variables" = "lhost" ]] || [[ "$new_processing_variables" = "LHOST" ]]; then
+		if [[ "$new_processing_variables" = "lhost" ]] || [[ "$new_processing_variables" = "LHOST" ]] || [[ "$new_processing_variables" = "Lhost" ]]; then
 			unset lhost
 			lhost=$module_set
-		elif [[ "$new_processing_variables" = "lport" ]] || [[ "$new_processing_variables" = "LPORT" ]]; then
+		elif [[ "$new_processing_variables" = "lport" ]] || [[ "$new_processing_variables" = "LPORT" ]] || [[ "$new_processing_variables" = "Lport" ]]; then
 			unset lport
 			lport="$module_set"
-		elif [[ "$new_processing_variables" = "exitfunc" ]] || [[ "$new_processing_variables" = "EXITFUNC" ]]; then
-			unset exitfunc
-			exitfunc="$module_set"
-		elif [[ "$new_processing_variables" = "luri" ]] || [[ "$new_processing_variables" = "LURI" ]]; then
+		elif [[ "$new_processing_variables" = "exitfunc" ]] || [[ "$new_processing_variables" = "EXITFUNC" ]] || [[ "$new_processing_variables" = "Exitfunc" ]]; then
+			if [[ "$module_set" = "" ]] || [[ "$module_set" = "" ]] || [[ "$module_set" = "" ]]; then
+				unset exitfunc
+				exitfunc="$module_set"
+			elif [[ "$module_set" = "seh" ]] || [[ "$module_set" = "SEH" ]] || [[ "$module_set" = "Seh" ]]; then
+				unset exitfunc
+				exitfunc="$module_set"
+			elif [[ "$module_set" = "thread" ]] || [[ "$module_set" = "THREAD" ]] || [[ "$module_set" = "Thread" ]]; then
+				unset exitfunc
+				exitfunc="$module_set"
+			elif [[ "$module_set" = "process" ]] || [[ "$module_set" = "PROCESS" ]] || [[ "$module_set" = "Process," ]]; then
+				unset exitfunc
+				exitfunc="$module_set"
+			elif [[ "$module_set" = "none" ]] || [[ "$module_set" = "NONE" ]] || [[ "$module_set" = "None" ]]; then
+				unset exitfunc
+				exitfunc="$module_set"
+			else 	failed_to_validate=" $failed_validate'$module_set' $notvalid '$new_processing_variables'"
+				echo -e "$red[-]$RESET" $failed_to_validate
+			fi
+		elif [[ "$new_processing_variables" = "luri" ]] || [[ "$new_processing_variables" = "LURI" ]] || [[ "$new_processing_variables" = "Luri" ]]; then
 			unset exitfunc
 			exitfunc="$module_set"
 		fi
@@ -121,29 +137,29 @@ payload_banner_2
 }
 function payload_banner_1 {
 if [ "$language" = "VN" ]; then
-yes="  Có "
-no="  Không "
+yes="     Có   "
+no="     Không "
 cat << !
-Các tùy chọn của tải trọng (windows/meterpreter/reverse_tcp):
+Các tùy chọn của tải trọng (windows/meterpreter/reverse_http):
 
-   Tên            Thiết lập hiện tại  Yêu cầu   Miêu tả
-   ----           ----------------    --------  -----------
-   EXITFUNC       $exitfunc$yes       Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none)
-   LHOST          $lhost$yes       Địa chỉ lắng nghe
-   LPORT          $lport$yes       Cổng lắng nghe
-   LURI           $luri$no         Đường dẫn HTTP
+   Tên            Thiết lập hiện tại    Yêu cầu   Miêu tả
+   ----           ----------------      --------  -----------
+   EXITFUNC       $exitfunc$no   Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none)
+   LHOST          $lhost$yes    Địa chỉ lắng nghe
+   LPORT          $lport$yes    Cổng lắng nghe
+   LURI           $luri$no   Đường dẫn HTTP
 !
 elif [ "$language" = "EN" ]; then
-yes="  yes"
-no="  no "
+yes="     yes"
+no="     no "
 cat << !
-Payload options (windows/meterpreter/reverse_tcp):
+Payload options (windows/meterpreter/reverse_http):
 
-   Name           Current Setting  Required  Description
-   ----           ---------------  --------  -----------
-   EXITFUNC       $exitfunc$yes    Exit technique (Accepted: '', seh, thread, process, none)
-   LHOST          $lhost$yes    The listen address
-   LPORT          $lport$yes    The listen port
+   Name           Current Setting       Required  Description
+   ----           ---------------       --------  -----------
+   EXITFUNC       $exitfunc$no      Exit technique (Accepted: '', seh, thread, process, none)
+   LHOST          $lhost$yes      The listen address
+   LPORT          $lport$yes      The listen port
    LURI           $luri$no      The HTTP Path
 
 !
@@ -151,30 +167,30 @@ fi
 }
 function payload_banner_2 {
 if [ "$language" = "VN" ]; then
-yes="  Có  "
-no="  Không "
+yes="   Có  "
+no="   Không "
 cat << !
-Các tùy chọn của tải trọng (windows/meterpreter/reverse_tcp):
+Các tùy chọn của tải trọng (windows/meterpreter/reverse_http):
 
    Tên            Thiết lập hiện tại	       Yêu cầu    Miêu tả
    ----      	  ---------------  	       --------  -----------
-   EXITFUNC       $exitfunc$yes       Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none)
-   LHOST          $lhost$yes       Địa chỉ lắng nghe
-   LPORT          $lport$yes       Cổng lắng nghe
-   LURI           $luri$no         Đường dẫn HTTP
+   EXITFUNC       $exitfunc$no   Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none)
+   LHOST          $lhost$yes     Địa chỉ lắng nghe
+   LPORT          $lport$yes     Cổng lắng nghe
+   LURI           $luri$no   Đường dẫn HTTP
 
 !
 elif [ "$language" = "EN" ]; then
-yes="  yes"
-no="  no "
+yes="   yes"
+no="   no "
 cat << !
-Payload options (windows/meterpreter/reverse_tcp):
+Payload options (windows/meterpreter/reverse_http):
 
    Name           Current Setting  	       Required  Description
    ----           ---------------  	       --------  -----------
-   EXITFUNC       $exitfunc$yes       Exit technique (Accepted: '', seh, thread, process, none)
-   LHOST          $lhost$yes       The listen address
-   LPORT          $lport$yes       The listen port
+   EXITFUNC       $exitfunc$no      Exit technique (Accepted: '', seh, thread, process, none)
+   LHOST          $lhost$yes      The listen address
+   LPORT          $lport$yes      The listen port
    LURI           $luri$no      The HTTP Path
 
 !
@@ -184,9 +200,10 @@ function payload_run {
 payload_path_present=`pwd`
 payload_path_rc_file="$payload_path_present/Config"
 rc_file="$payload_path_rc_file/file.rc"
-	echo "set payload $payload_OS/$payload_format/$payload_name" >> $rc_file
-	echo "set LHOST $lhost" >> $rc_file
-	echo "set LPORT $lport" >> $rc_file
+config_file="$payload_path_present/Config/config"
+	echo "set payload windows/meterpreter/reverse_http" >> $rc_file
 	echo "set EXITFUNC $exitfunc" >> $rc_file
-	echo "set LURI $luri" >> $rc_file
+	paylo="windows/meterpreter/reverse_http"
+	lhost=$lhost
+	lport=$lport
 }
