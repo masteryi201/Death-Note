@@ -874,7 +874,7 @@ function ShowAndInstall_ExploitTools {
 		mkdir -p $direxploit_expframework/exploit/windows/fileformat
 		mkdir -p $direxploit_expframework/exploit/windows/smb
 		mkdir -p $direxploit_expframework/exploit/windows/rdp
-
+		mkdir -p $direxploit_expframework/exploit/unix/webapp
 	fi
 clear
 echo -e "${cyan}	Install Vulnerability Exploit Tools${RESET}"
