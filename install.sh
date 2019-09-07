@@ -167,6 +167,38 @@ cve20180802_sh=`find $direxploit_expframework/exploit/windows/fileformat -name C
 		cd $Work_dir
 	fi
 }
+function cve201820250 {	
+cve201820250=`find $Folder_exploitTools -name CVE-2018-20250 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2018-20250"`
+cve201820250_sh=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2018-20250 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2018-20250_winrar_rce.sh"`
+	if [[ "$cve201820250" = "Tools/Vulnerability-Exploit/CVE-2018-20250" ]] || [[ "$cve201820250_sh" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2018-20250_winrar_rce.sh" ]]; then
+		echo -e "[ ✔ ]   CVE-2018-20250 tool ${white}................ ${yellow}$Installed ${RESET}"
+	else    echo -e "[ ! ]   CVE-2018-20250 tool ${white}................ ${red}$NotInstalled ${RESET}"
+		cd $Folder_exploitTools
+		mkdir CVE-2018-20250
+		cd CVE-2018-20250
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2018-20250/exp exp
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2018-20250/acefile.py acefile.py
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2018-20250/CVE-2018-20250_winrar_rce.sh $Work_dir/$direxploit_expframework/exploit/windows/fileformat/CVE-2018-20250_winrar_rce.sh
+		echo -e "[ ✔ ]   CVE-2018-20250 tool ${white}................ ${yellow}$Installed ${RESET}"
+		cd $Work_dir
+	fi
+}
+function cve201915107 {	
+cve201915107=`find $Folder_exploitTools -name CVE-2019-15107 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2019-15107"`
+cve201915107_sh=`find $direxploit_expframework/exploit/unix/webapp -name CVE-2019-15107 -type d | grep -w "Modules/Vuln/Framework/exploit/unix/webapp/CVE-2019-15107_webmin_rce.sh"`
+	if [[ "$cve201915107" = "Tools/Vulnerability-Exploit/CVE-2019-15107" ]] || [[ "$cve201915107_sh" = "Modules/Vuln/Framework/exploit/unix/webapp/CVE-2019-15107_webmin_rce.sh" ]]; then
+		echo -e "[ ✔ ]   CVE-2019-15107 tool ${white}................ ${yellow}$Installed ${RESET}"
+	else    echo -e "[ ! ]   CVE-2019-15107 tool ${white}................ ${red}$NotInstalled ${RESET}"
+		cd $Folder_exploitTools
+		mkdir CVE-2019-15107
+		cd CVE-2019-15107
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-15107/CVE-2019-15107.py CVE-2019-15107.py
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-15107/CVE-2019-15107_check.sh CVE-2019-15107_check.sh
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-15107/CVE-2019-15107_webmin_rce.sh $Work_dir/$direxploit_expframework/exploit/unix/webapp/CVE-2019-15107_webmin_rce.sh
+		echo -e "[ ✔ ]   CVE-2019-15107 tool ${white}................ ${yellow}$Installed ${RESET}"
+		cd $Work_dir
+	fi
+}
 ##################################################################
 ############## Backdoor and malwares #############################
 ##################################################################
