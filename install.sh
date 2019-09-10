@@ -877,25 +877,24 @@ function ShowAndInstall_ExploitTools {
 		mkdir -p $direxploit_expframework/exploit/unix/webapp
 	fi
 clear
-echo -e "${cyan}	Install Vulnerability Exploit Tools${RESET}"
-sleep 0.5
-
 function all_exploit_tools {
-	cve20170199
-	cve20180802
-	cve20178570
-	}
+cve20170199
+cve20180802
+cve20178570
+cve201820250
+cve201915107
+}
 function ShowVunlTable {
+echo -e "${cyan}			Install Vulnerability Exploit Tools${RESET}"
+echo ""
+sleep 0.5
 cat << !
-
-	 _________________________________________________________________________
-	|    |       			     |    |               		  |
-	| 1  |        CVE-2017-11882 	     | 2  |       CVE-2017-0199           |
-	|----+-------------------------------|----+-------------------------------|
-	| 3  |        CVE-2017-8570          | 4  |       CVE-2018-0802           |
-	|----+-------------------------------|----+-------------------------------|
-	| 6  |          ALL                  | 99 |       back                    |
-	|----+-------------------------------|----+-------------------------------|
+	1 ) Install CVE-2017-11882 (Office Remote Code Execution)
+	2 ) Install CVE-2017-0199  (Office Remote Code Execution)
+	3 ) Install CVE-2017-8570  (Office Remote Code Execution)
+	4 ) Install CVE-2018-0802  (Office Remote Code Execution)
+	5 ) Install CVE-2018-20250 (Winrar Remote Code Execution)
+	6 ) Install CVE-2019-15107 (Webmin Remote Code Execution)
 !
 }
 ShowVunlTable
@@ -907,7 +906,9 @@ ShowVunlTable
 		2) cve20170199;;
 		3) cve20178570;;
 		4) cve20180802;;
-		6) all_exploit_tools;;
+		5) cve201820250;;
+		6) cve201915107;;
+		all) all_exploit_tools;;
 		99) break;;
 		*) echo -e "$error1";
 		esac
