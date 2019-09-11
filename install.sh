@@ -881,7 +881,7 @@ function ShowAndInstall_ExploitTools {
 	if [ "$check_auxiliary_folder" = "./auxiliary" ]; then
 		echo ""
 	else
-		mkdir -p $direxploit_expframework/auxiliary/unix/webapp
+		mkdir -p $direxploit_expframework/auxiliary/scanner/webapp
 	fi
 clear
 function all_exploit_tools {
