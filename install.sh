@@ -194,6 +194,7 @@ cve201915107_sh=`find $direxploit_expframework/exploit/unix/webapp -name CVE-201
 		cd CVE-2019-15107
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-15107/CVE-2019-15107.py CVE-2019-15107.py
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-15107/CVE-2019-15107_check.sh CVE-2019-15107_check.sh
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-15107/CVE-2019-15107_webmin_scan.sh $Work_dir/$direxploit_expframework/auxiliary/unix/webapp/CVE-2019-15107_webmin_rce.sh
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-15107/CVE-2019-15107_webmin_rce.sh $Work_dir/$direxploit_expframework/exploit/unix/webapp/CVE-2019-15107_webmin_rce.sh
 		echo -e "[ ✔ ]   CVE-2019-15107 tool ${white}................ ${yellow}$Installed ${RESET}"
 		cd $Work_dir
@@ -875,6 +876,12 @@ function ShowAndInstall_ExploitTools {
 		mkdir -p $direxploit_expframework/exploit/windows/smb
 		mkdir -p $direxploit_expframework/exploit/windows/rdp
 		mkdir -p $direxploit_expframework/exploit/unix/webapp
+	fi
+	check_auxiliary_folder=`find $direxploit_expframework -name auxiliary -type d | grep -w "./auxiliary"`
+	if [ "$check_auxiliary_folder" = "./auxiliary" ]; then
+		echo ""
+	else
+		mkdir -p $direxploit_expframework/auxiliary/unix/webapp
 	fi
 clear
 function all_exploit_tools {
