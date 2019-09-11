@@ -1,6 +1,6 @@
 not_install="Mô-dun này chưa cài đặt !"
 not_data="Không tìm thầy trong cơ sở dữ liệu !"
-not_find_payload="không tìm thấy tải trọng trên cơ sở dữ liệu"
+not_find_payload="Không tìm thấy tải trọng trên cơ sở dữ liệu"
 your_mean="Ý bạn là gì?"
 error_gen_file="Không thể tạo được tệp!"
 failed_validate="Các tùy chọn sau không thể xác thực: Giá trị "
