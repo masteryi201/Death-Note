@@ -159,9 +159,9 @@ cve20180802_sh=`find $direxploit_expframework/exploit/windows/fileformat -name C
 		echo -e "[ ✔ ]   CVE-2018-0802 tool ${white}................ ${yellow}$Installed ${RESET}"
 	else    echo -e "[ ! ]   CVE-2018-0802 tool ${white}................ ${red}$NotInstalled ${RESET}"
 		cd $Folder_exploitTools
-		xterm $BOTTOMRIGHT -bg "#000000" -fg "#FFFFFF" -title "=> Download CVE-2018-0802 tool <=" -e git clone https://github.com/rxwx/CVE-2018-0802.git
+		mkdir CVE-2018-0802
 		cd CVE-2018-0802
-		chmod 755 *.py
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2018-0802/CVE-2018-0802.py CVE-2018-0802.py
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2018-0802/CVE-2018-0802_office_rce.sh $Work_dir/$direxploit_expframework/exploit/windows/fileformat/CVE-2018-0802_office_rce.sh
 		echo -e "[ ✔ ]   CVE-2018-0802 tool ${white}................ ${yellow}$Installed ${RESET}"
 		cd $Work_dir
