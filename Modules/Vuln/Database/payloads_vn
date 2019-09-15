@@ -1,0 +1,496 @@
+   android/meterpreter/reverse_http   			Android Meterpreter, kết nối ngược bằng kết nối HTTP
+   android/meterpreter/reverse_https  			Android Meterpreter, kết nối ngược bằng kết nối HTTPS
+   android/meterpreter/reverse_tcp   			Android Meterpreter, kết nối ngược bằng kết nối TCP
+   android/meterpreter_reverse_http   			Android Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối HTTP
+   android/meterpreter_reverse_https  			Android Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối HTTPS
+   android/meterpreter_reverse_tcp    			Android Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   android/shell/reverse_http         			Command Shell, kết nối ngược bằng kết nối HTTP
+   android/shell/reverse_https        			Command Shell, kết nối ngược bằng kết nối HTTPS
+   android/shell/reverse_tcp          			Command Shell, kết nối ngược bằng kết nối TCP
+   apple_ios/aarch64/meterpreter_reverse_http   	Apple_iOS Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   apple_ios/aarch64/meterpreter_reverse_https  	Apple_iOS Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   apple_ios/aarch64/meterpreter_reverse_tcp    	Apple_iOS Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   apple_ios/aarch64/shell_reverse_tcp			Apple iOS aarch64 Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   bsd/sparc/shell_bind_tcp           			BSD Command Shell, kết nối trực tiếp bằng kết nối TCP
+   bsd/sparc/shell_reverse_tcp        			BSD Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   bsd/x64/exec      					BSD x64 Thực thi lệnh
+   bsd/x64/shell_bind_ipv6_tcp        			BSD x64 Command Shell, kết nối trực tiếp bằng kết nối TCP (IPv6)
+   bsd/x64/shell_bind_tcp             			BSD x64 Shell kết nối trực tiếp bằng kết nối TCP
+   bsd/x64/shell_bind_tcp_small       			BSD x64 Command Shell, kết nối trực tiếp bằng kết nối TCP
+   bsd/x64/shell_reverse_ipv6_tcp     			BSD x64 Command Shell, kết nối trực tiếp bằng kết nối TCP (IPv6)
+   bsd/x64/shell_reverse_tcp          			BSD x64 Shell kết nối ngược bằng kết nối TCP
+   bsd/x64/shell_reverse_tcp_small    			BSD x64 Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   bsd/x86/exec      					BSD Thực thi lệnh
+   bsd/x86/metsvc_bind_tcp            			FreeBSD Meterpreter Service, kết nối trực tiếp bằng kết nối TCP
+   bsd/x86/metsvc_reverse_tcp         			FreeBSD Meterpreter Service, kết nối ngược trực tiếp bằng kết nối TCP
+   bsd/x86/shell/bind_ipv6_tcp        			BSD Command Shell, kết nối trực tiếp bằng kết nối TCP (IPv6)
+   bsd/x86/shell/bind_tcp             			BSD Command Shell, kết nối trực tiếp bằng kết nối TCP
+   bsd/x86/shell/reverse_ipv6_tcp     			BSD Command Shell, kết nối ngược bằng kết nối TCP (IPv6)
+   bsd/x86/shell/reverse_tcp          			BSD Command Shell, kết nối ngược bằng kết nối TCP
+   bsd/x86/shell_bind_tcp             			BSD Command Shell, kết nối trực tiếp bằng kết nối TCP
+   bsd/x86/shell_bind_tcp_ipv6        			BSD Command Shell, kết nối trực tiếp bằng kết nối TCP (IPv6)
+   bsd/x86/shell_reverse_tcp          			BSD Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   bsd/x86/shell_reverse_tcp_ipv6     			BSD Command Shell, kết nối ngược trực tiếp bằng kết nối TCP (IPv6)
+   cmd/mainframe/apf_privesc_jcl      			JCL leo thang đặc quyền
+   cmd/mainframe/bind_shell_jcl       			Z/OS (MVS) Command Shell, kết nối trực tiếp bằng kết nối TCP
+   cmd/mainframe/generic_jcl          			Kiểm tra JCL chung cho các khai thác máy tính lớn
+   cmd/mainframe/reverse_shell_jcl    			Z/OS (MVS) Command Shell, kết nối ngược bằng kết nối TCP
+   cmd/unix/bind_awk 					Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua AWK)
+   cmd/unix/bind_busybox_telnetd      			Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua BusyBox telnetd)
+   cmd/unix/bind_lua 					Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua Lua)
+   cmd/unix/bind_netcat               			Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua netcat)
+   cmd/unix/bind_netcat_gaping        			Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua netcat -e)
+   cmd/unix/bind_netcat_gaping_ipv6   			Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua netcat -e) IPv6
+   cmd/unix/bind_nodejs               			Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua nodejs)
+   cmd/unix/bind_perl					Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua Perl)
+   cmd/unix/bind_perl_ipv6            			Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua perl) IPv6
+   cmd/unix/bind_r   					Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua R)
+   cmd/unix/bind_ruby					Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua Ruby)
+   cmd/unix/bind_ruby_ipv6            			Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua Ruby) IPv6
+   cmd/unix/bind_socat_udp            			Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua socat)
+   cmd/unix/bind_stub					Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua)
+   cmd/unix/bind_zsh 					Unix Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua Zsh)
+   cmd/unix/generic  					Unix Command, Thực thi lệnh chung
+   cmd/unix/reverse  					Unix Command Shell, TCP đảo ngược kép (telnet)
+   cmd/unix/reverse_awk               			Unix Command Shell, kết nối ngược bằng kết nối TCP (thông qua AWK)
+   cmd/unix/reverse_bash              			Unix Command Shell, kết nối ngược bằng kết nối TCP (/dev/tcp)
+   cmd/unix/reverse_bash_telnet_ssl   			Unix Command Shell, kết nối ngược bằng kết nối TCP SSL (telnet)
+   cmd/unix/reverse_ksh               			Unix Command Shell, kết nối ngược bằng kết nối TCP (thông qua Ksh)
+   cmd/unix/reverse_lua               			Unix Command Shell, kết nối ngược bằng kết nối TCP (thông qua Lua)
+   cmd/unix/reverse_ncat_ssl          			Unix Command Shell, kết nối ngược bằng kết nối TCP (thông qua ncat)
+   cmd/unix/reverse_netcat            			Unix Command Shell, kết nối ngược bằng kết nối TCP (thông qua netcat)
+   cmd/unix/reverse_netcat_gaping     			Unix Command Shell, kết nối ngược bằng kết nối TCP (thông qua netcat -e)
+   cmd/unix/reverse_nodejs            			Unix Command Shell, kết nối ngược bằng kết nối TCP (thông qua nodejs)
+   cmd/unix/reverse_openssl           			Unix Command Shell, TCP đảo ngược kép SSL (openssl)
+   cmd/unix/reverse_perl              			Unix Command Shell, kết nối ngược bằng kết nối TCP (thông qua Perl)
+   cmd/unix/reverse_perl_ssl          			Unix Command Shell, kết nối ngược bằng kết nối TCP SSL (thông qua perl)
+   cmd/unix/reverse_php_ssl           			Unix Command Shell, kết nối ngược bằng kết nối TCP SSL (thông qua php)
+   cmd/unix/reverse_python            			Unix Command Shell, kết nối ngược bằng kết nối TCP (thông qua Python)
+   cmd/unix/reverse_python_ssl        			Unix Command Shell, kết nối ngược bằng kết nối TCP SSL (thông qua python)
+   cmd/unix/reverse_r					Unix Command Shell, kết nối ngược bằng kết nối TCP (thông qua R)
+   cmd/unix/reverse_ruby              			Unix Command Shell, kết nối ngược bằng kết nối TCP (thông qua Ruby)
+   cmd/unix/reverse_ruby_ssl          			Unix Command Shell, kết nối ngược bằng kết nối TCP SSL (thông qua Ruby)
+   cmd/unix/reverse_socat_udp         			Unix Command Shell, kết nối ngược bằng kết nối UDP (thông qua socat)
+   cmd/unix/reverse_ssl_double_telnet 			Unix Command Shell, TCP đảo ngược kép SSL (telnet)
+   cmd/unix/reverse_stub              			Unix Command Shell, kết nối ngược bằng kết nối TCP (stub)
+   cmd/unix/reverse_zsh               			Unix Command Shell, kết nối ngược bằng kết nối TCP (thông qua Zsh)
+   cmd/windows/adduser                			Windows Execute net user /ADD CMD
+   cmd/windows/bind_lua               			Windows Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua Lua)
+   cmd/windows/bind_perl              			Windows Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua Perl)
+   cmd/windows/bind_perl_ipv6         			Windows Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua perl) IPv6
+   cmd/windows/bind_ruby              			Windows Command Shell, kết nối trực tiếp bằng kết nối TCP (thông qua Ruby)
+   cmd/windows/download_eval_vbs      			Windows Executable Tải xuống và đánh giá VBS
+   cmd/windows/download_exec_vbs      			Windows Executable Tải xuống và thực thi (thông qua .vbs)
+   cmd/windows/generic                			Windows Command, Thực thi lệnh chung
+   cmd/windows/powershell_bind_tcp    			Windows Interactive Powershell Session, kết nối trực tiếp bằng kết nối TCP
+   cmd/windows/powershell_reverse_tcp 			Windows Interactive Powershell Session, kết nối ngược bằng kết nối TCP
+   cmd/windows/reverse_lua            			Windows Command Shell, kết nối ngược bằng kết nối TCP (thông qua Lua)
+   cmd/windows/reverse_perl           			Windows Command, Double kết nối ngược bằng kết nối TCP Connection (thông qua Perl)
+   cmd/windows/reverse_powershell     			Windows Command Shell, kết nối ngược bằng kết nối TCP (thông qua Powershell)
+   cmd/windows/reverse_ruby           			Windows Command Shell, kết nối ngược bằng kết nối TCP (thông qua Ruby)
+   generic/custom    					Tải trọng tùy chỉnh
+   generic/debug_trap					Generic x86 Bẫy gỡ lỗi
+   generic/shell_bind_tcp             			Generic Command Shell, kết nối trực tiếp bằng kết nối TCP
+   generic/shell_reverse_tcp          			Generic Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   generic/tight_loop					Generic x86 Vòng lặp chặt chẽ
+   java/jsp_shell_bind_tcp            			Java JSP Command Shell, kết nối trực tiếp bằng kết nối TCP
+   java/jsp_shell_reverse_tcp         			Java JSP Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   java/meterpreter/bind_tcp          			Java Meterpreter, Java kết nối trực tiếp bằng kết nối TCP
+   java/meterpreter/reverse_http      			Java Meterpreter, Java kết nối ngược bằng kết nối HTTP
+   java/meterpreter/reverse_https     			Java Meterpreter, Java kết nối ngược bằng kết nối HTTPS
+   java/meterpreter/reverse_tcp       			Java Meterpreter, Java kết nối ngược bằng kết nối TCP
+   java/shell/bind_tcp                			Command Shell, Java kết nối trực tiếp bằng kết nối TCP
+   java/shell/reverse_tcp             			Command Shell, Java kết nối ngược bằng kết nối TCP
+   java/shell_reverse_tcp             			Java Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/aarch64/meterpreter/reverse_tcp        	Linux Meterpreter, kết nối ngược bằng kết nối TCP
+   linux/aarch64/meterpreter_reverse_http       	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   linux/aarch64/meterpreter_reverse_https      	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   linux/aarch64/meterpreter_reverse_tcp        	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/aarch64/shell/reverse_tcp    			Linux dup2 Command Shell, kết nối ngược bằng kết nối TCP
+   linux/aarch64/shell_reverse_tcp    			Linux Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/armbe/meterpreter_reverse_http         	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   linux/armbe/meterpreter_reverse_https        	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   linux/armbe/meterpreter_reverse_tcp			Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/armbe/shell_bind_tcp         			Linux ARM Big Endian Command Shell, kết nối trực tiếp bằng kết nối TCP
+   linux/armle/exec  					Linux Thực thi lệnh
+   linux/armle/meterpreter/bind_tcp   			Linux Meterpreter, kết nối trực tiếp bằng kết nối TCP
+   linux/armle/meterpreter/reverse_tcp			Linux Meterpreter, kết nối ngược bằng kết nối TCP
+   linux/armle/meterpreter_reverse_http         	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   linux/armle/meterpreter_reverse_https        	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   linux/armle/meterpreter_reverse_tcp			Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/armle/shell/bind_tcp         			Linux dup2 Command Shell, kết nối trực tiếp bằng kết nối TCP
+   linux/armle/shell/reverse_tcp      			Linux dup2 Command Shell, kết nối ngược bằng kết nối TCP
+   linux/armle/shell_bind_tcp         			Linux Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/armle/shell_reverse_tcp      			Linux Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/mips64/meterpreter_reverse_http        	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   linux/mips64/meterpreter_reverse_https       	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   linux/mips64/meterpreter_reverse_tcp         	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/mipsbe/exec 					Linux Thực thi lệnh
+   linux/mipsbe/meterpreter/reverse_tcp         	Linux Meterpreter, kết nối ngược bằng kết nối TCP
+   linux/mipsbe/meterpreter_reverse_http        	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   linux/mipsbe/meterpreter_reverse_https       	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   linux/mipsbe/meterpreter_reverse_tcp         	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/mipsbe/reboot                			Linux Khởi động lại
+   linux/mipsbe/shell/reverse_tcp     			Linux Command Shell, kết nối ngược bằng kết nối TCP
+   linux/mipsbe/shell_bind_tcp        			Linux Command Shell, kết nối trực tiếp bằng kết nối TCP
+   linux/mipsbe/shell_reverse_tcp     			Linux Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/mipsle/exec 					Linux Thực thi lệnh
+   linux/mipsle/meterpreter/reverse_tcp         	Linux Meterpreter, kết nối ngược bằng kết nối TCP
+   linux/mipsle/meterpreter_reverse_http        	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   linux/mipsle/meterpreter_reverse_https       	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   linux/mipsle/meterpreter_reverse_tcp         	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/mipsle/reboot                			Linux Khởi động lại
+   linux/mipsle/shell/reverse_tcp     			Linux Command Shell, kết nối ngược bằng kết nối TCP
+   linux/mipsle/shell_bind_tcp        			Linux Command Shell, kết nối trực tiếp bằng kết nối TCP
+   linux/mipsle/shell_reverse_tcp     			Linux Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/ppc/meterpreter_reverse_http 			Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   linux/ppc/meterpreter_reverse_https			Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   linux/ppc/meterpreter_reverse_tcp  			Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/ppc/shell_bind_tcp           			Linux Command Shell, kết nối trực tiếp bằng kết nối TCP
+   linux/ppc/shell_reverse_tcp        			Linux Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/ppc64/shell_bind_tcp         			Linux Command Shell, kết nối trực tiếp bằng kết nối TCP
+   linux/ppc64/shell_reverse_tcp      			Linux Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/ppc64le/meterpreter_reverse_http       	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   linux/ppc64le/meterpreter_reverse_https      	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   linux/ppc64le/meterpreter_reverse_tcp        	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/ppce500v2/meterpreter_reverse_http     	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   linux/ppce500v2/meterpreter_reverse_https    	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   linux/ppce500v2/meterpreter_reverse_tcp      	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/x64/exec    					Linux Thực thi lệnh
+   linux/x64/meterpreter/bind_tcp     			Linux Mettle x64, kết nối trực tiếp bằng kết nối TCP
+   linux/x64/meterpreter/reverse_tcp  			Linux Mettle x64, kết nối ngược bằng kết nối TCP
+   linux/x64/meterpreter_reverse_http 			Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   linux/x64/meterpreter_reverse_https			Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   linux/x64/meterpreter_reverse_tcp  			Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/x64/shell/bind_tcp           			Linux Command Shell, kết nối trực tiếp bằng kết nối TCP
+   linux/x64/shell/reverse_tcp        			Linux Command Shell, kết nối ngược bằng kết nối TCP
+   linux/x64/shell_bind_tcp           			Linux Command Shell, kết nối trực tiếp bằng kết nối TCP
+   linux/x64/shell_bind_tcp_random_port         	Linux Command Shell, Kết nối TCP bằng cỗng ngẫu nhiên
+   linux/x64/shell_reverse_tcp        			Linux Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/x86/chmod   					Linux Thêm quyền
+   linux/x86/exec    					Linux Thực thi lệnh
+   linux/x86/meterpreter/bind_ipv6_tcp			Linux Mettle x86, kết nối trực tiếp bằng kết nối TCP IPv6 (Linux x86)
+   linux/x86/meterpreter/bind_ipv6_tcp_uuid     	Linux Mettle x86, kết nối trực tiếp bằng kết nối TCP IPv6 với hỗ trợ UUID (Linux x86)
+   linux/x86/meterpreter/bind_nonx_tcp			Linux Mettle x86, kết nối trực tiếp bằng kết nối TCP
+   linux/x86/meterpreter/bind_tcp     			Linux Mettle x86, kết nối trực tiếp bằng kết nối TCP (Linux x86)
+   linux/x86/meterpreter/bind_tcp_uuid			Linux Mettle x86, kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID (Linux x86)
+   linux/x86/meterpreter/reverse_ipv6_tcp       	Linux Mettle x86, kết nối ngược bằng kết nối TCP (IPv6)
+   linux/x86/meterpreter/reverse_nonx_tcp       	Linux Mettle x86, kết nối ngược bằng kết nối TCP
+   linux/x86/meterpreter/reverse_tcp  			Linux Mettle x86, kết nối ngược bằng kết nối TCP
+   linux/x86/meterpreter/reverse_tcp_uuid       	Linux Mettle x86, kết nối ngược bằng kết nối TCP
+   linux/x86/meterpreter_reverse_http 			Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   linux/x86/meterpreter_reverse_https			Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   linux/x86/meterpreter_reverse_tcp  			Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/x86/metsvc_bind_tcp          			Linux Meterpreter Service, kết nối trực tiếp bằng kết nối TCP
+   linux/x86/metsvc_reverse_tcp       			Linux Meterpreter Service, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/x86/read_file                			Linux Đọc tệp
+   linux/x86/shell/bind_ipv6_tcp      			Linux Command Shell, kết nối trực tiếp bằng kết nối TCP IPv6 (Linux x86)
+   linux/x86/shell/bind_ipv6_tcp_uuid 			Linux Command Shell, kết nối trực tiếp bằng kết nối TCP IPv6 với hỗ trợ UUID (Linux x86)
+   linux/x86/shell/bind_nonx_tcp      			Linux Command Shell, kết nối trực tiếp bằng kết nối TCP
+   linux/x86/shell/bind_tcp           			Linux Command Shell, kết nối trực tiếp bằng kết nối TCP (Linux x86)
+   linux/x86/shell/bind_tcp_uuid      			Linux Command Shell, kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID (Linux x86)
+   linux/x86/shell/reverse_ipv6_tcp   			Linux Command Shell, kết nối ngược bằng kết nối TCP (IPv6)
+   linux/x86/shell/reverse_nonx_tcp   			Linux Command Shell, kết nối ngược bằng kết nối TCP
+   linux/x86/shell/reverse_tcp        			Linux Command Shell, kết nối ngược bằng kết nối TCP
+   linux/x86/shell/reverse_tcp_uuid   			Linux Command Shell, kết nối ngược bằng kết nối TCP
+   linux/x86/shell_bind_ipv6_tcp      			Linux Command Shell, kết nối trực tiếp bằng kết nối TCP (IPv6)
+   linux/x86/shell_bind_tcp           			Linux Command Shell, kết nối trực tiếp bằng kết nối TCP
+   linux/x86/shell_bind_tcp_random_port         	Linux Command Shell, Kết nối TCP bằng cỗng ngẫu nhiên
+   linux/x86/shell_reverse_tcp        			Linux Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   linux/x86/shell_reverse_tcp_ipv6   			Linux Command Shell, kết nối ngược trực tiếp bằng kết nối TCP (IPv6)
+   linux/zarch/meterpreter_reverse_http         	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   linux/zarch/meterpreter_reverse_https        	Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   linux/zarch/meterpreter_reverse_tcp			Linux Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   mainframe/shell_reverse_tcp        			Z/OS (MVS) Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   multi/meterpreter/reverse_http     			Architecture-Independent Meterpreter Stage, kết nối ngược bằng kết nối HTTP  (Nhiều kiến trúc)
+   multi/meterpreter/reverse_https    			Architecture-Independent Meterpreter Stage, kết nối ngược bằng kết nối HTTPS (Nhiều kiến trúc)
+   nodejs/shell_bind_tcp              			Command Shell, kết nối trực tiếp bằng kết nối TCP(thông qua nodejs)
+   nodejs/shell_reverse_tcp           			Command Shell, kết nối ngược bằng kết nối TCP (thông qua nodejs)
+   nodejs/shell_reverse_tcp_ssl       			Command Shell, kết nối ngược bằng kết nối TCP SSL (thông qua nodejs)
+   osx/armle/execute/bind_tcp         			OS X Write and Execute Binary, kết nối trực tiếp bằng kết nối TCP
+   osx/armle/execute/reverse_tcp      			OS X Write and Execute Binary, kết nối ngược bằng kết nối TCP
+   osx/armle/shell/bind_tcp           			OS X Command Shell, kết nối trực tiếp bằng kết nối TCP
+   osx/armle/shell/reverse_tcp        			OS X Command Shell, kết nối ngược bằng kết nối TCP
+   osx/armle/shell_bind_tcp           			Apple iOS Command Shell, kết nối trực tiếp bằng kết nối TCP
+   osx/armle/shell_reverse_tcp        			Apple iOS Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   osx/armle/vibrate 					Apple iOS iPhone Rung
+   osx/ppc/shell/bind_tcp             			OS X Command Shell, kết nối trực tiếp bằng kết nối TCP
+   osx/ppc/shell/reverse_tcp          			OS X Command Shell, kết nối ngược bằng kết nối TCP
+   osx/ppc/shell_bind_tcp             			OS X Command Shell, kết nối trực tiếp bằng kết nối TCP
+   osx/ppc/shell_reverse_tcp          			OS X Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   osx/x64/dupandexecve/bind_tcp      			OS X dup2 Command Shell, kết nối trực tiếp bằng kết nối TCP
+   osx/x64/dupandexecve/reverse_tcp   			OS X dup2 Command Shell, kết nối ngược bằng kết nối TCP
+   osx/x64/exec      					OS X x64 Thực thi lệnh
+   osx/x64/meterpreter/bind_tcp       			OSX Meterpreter, kết nối trực tiếp bằng kết nối TCP
+   osx/x64/meterpreter/reverse_tcp    			OSX Meterpreter, kết nối ngược bằng kết nối TCP
+   osx/x64/meterpreter_reverse_http   			OSX Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTP
+   osx/x64/meterpreter_reverse_https  			OSX Meterpreter, kết nối ngược trực tiếp bằng kết nối HTTPS
+   osx/x64/meterpreter_reverse_tcp    			OSX Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   osx/x64/say       					OS X x64 say Shellcode
+   osx/x64/shell_bind_tcp             			OS X x64 Shell kết nối trực tiếp bằng kết nối TCP
+   osx/x64/shell_reverse_tcp          			OS X x64 Shell kết nối ngược bằng kết nối TCP
+   osx/x86/bundleinject/bind_tcp      			Mac OS X Inject Mach-O Bundle, kết nối trực tiếp bằng kết nối TCP
+   osx/x86/bundleinject/reverse_tcp   			Mac OS X Inject Mach-O Bundle, kết nối ngược bằng kết nối TCP
+   osx/x86/exec      					OS X Thực thi lệnh
+   osx/x86/isight/bind_tcp            			Mac OS X x86 iSight Photo Capture, kết nối trực tiếp bằng kết nối TCP
+   osx/x86/isight/reverse_tcp         			Mac OS X x86 iSight Photo Capture, kết nối ngược bằng kết nối TCP
+   osx/x86/shell_bind_tcp             			OS X Command Shell, kết nối trực tiếp bằng kết nối TCP
+   osx/x86/shell_reverse_tcp          			OS X Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   osx/x86/vforkshell/bind_tcp        			OS X (vfork) Command Shell, kết nối trực tiếp bằng kết nối TCP
+   osx/x86/vforkshell/reverse_tcp     			OS X (vfork) Command Shell, kết nối ngược bằng kết nối TCP
+   osx/x86/vforkshell_bind_tcp        			OS X (vfork) Command Shell, kết nối trực tiếp bằng kết nối TCP
+   osx/x86/vforkshell_reverse_tcp     			OS X (vfork) Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   php/bind_perl     					PHP Command Shell, kết nối trực tiếp bằng kết nối TCP(thông qua Perl)
+   php/bind_perl_ipv6					PHP Command Shell, kết nối trực tiếp bằng kết nối TCP(thông qua perl) IPv6
+   php/bind_php      					PHP Command Shell, kết nối trực tiếp bằng kết nối TCP(thông qua PHP)
+   php/bind_php_ipv6 					PHP Command Shell, kết nối trực tiếp bằng kết nối TCP(thông qua php) IPv6
+   php/download_exec 					PHP Tải xuống và thực thi
+   php/exec          					PHP Thực thi lệnh 
+   php/meterpreter/bind_tcp           			PHP Meterpreter, kết nối trực tiếp bằng kết nối TCP
+   php/meterpreter/bind_tcp_ipv6      			PHP Meterpreter, kết nối trực tiếp bằng kết nối TCP IPv6
+   php/meterpreter/bind_tcp_ipv6_uuid 			PHP Meterpreter, kết nối trực tiếp bằng kết nối TCP IPv6 với hỗ trợ UUID
+   php/meterpreter/bind_tcp_uuid      			PHP Meterpreter, kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID
+   php/meterpreter/reverse_tcp        			PHP Meterpreter, PHP kết nối ngược bằng kết nối TCP
+   php/meterpreter/reverse_tcp_uuid   			PHP Meterpreter, PHP kết nối ngược bằng kết nối TCP
+   php/meterpreter_reverse_tcp        			PHP Meterpreter, kết nối ngược trực tiếp bằng kết nối TCP
+   php/reverse_perl  					PHP Command, Kết nối TCP đảo ngược kép (thông qua Perl)
+   php/reverse_php   					PHP Command Shell, kết nối ngược bằng kết nối TCP (thông qua PHP)
+   python/meterpreter/bind_tcp        			Python Meterpreter, Python kết nối trực tiếp bằng kết nối TCP
+   python/meterpreter/bind_tcp_uuid   			Python Meterpreter, Python kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID
+   python/meterpreter/reverse_http    			Python Meterpreter, Python kết nối ngược bằng kết nối HTTP 
+   python/meterpreter/reverse_https   			Python Meterpreter, Python kết nối ngược bằng kết nối HTTPS
+   python/meterpreter/reverse_tcp     			Python Meterpreter, Python kết nối ngược bằng kết nối TCP
+   python/meterpreter/reverse_tcp_ssl 			Python Meterpreter, Python kết nối ngược bằng kết nối TCP SSL
+   python/meterpreter/reverse_tcp_uuid			Python Meterpreter, Python kết nối ngược bằng kết nối TCP với hỗ trợ UUID
+   python/meterpreter_bind_tcp        			Python Meterpreter Shell, kết nối trực tiếp bằng kết nối TCP
+   python/meterpreter_reverse_http    			Python Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối HTTP
+   python/meterpreter_reverse_https   			Python Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối HTTPS
+   python/meterpreter_reverse_tcp     			Python Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   python/shell_bind_tcp              			Command Shell, kết nối trực tiếp bằng kết nối TCP(thông qua python)
+   python/shell_reverse_tcp           			Command Shell, kết nối ngược bằng kết nối TCP (thông qua python)
+   python/shell_reverse_tcp_ssl       			Command Shell, kết nối ngược bằng kết nối TCP SSL (thông qua python)
+   python/shell_reverse_udp           			Command Shell, kết nối ngược bằng kết nối UDP (thông qua python)
+   ruby/shell_bind_tcp                			Ruby Command Shell, kết nối trực tiếp bằng kết nối TCP
+   ruby/shell_bind_tcp_ipv6           			Ruby Command Shell, kết nối trực tiếp bằng kết nối TCPIPv6
+   ruby/shell_reverse_tcp             			Ruby Command Shell, kết nối ngược bằng kết nối TCP
+   ruby/shell_reverse_tcp_ssl         			Ruby Command Shell, kết nối ngược bằng kết nối TCP SSL
+   solaris/sparc/shell_bind_tcp       			Solaris Command Shell, kết nối trực tiếp bằng kết nối TCP
+   solaris/sparc/shell_reverse_tcp    			Solaris Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   solaris/x86/shell_bind_tcp         			Solaris Command Shell, kết nối trực tiếp bằng kết nối TCP
+   solaris/x86/shell_reverse_tcp      			Solaris Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   tty/unix/interact 					Unix TTY, Tương tác với kết nối được thiết lập
+   windows/dllinject/bind_hidden_ipknock_tcp    	Reflective DLL Injection, Ẩn kết nối trực tiếp bằng Ipknock TCP
+   windows/dllinject/bind_hidden_tcp  			Reflective DLL Injection, Ẩn kết nối trực tiếp bằng kết nối TCP
+   windows/dllinject/bind_ipv6_tcp    			Reflective DLL Injection, kết nối trực tiếp bằng kết nối TCP IPv6 (Windows x86)
+   windows/dllinject/bind_ipv6_tcp_uuid         	Reflective DLL Injection, kết nối trực tiếp bằng kết nối TCP IPv6 với hỗ trợ UUID (Windows x86)
+   windows/dllinject/bind_named_pipe  			Reflective DLL Injection, Windows x86 kết nối trực tiếp bằng tên Pipe đã đặt
+   windows/dllinject/bind_nonx_tcp    			Reflective DLL Injection, kết nối trực tiếp bằng kết nối TCP (No NX or Win7)
+   windows/dllinject/bind_tcp         			Reflective DLL Injection, kết nối trực tiếp bằng kết nối TCP (Windows x86)
+   windows/dllinject/bind_tcp_rc4     			Reflective DLL Injection, kết nối trực tiếp bằng kết nối TCP (RC4 mã hóa, Metasm)
+   windows/dllinject/bind_tcp_uuid    			Reflective DLL Injection, kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID (Windows x86)
+   windows/dllinject/reverse_hop_http 			Reflective DLL Injection, kết nối ngược bằng kết nối Hop HTTP/HTTPS
+   windows/dllinject/reverse_http     			Reflective DLL Injection, Windows kết nối ngược bằng kết nối HTTP  (wininet)
+   windows/dllinject/reverse_http_proxy_pstore  	Reflective DLL Injection, kết nối ngược bằng kết nối HTTP  Proxy
+   windows/dllinject/reverse_ipv6_tcp 			Reflective DLL Injection, kết nối ngược bằng kết nối TCP (IPv6)
+   windows/dllinject/reverse_nonx_tcp 			Reflective DLL Injection, kết nối ngược bằng kết nối TCP (No NX or Win7)
+   windows/dllinject/reverse_ord_tcp  			Reflective DLL Injection, Đảo ngược TCP thông thường (No NX or Win7)
+   windows/dllinject/reverse_tcp      			Reflective DLL Injection, kết nối ngược bằng kết nối TCP
+   windows/dllinject/reverse_tcp_allports       	Reflective DLL Injection, kết nối ngược tới tất cả Port bằng kết nối TCP 
+   windows/dllinject/reverse_tcp_dns  			Reflective DLL Injection, kết nối ngược bằng kết nối TCP (DNS)
+   windows/dllinject/reverse_tcp_rc4  			Reflective DLL Injection, kết nối ngược bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/dllinject/reverse_tcp_rc4_dns        	Reflective DLL Injection, kết nối ngược bằng kết nối TCP (mã hóa RC4 DNS, Metasm)
+   windows/dllinject/reverse_tcp_uuid 			Reflective DLL Injection, kết nối ngược bằng kết nối TCP với hỗ trợ UUID
+   windows/dllinject/reverse_udp      			Reflective DLL Injection, kết nối ngược bằng kết nối UDP với hỗ trợ UUID
+   windows/dllinject/reverse_winhttp  			Reflective DLL Injection, Windows kết nối ngược bằng kết nối HTTP  (winhttp)
+   windows/dns_txt_query_exec         			DNS TXT Tải xuống và thực hiện tải trọng
+   windows/download_exec              			Windows Executable Tải (http,https,ftp) và thực thi
+   windows/exec      					Windows Thực thi lệnh
+   windows/loadlibrary                			Windows Đường dẫn thư viện
+   windows/messagebox					Windows Tin nhắn
+   windows/meterpreter/bind_hidden_ipknock_tcp  	Windows Meterpreter (Reflective Injection), Ẩn kết nối trực tiếp bằng Ipknock TCP
+   windows/meterpreter/bind_hidden_tcp			Windows Meterpreter (Reflective Injection), Ẩn kết nối trực tiếp bằng kết nối TCP
+   windows/meterpreter/bind_ipv6_tcp  			Windows Meterpreter (Reflective Injection), kết nối trực tiếp bằng kết nối TCP IPv6 (Windows x86)
+   windows/meterpreter/bind_ipv6_tcp_uuid       	Windows Meterpreter (Reflective Injection), kết nối trực tiếp bằng kết nối TCP IPv6 với hỗ trợ UUID (Windows x86)
+   windows/meterpreter/bind_named_pipe			Windows Meterpreter (Reflective Injection), Windows x86 nối trực tiếp bằng tên Pipe đã đặt
+   windows/meterpreter/bind_nonx_tcp  			Windows Meterpreter (Reflective Injection), kết nối trực tiếp bằng kết nối TCP (No NX or Win7)
+   windows/meterpreter/bind_tcp       			Windows Meterpreter (Reflective Injection), kết nối trực tiếp bằng kết nối TCP (Windows x86)
+   windows/meterpreter/bind_tcp_rc4   			Windows Meterpreter (Reflective Injection), kết nối trực tiếp bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/meterpreter/bind_tcp_uuid  			Windows Meterpreter (Reflective Injection), kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID (Windows x86)
+   windows/meterpreter/reverse_hop_http         	Windows Meterpreter (Reflective Injection), kết nối ngược bằng kết nối Hop HTTP/HTTPS
+   windows/meterpreter/reverse_http   			Windows Meterpreter (Reflective Injection), Windows kết nối ngược bằng kết nối HTTP  (wininet)
+   windows/meterpreter/reverse_http_proxy_pstore	Windows Meterpreter (Reflective Injection), kết nối ngược bằng kết nối HTTP  Proxy
+   windows/meterpreter/reverse_https  			Windows Meterpreter (Reflective Injection), Windows kết nối ngược bằng kết nối HTTPS (wininet)
+   windows/meterpreter/reverse_https_proxy      	Windows Meterpreter (Reflective Injection), kết nối ngược bằng kết nối HTTPS with Support for Custom Proxy
+   windows/meterpreter/reverse_ipv6_tcp         	Windows Meterpreter (Reflective Injection), kết nối ngược bằng kết nối TCP (IPv6)
+   windows/meterpreter/reverse_named_pipe       	Windows Meterpreter (Reflective Injection), Windows x86 nối ngược bằng tên Pipe đã đặt (SMB)
+   windows/meterpreter/reverse_nonx_tcp         	Windows Meterpreter (Reflective Injection), kết nối ngược bằng kết nối TCP (No NX or Win7)
+   windows/meterpreter/reverse_ord_tcp			Windows Meterpreter (Reflective Injection), Đảo ngược TCP thông thường (No NX or Win7)
+   windows/meterpreter/reverse_tcp    			Windows Meterpreter (Reflective Injection), kết nối ngược bằng kết nối TCP
+   windows/meterpreter/reverse_tcp_allports     	Windows Meterpreter (Reflective Injection), kết nối ngược tới tất cả Port bằng kết nối TCP 
+   windows/meterpreter/reverse_tcp_dns			Windows Meterpreter (Reflective Injection), kết nối ngược bằng kết nối TCP (DNS)
+   windows/meterpreter/reverse_tcp_rc4			Windows Meterpreter (Reflective Injection), kết nối ngược bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/meterpreter/reverse_tcp_rc4_dns      	Windows Meterpreter (Reflective Injection), kết nối ngược bằng kết nối TCP (mã hóa RC4 DNS, Metasm)
+   windows/meterpreter/reverse_tcp_uuid         	Windows Meterpreter (Reflective Injection), kết nối ngược bằng kết nối TCP với hỗ trợ UUID
+   windows/meterpreter/reverse_udp    			Windows Meterpreter (Reflective Injection), kết nối ngược bằng kết nối UDP với hỗ trợ UUID
+   windows/meterpreter/reverse_winhttp			Windows Meterpreter (Reflective Injection), Windows kết nối ngược bằng kết nối HTTP  (winhttp)
+   windows/meterpreter/reverse_winhttps         	Windows Meterpreter (Reflective Injection), Windows kết nối ngược bằng kết nối HTTPS (winhttp)
+   windows/meterpreter_bind_named_pipe			Windows Meterpreter Shell, nối trực tiếp bằng tên Pipe đã đặt
+   windows/meterpreter_bind_tcp       			Windows Meterpreter Shell, kết nối trực tiếp bằng kết nối TCP
+   windows/meterpreter_reverse_http   			Windows Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối HTTP
+   windows/meterpreter_reverse_https  			Windows Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối HTTPS
+   windows/meterpreter_reverse_ipv6_tcp         	Windows Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối TCP (IPv6)
+   windows/meterpreter_reverse_tcp    			Windows Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   windows/metsvc_bind_tcp            			Windows Meterpreter Service, kết nối trực tiếp bằng kết nối TCP
+   windows/metsvc_reverse_tcp         			Windows Meterpreter Service, kết nối ngược trực tiếp bằng kết nối TCP
+   windows/patchupdllinject/bind_hidden_ipknock_tcp	Windows Inject DLL, Ẩn kết nối trực tiếp bằng Ipknock TCP
+   windows/patchupdllinject/bind_hidden_tcp     	Windows Inject DLL, Ẩn kết nối trực tiếp bằng kết nối TCP
+   windows/patchupdllinject/bind_ipv6_tcp       	Windows Inject DLL, kết nối trực tiếp bằng kết nối TCP IPv6 (Windows x86)
+   windows/patchupdllinject/bind_ipv6_tcp_uuid  	Windows Inject DLL, kết nối trực tiếp bằng kết nối TCP IPv6 với hỗ trợ UUID (Windows x86)
+   windows/patchupdllinject/bind_named_pipe     	Windows Inject DLL, Windows x86 nối trực tiếp bằng tên Pipe đã đặt
+   windows/patchupdllinject/bind_nonx_tcp       	Windows Inject DLL, kết nối trực tiếp bằng kết nối TCP (No NX or Win7)
+   windows/patchupdllinject/bind_tcp  			Windows Inject DLL, kết nối trực tiếp bằng kết nối TCP (Windows x86)
+   windows/patchupdllinject/bind_tcp_rc4        	Windows Inject DLL, kết nối trực tiếp bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/patchupdllinject/bind_tcp_uuid       	Windows Inject DLL, kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID (Windows x86)
+   windows/patchupdllinject/reverse_ipv6_tcp    	Windows Inject DLL, kết nối ngược bằng kết nối TCP (IPv6)
+   windows/patchupdllinject/reverse_nonx_tcp    	Windows Inject DLL, kết nối ngược bằng kết nối TCP (No NX or Win7)
+   windows/patchupdllinject/reverse_ord_tcp     	Windows Inject DLL, Đảo ngược TCP thông thường (No NX or Win7)
+   windows/patchupdllinject/reverse_tcp         	Windows Inject DLL, kết nối ngược bằng kết nối TCP
+   windows/patchupdllinject/reverse_tcp_allports	Windows Inject DLL, kết nối ngược tới tất cả Port bằng kết nối TCP 
+   windows/patchupdllinject/reverse_tcp_dns     	Windows Inject DLL, kết nối ngược bằng kết nối TCP (DNS)
+   windows/patchupdllinject/reverse_tcp_rc4     	Windows Inject DLL, kết nối ngược bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/patchupdllinject/reverse_tcp_rc4_dns 	Windows Inject DLL, kết nối ngược bằng kết nối TCP (mã hóa RC4 DNS, Metasm)
+   windows/patchupdllinject/reverse_tcp_uuid    	Windows Inject DLL, kết nối ngược bằng kết nối TCP với hỗ trợ UUID
+   windows/patchupdllinject/reverse_udp         	Windows Inject DLL, kết nối ngược bằng kết nối UDP với hỗ trợ UUID
+   windows/patchupmeterpreter/bind_hidden_ipknock_tcp	Windows Meterpreter (skape/jt Injection), Ẩn kết nối trực tiếp bằng Ipknock TCP
+   windows/patchupmeterpreter/bind_hidden_tcp   	Windows Meterpreter (skape/jt Injection), Ẩn kết nối trực tiếp bằng kết nối TCP
+   windows/patchupmeterpreter/bind_ipv6_tcp     	Windows Meterpreter (skape/jt Injection), kết nối trực tiếp bằng kết nối TCP IPv6 (Windows x86)
+   windows/patchupmeterpreter/bind_ipv6_tcp_uuid	Windows Meterpreter (skape/jt Injection), kết nối trực tiếp bằng kết nối TCP IPv6 với hỗ trợ UUID (Windows x86)
+   windows/patchupmeterpreter/bind_named_pipe   	Windows Meterpreter (skape/jt Injection), Windows x86 nối trực tiếp bằng tên Pipe đã đặt
+   windows/patchupmeterpreter/bind_nonx_tcp     	Windows Meterpreter (skape/jt Injection), kết nối trực tiếp bằng kết nối TCP (No NX or Win7)
+   windows/patchupmeterpreter/bind_tcp			Windows Meterpreter (skape/jt Injection), kết nối trực tiếp bằng kết nối TCP (Windows x86)
+   windows/patchupmeterpreter/bind_tcp_rc4      	Windows Meterpreter (skape/jt Injection), kết nối trực tiếp bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/patchupmeterpreter/bind_tcp_uuid     	Windows Meterpreter (skape/jt Injection), kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID (Windows x86)
+   windows/patchupmeterpreter/reverse_ipv6_tcp  	Windows Meterpreter (skape/jt Injection), kết nối ngược bằng kết nối TCP (IPv6)
+   windows/patchupmeterpreter/reverse_nonx_tcp  	Windows Meterpreter (skape/jt Injection), kết nối ngược bằng kết nối TCP (No NX or Win7)
+   windows/patchupmeterpreter/reverse_ord_tcp   	Windows Meterpreter (skape/jt Injection), Đảo ngược TCP thông thường (No NX or Win7)
+   windows/patchupmeterpreter/reverse_tcp       	Windows Meterpreter (skape/jt Injection), kết nối ngược bằng kết nối TCP
+   windows/patchupmeterpreter/reverse_tcp_allports	Windows Meterpreter (skape/jt Injection), kết nối ngược tới tất cả Port bằng kết nối TCP 
+   windows/patchupmeterpreter/reverse_tcp_dns   	Windows Meterpreter (skape/jt Injection), kết nối ngược bằng kết nối TCP (DNS)
+   windows/patchupmeterpreter/reverse_tcp_rc4   	Windows Meterpreter (skape/jt Injection), kết nối ngược bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/patchupmeterpreter/reverse_tcp_rc4_dns	Windows Meterpreter (skape/jt Injection), kết nối ngược bằng kết nối TCP (mã hóa RC4 DNS, Metasm)
+   windows/patchupmeterpreter/reverse_tcp_uuid  	Windows Meterpreter (skape/jt Injection), kết nối ngược bằng kết nối TCP với hỗ trợ UUID
+   windows/patchupmeterpreter/reverse_udp       	Windows Meterpreter (skape/jt Injection), kết nối ngược bằng kết nối UDP với hỗ trợ UUID
+   windows/powershell_bind_tcp        			Windows Interactive Powershell Session, kết nối trực tiếp bằng kết nối TCP
+   windows/powershell_reverse_tcp     			Windows Interactive Powershell Session, kết nối ngược bằng kết nối TCP
+   windows/shell/bind_hidden_ipknock_tcp        	Windows Command Shell, Ẩn kết nối trực tiếp bằng Ipknock TCP
+   windows/shell/bind_hidden_tcp      			Windows Command Shell, Ẩn kết nối trực tiếp bằng kết nối TCP
+   windows/shell/bind_ipv6_tcp        			Windows Command Shell, kết nối trực tiếp bằng kết nối TCP IPv6 (Windows x86)
+   windows/shell/bind_ipv6_tcp_uuid   			Windows Command Shell, kết nối trực tiếp bằng kết nối TCP IPv6 với hỗ trợ UUID (Windows x86)
+   windows/shell/bind_named_pipe      			Windows Command Shell, Windows x86 nối trực tiếp bằng tên Pipe đã đặt
+   windows/shell/bind_nonx_tcp        			Windows Command Shell, kết nối trực tiếp bằng kết nối TCP (No NX or Win7)
+   windows/shell/bind_tcp             			Windows Command Shell, kết nối trực tiếp bằng kết nối TCP (Windows x86)
+   windows/shell/bind_tcp_rc4         			Windows Command Shell, kết nối trực tiếp bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/shell/bind_tcp_uuid        			Windows Command Shell, kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID (Windows x86)
+   windows/shell/reverse_ipv6_tcp     			Windows Command Shell, kết nối ngược bằng kết nối TCP (IPv6)
+   windows/shell/reverse_nonx_tcp     			Windows Command Shell, kết nối ngược bằng kết nối TCP (No NX or Win7)
+   windows/shell/reverse_ord_tcp      			Windows Command Shell, Đảo ngược TCP thông thường (No NX or Win7)
+   windows/shell/reverse_tcp          			Windows Command Shell, kết nối ngược bằng kết nối TCP
+   windows/shell/reverse_tcp_allports 			Windows Command Shell, kết nối ngược tới tất cả Port bằng kết nối TCP 
+   windows/shell/reverse_tcp_dns      			Windows Command Shell, kết nối ngược bằng kết nối TCP (DNS)
+   windows/shell/reverse_tcp_rc4      			Windows Command Shell, kết nối ngược bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/shell/reverse_tcp_rc4_dns  			Windows Command Shell, kết nối ngược bằng kết nối TCP (mã hóa RC4 DNS, Metasm)
+   windows/shell/reverse_tcp_uuid     			Windows Command Shell, kết nối ngược bằng kết nối TCP với hỗ trợ UUID
+   windows/shell/reverse_udp          			Windows Command Shell, kết nối ngược bằng kết nối UDP với hỗ trợ UUID
+   windows/shell_bind_tcp             			Windows Command Shell, kết nối trực tiếp bằng kết nối TCP
+   windows/shell_bind_tcp_xpfw        			Windows Disable Windows ICF, Command Shell, kết nối trực tiếp bằng kết nối TCP
+   windows/shell_hidden_bind_tcp      			Windows Command Shell, Ẩn kết nối trực tiếp bằng kết nối TCP
+   windows/shell_reverse_tcp          			Windows Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   windows/speak_pwned                			Windows Speech API - nói "You Got Pwned!"
+   windows/upexec/bind_hidden_ipknock_tcp       	Windows Upload/Execute, Ẩn kết nối trực tiếp bằng Ipknock TCP
+   windows/upexec/bind_hidden_tcp     			Windows Upload/Execute, Ẩn kết nối trực tiếp bằng kết nối TCP
+   windows/upexec/bind_ipv6_tcp       			Windows Upload/Execute, kết nối trực tiếp bằng kết nối TCP IPv6 (Windows x86)
+   windows/upexec/bind_ipv6_tcp_uuid  			Windows Upload/Execute, kết nối trực tiếp bằng kết nối TCP IPv6 với hỗ trợ UUID (Windows x86)
+   windows/upexec/bind_named_pipe     			Windows Upload/Execute, Windows x86 nối trực tiếp bằng tên Pipe đã đặt
+   windows/upexec/bind_nonx_tcp       			Windows Upload/Execute, kết nối trực tiếp bằng kết nối TCP (No NX or Win7)
+   windows/upexec/bind_tcp            			Windows Upload/Execute, kết nối trực tiếp bằng kết nối TCP (Windows x86)
+   windows/upexec/bind_tcp_rc4        			Windows Upload/Execute, kết nối trực tiếp bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/upexec/bind_tcp_uuid       			Windows Upload/Execute, kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID (Windows x86)
+   windows/upexec/reverse_ipv6_tcp    			Windows Upload/Execute, kết nối ngược bằng kết nối TCP (IPv6)
+   windows/upexec/reverse_nonx_tcp    			Windows Upload/Execute, kết nối ngược bằng kết nối TCP (No NX or Win7)
+   windows/upexec/reverse_ord_tcp     			Windows Upload/Execute, Đảo ngược TCP thông thường (No NX or Win7)
+   windows/upexec/reverse_tcp         			Windows Upload/Execute, kết nối ngược bằng kết nối TCP
+   windows/upexec/reverse_tcp_allports			Windows Upload/Execute, kết nối ngược tới tất cả Port bằng kết nối TCP 
+   windows/upexec/reverse_tcp_dns     			Windows Upload/Execute, kết nối ngược bằng kết nối TCP (DNS)
+   windows/upexec/reverse_tcp_rc4     			Windows Upload/Execute, kết nối ngược bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/upexec/reverse_tcp_rc4_dns 			Windows Upload/Execute, kết nối ngược bằng kết nối TCP (mã hóa RC4 DNS, Metasm)
+   windows/upexec/reverse_tcp_uuid    			Windows Upload/Execute, kết nối ngược bằng kết nối TCP với hỗ trợ UUID
+   windows/upexec/reverse_udp         			Windows Upload/Execute, kết nối ngược bằng kết nối UDP với hỗ trợ UUID
+   windows/vncinject/bind_hidden_ipknock_tcp    	VNC Server (Reflective Injection), Ẩn kết nối trực tiếp bằng Ipknock TCP
+   windows/vncinject/bind_hidden_tcp  			VNC Server (Reflective Injection), Ẩn kết nối trực tiếp bằng kết nối TCP
+   windows/vncinject/bind_ipv6_tcp    			VNC Server (Reflective Injection), kết nối trực tiếp bằng kết nối TCP IPv6 (Windows x86)
+   windows/vncinject/bind_ipv6_tcp_uuid         	VNC Server (Reflective Injection), kết nối trực tiếp bằng kết nối TCP IPv6 với hỗ trợ UUID (Windows x86)
+   windows/vncinject/bind_named_pipe  			VNC Server (Reflective Injection), Windows x86 nối trực tiếp bằng tên Pipe đã đặt
+   windows/vncinject/bind_nonx_tcp    			VNC Server (Reflective Injection), kết nối trực tiếp bằng kết nối TCP (No NX or Win7)
+   windows/vncinject/bind_tcp         			VNC Server (Reflective Injection), kết nối trực tiếp bằng kết nối TCP (Windows x86)
+   windows/vncinject/bind_tcp_rc4     			VNC Server (Reflective Injection), kết nối trực tiếp bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/vncinject/bind_tcp_uuid    			VNC Server (Reflective Injection), kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID (Windows x86)
+   windows/vncinject/reverse_hop_http 			VNC Server (Reflective Injection), kết nối ngược bằng kết nối Hop HTTP/HTTPS
+   windows/vncinject/reverse_http     			VNC Server (Reflective Injection), Windows kết nối ngược bằng kết nối HTTP  (wininet)
+   windows/vncinject/reverse_http_proxy_pstore  	VNC Server (Reflective Injection), kết nối ngược bằng kết nối HTTP  Proxy
+   windows/vncinject/reverse_ipv6_tcp 			VNC Server (Reflective Injection), kết nối ngược bằng kết nối TCP (IPv6)
+   windows/vncinject/reverse_nonx_tcp 			VNC Server (Reflective Injection), kết nối ngược bằng kết nối TCP (No NX or Win7)
+   windows/vncinject/reverse_ord_tcp  			VNC Server (Reflective Injection), Đảo ngược TCP thông thường (No NX or Win7)
+   windows/vncinject/reverse_tcp      			VNC Server (Reflective Injection), kết nối ngược bằng kết nối TCP
+   windows/vncinject/reverse_tcp_allports       	VNC Server (Reflective Injection), kết nối ngược tới tất cả Port bằng kết nối TCP 
+   windows/vncinject/reverse_tcp_dns  			VNC Server (Reflective Injection), kết nối ngược bằng kết nối TCP (DNS)
+   windows/vncinject/reverse_tcp_rc4  			VNC Server (Reflective Injection), kết nối ngược bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/vncinject/reverse_tcp_rc4_dns        	VNC Server (Reflective Injection), kết nối ngược bằng kết nối TCP (mã hóa RC4 DNS, Metasm)
+   windows/vncinject/reverse_tcp_uuid 			VNC Server (Reflective Injection), kết nối ngược bằng kết nối TCP với hỗ trợ UUID
+   windows/vncinject/reverse_udp      			VNC Server (Reflective Injection), kết nối ngược bằng kết nối UDP với hỗ trợ UUID
+   windows/vncinject/reverse_winhttp  			VNC Server (Reflective Injection), Windows kết nối ngược bằng kết nối HTTP  (winhttp)
+   windows/x64/exec  					Windows x64 Thực thi lệnh
+   windows/x64/loadlibrary            			Windows x64 Đường dẫn thư viện
+   windows/x64/messagebox             			Windows Tin nhắn x64
+   windows/x64/meterpreter/bind_ipv6_tcp        	Windows Meterpreter (Reflective Injection x64), Windows x64 IPv6 kết nối trực tiếp bằng kết nối TCP
+   windows/x64/meterpreter/bind_ipv6_tcp_uuid   	Windows Meterpreter (Reflective Injection x64), Windows x64 IPv6 kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID
+   windows/x64/meterpreter/bind_named_pipe      	Windows Meterpreter (Reflective Injection x64), Windows x64 nối trực tiếp bằng tên Pipe đã đặt
+   windows/x64/meterpreter/bind_tcp   			Windows Meterpreter (Reflective Injection x64), Windows x64 kết nối trực tiếp bằng kết nối TCP
+   windows/x64/meterpreter/bind_tcp_uuid        	Windows Meterpreter (Reflective Injection x64), kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID (Windows x64)
+   windows/x64/meterpreter/reverse_http         	Windows Meterpreter (Reflective Injection x64), Windows x64 kết nối ngược bằng kết nối HTTP  (wininet)
+   windows/x64/meterpreter/reverse_https        	Windows Meterpreter (Reflective Injection x64), Windows x64 kết nối ngược bằng kết nối HTTP  (wininet)
+   windows/x64/meterpreter/reverse_named_pipe   	Windows Meterpreter (Reflective Injection x64), Windows x64 nối ngược bằng tên Pipe đã đặt (SMB)
+   windows/x64/meterpreter/reverse_tcp			Windows Meterpreter (Reflective Injection x64), Windows x64 kết nối ngược bằng kết nối TCP
+   windows/x64/meterpreter/reverse_tcp_rc4      	Windows Meterpreter (Reflective Injection x64), kết nối ngược bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/x64/meterpreter/reverse_tcp_uuid     	Windows Meterpreter (Reflective Injection x64), kết nối ngược bằng kết nối TCP với hỗ trợ UUID (Windows x64)
+   windows/x64/meterpreter/reverse_winhttp      	Windows Meterpreter (Reflective Injection x64), Windows x64 kết nối ngược bằng kết nối HTTP  (winhttp)
+   windows/x64/meterpreter/reverse_winhttps     	Windows Meterpreter (Reflective Injection x64), Windows x64 kết nối ngược bằng kết nối HTTPS (winhttp)
+   windows/x64/meterpreter_bind_named_pipe      	Windows Meterpreter Shell, nối trực tiếp bằng tên Pipe đã đặt (x64)
+   windows/x64/meterpreter_bind_tcp   			Windows Meterpreter Shell, kết nối trực tiếp bằng kết nối TCP (x64)
+   windows/x64/meterpreter_reverse_http         	Windows Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối HTTP (x64)
+   windows/x64/meterpreter_reverse_https        	Windows Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối HTTPS (x64)
+   windows/x64/meterpreter_reverse_ipv6_tcp     	Windows Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối TCP (IPv6) (x64)
+   windows/x64/meterpreter_reverse_tcp			Windows Meterpreter Shell, kết nối ngược trực tiếp bằng kết nối TCP x64
+   windows/x64/powershell_bind_tcp    			Windows Interactive Powershell Session, kết nối trực tiếp bằng kết nối TCP
+   windows/x64/powershell_reverse_tcp 			Windows Interactive Powershell Session, kết nối ngược bằng kết nối TCP
+   windows/x64/shell/bind_ipv6_tcp    			Windows x64 Command Shell, Windows x64 IPv6 kết nối trực tiếp bằng kết nối TCP
+   windows/x64/shell/bind_ipv6_tcp_uuid         	Windows x64 Command Shell, Windows x64 IPv6 kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID
+   windows/x64/shell/bind_named_pipe  			Windows x64 Command Shell, Windows x64 nối trực tiếp bằng tên Pipe đã đặt
+   windows/x64/shell/bind_tcp         			Windows x64 Command Shell, Windows x64 kết nối trực tiếp bằng kết nối TCP
+   windows/x64/shell/bind_tcp_uuid    			Windows x64 Command Shell, kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID (Windows x64)
+   windows/x64/shell/reverse_tcp      			Windows x64 Command Shell, Windows x64 kết nối ngược bằng kết nối TCP
+   windows/x64/shell/reverse_tcp_rc4  			Windows x64 Command Shell, kết nối ngược bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/x64/shell/reverse_tcp_uuid 			Windows x64 Command Shell, kết nối ngược bằng kết nối TCP với hỗ trợ UUID (Windows x64)
+   windows/x64/shell_bind_tcp         			Windows x64 Command Shell, kết nối trực tiếp bằng kết nối TCP
+   windows/x64/shell_reverse_tcp      			Windows x64 Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
+   windows/x64/vncinject/bind_ipv6_tcp			Windows x64 VNC Server (Reflective Injection), Windows x64 IPv6 kết nối trực tiếp bằng kết nối TCP
+   windows/x64/vncinject/bind_ipv6_tcp_uuid     	Windows x64 VNC Server (Reflective Injection), Windows x64 IPv6 kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID
+   windows/x64/vncinject/bind_named_pipe        	Windows x64 VNC Server (Reflective Injection), Windows x64 nối trực tiếp bằng tên Pipe đã đặt
+   windows/x64/vncinject/bind_tcp     			Windows x64 VNC Server (Reflective Injection), Windows x64 kết nối trực tiếp bằng kết nối TCP
+   windows/x64/vncinject/bind_tcp_uuid			Windows x64 VNC Server (Reflective Injection), kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID (Windows x64)
+   windows/x64/vncinject/reverse_http 			Windows x64 VNC Server (Reflective Injection), Windows x64 kết nối ngược bằng kết nối HTTP  (wininet)
+   windows/x64/vncinject/reverse_https			Windows x64 VNC Server (Reflective Injection), Windows x64 kết nối ngược bằng kết nối HTTP  (wininet)
+   windows/x64/vncinject/reverse_tcp  			Windows x64 VNC Server (Reflective Injection), Windows x64 kết nối ngược bằng kết nối TCP
+   windows/x64/vncinject/reverse_tcp_rc4        	Windows x64 VNC Server (Reflective Injection), kết nối ngược bằng kết nối TCP (mã hóa RC4, Metasm)
+   windows/x64/vncinject/reverse_tcp_uuid       	Windows x64 VNC Server (Reflective Injection), kết nối ngược bằng kết nối TCP với hỗ trợ UUID (Windows x64)
+   windows/x64/vncinject/reverse_winhttp        	Windows x64 VNC Server (Reflective Injection), Windows x64 kết nối ngược bằng kết nối HTTP  (winhttp)
+   windows/x64/vncinject/reverse_winhttps       	Windows x64 VNC Server (Reflective Injection), Windows x64 kết nối ngược bằng kết nối HTTPS (winhttp)
