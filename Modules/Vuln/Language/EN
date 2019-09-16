@@ -19,4 +19,5 @@ not_module_check="This module does not support the command: \"check\""
 check_vuln="Start checking on"
 scan_start="Start scanning and checking"
 scan_stop="Done. Module completed"
+yout_sure="Are you sure this server has the vulnerability?"
 
