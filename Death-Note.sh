@@ -8,8 +8,10 @@ scriptname="Death-Note.sh"
 config_language="$Work_dir/config/config-language"
 Metasploit_Config="$Work_dir/config/metasploit-config"
 dir_malware_tools="Tools/Synthetic-Malware"
+banner_script="$Work_dir/Modules/Banner/banner.sh"
 update_script="$Work_dir/Modules/Update/update.sh"
 source install.sh
+source $banner_script
 source $update_script
 #
 IP=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/'`
@@ -27,20 +29,6 @@ RESET="\033[00m" #normal
 #Banner
 #
 ######
-
-function Banner {
-echo ""
-echo ""
-echo -e $red'	M"""""""YMM'${white}'                     dP   dP                              dP 		'           
-echo -e $red"	M  ${white}mmmm.$red "'`'"M${white}                     88   88                              88            	"
-echo -e $red"	M  ${white}MMMMM$red  M${white} .d8888b. .d8888b. d8888P 88d888b.    88d888b. .d8888b. d8888P .d8888b. 	"
-echo -e $red"	M  ${white}MMMMM$red  M${white} 88ooood8 88'  "'`'"88   88   88'  "'`'"88    88'  "'`'"88 88'  "'`'"88   88   88ooood8 	"
-echo -e $red"	M  ${white}MMMM'$red .M${white} 88.  ... 88.  .88   88   88    88    88    88 88.  .88   88   88.  ... 	"
-echo -e $red"	M       .MM${white} "'`'"88888P' "'`'"88888P8   dP   dP    dP    dP    dP "'`'"88888P'   dP   "'`'"88888P' 	"
-echo -e $red"	MMMMMMMMMMM${white}                                                                        	${RESET}"
-echo -e " 								Project's :${red} Ryuk-shinigami ${RESET}"
-echo ""
-}
 Banner
 function language {
 		
