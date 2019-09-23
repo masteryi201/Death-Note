@@ -2,8 +2,9 @@
 Version=1.0
 Name=Death-Note
 Name[ja]=デスノート
+Name[vi]=Cuốn sổ thiên mệnh
 Comment=All Tools In One
-Exec=gnome-terminal -t "Death-Note" --geometry=98x30 -e "bash -c 'Death-Note';-bash"
+Exec=gnome-terminal --window --title "Death-Note" --hide-menubar --geometry=98x30 --command "bash -c 'Death-Note';-bash" > /dev/null
 Icon=/usr/share/icons/Death-Note.ico
 Terminal=true
 Type=Application
