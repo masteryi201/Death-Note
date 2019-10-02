@@ -26,10 +26,10 @@ red='\e[31m'
 white="\e[97m" #normal
 RESET="\033[00m" #normal
 ######
-#Banner
+#banner1
 #
 ######
-Banner
+banner1
 function language {
 		
                 echo  -e " Select your language"
@@ -65,7 +65,7 @@ while true; do
 			Banner
 			cd Modules/Vuln/
 			./Exploit.sh
-			clear; Banner; order; break;;
+			clear; banner1; order; break;;
 		3 )
 
 			echo "		$GenMess"
@@ -77,7 +77,7 @@ while true; do
 			case $parameter in
 					1 ) GenAndLis; break;;
 					2 ) maware_tools; break;;
-					99 ) clear; Banner; order; break;;
+					99 ) clear; banner1; order; break;;
 					* ) echo -e "$error1";
 					echo  -ne "$input_choose";;
 			esac
@@ -95,7 +95,7 @@ while true; do
 			case $parameter in
 					1 ) WiFiAttacks; break;;
 					2 ) BluetoothAttacks; break;;
-					99) clear; Banner; order; break;;
+					99) clear; banner1; order; break;;
 					* ) echo -e "$error1";
 					echo  -ne "$input_choose";;
 			esac
@@ -111,21 +111,21 @@ while true; do
 			case $parameter in
 				1) echo $not_yet_developed;;
 				2) cleanup;
-				   ShowAndInstall_ExploitTools; clear; Banner; order; break;;
+				   ShowAndInstall_ExploitTools; clear; banner1; order; break;;
 				3) cleanup;
-				   ShowAndInstall_MalwareTools; clear; Banner; order; break;;
+				   ShowAndInstall_MalwareTools; clear; banner1; order; break;;
 				4) echo $not_yet_developed;;
 				5) echo $not_yet_developed;;
 				6) cleanup;
-				   ShowAndInstall_WiFiTools; clear; Banner; order; break;;
+				   ShowAndInstall_WiFiTools; clear; banner1; order; break;;
 				7) echo $not_yet_developed;;
 				8)
-				   add_module_metasploits; clear; Banner; order; break;;
+				   add_module_metasploits; clear; banner1; order; break;;
 				9)
-				   create_shotcut; clear; Banner; order; break;;
+				   create_shotcut; clear; banner1; order; break;;
 
 				0) cleanup;
-				   ShowAndInstall_ALLTools; clear; Banner; order; break;;
+				   ShowAndInstall_ALLTools; clear; banner1; order; break;;
 				* ) echo  "$error1";
 			esac
 			done
@@ -156,7 +156,7 @@ while true; do
 		else
 		echo "	$not_internet"
 		echo ""
-                fi; sleep 2; clear; Banner; order; break;;
+                fi; sleep 2; clear; banner1; order; break;;
 		e ) function_exit;;
 		* ) echo  "$error1";
 	esac
@@ -198,82 +198,82 @@ gen_backdoor_table
 		case $choose in
 1)	###################### Dr0p1t-Framework ###########################
 			cd $dir_malware_tools/Dr0p1t-Framework/
-			python Dr0p1t.py; clear; Banner; order; break;;
+			python Dr0p1t.py; clear; banner1; order; break;;
 2)	###################### DKMC ###########################
 			cd $dir_malware_tools/DKMC/
-			python dkmc.py; clear; Banner; order; break;;
+			python dkmc.py; clear; banner1; order; break;;
 3)	###################### TheFatRat ######################
 			cd $dir_malware_tools/TheFatRat/
-			./fatrat; clear; Banner; order; break;;
+			./fatrat; clear; banner1; order; break;;
 4) 	###################### msfpc ##########################	
 			function_config_mode1
 			cd $Work_dir/$dir_malware_tools/mpc/
-			./msfpc1.sh; clear;cd $Work_dir; Banner; order; break;;
+			./msfpc1.sh; clear;cd $Work_dir; banner1; order; break;;
 5)	###################### Winpayloads ###########################
 			cd $dir_malware_tools/Winpayloads/
-			python WinPayloads.py; clear; Banner; order; break;;
+			python WinPayloads.py; clear; banner1; order; break;;
 6)	###################### astroid ###########################
-			echo "Tool này đang trong quá trình thử nghiệm chưa thể  biên dịch thành file exe, Sorry :V chọn tool khác đeeeee "; clear; Banner; order; break;;
+			echo "Tool này đang trong quá trình thử nghiệm chưa thể  biên dịch thành file exe, Sorry :V chọn tool khác đeeeee "; clear; banner1; order; break;;
 7)	###################### phantom-evasion ###########################
 			cd $dir_malware_tools/Phantom-Evasion/
-			python phantom-evasion.py; clear; Banner; order; break;;
+			python phantom-evasion.py; clear; banner1; order; break;;
 8)	###################### tophat ###########################
 			cd $dir_malware_tools/TopHat/
-			python tophat.py; clear; Banner; order; break;;
+			python tophat.py; clear; banner1; order; break;;
 9) 	###################### MPM ##########################	
 		  	cd $dir_malware_tools/Meterpreter_Paranoid_Mode-SSL/
 			function_config_mode2
-			./Meterpreter_Paranoid_Mode.sh; clear;cd $Work_dir; Banner; order; break;;
+			./Meterpreter_Paranoid_Mode.sh; clear;cd $Work_dir; banner1; order; break;;
 10)	###################### venom ###########################
 			cd $dir_malware_tools/venom/
-			./venom.sh; clear; Banner; order; break;;
+			./venom.sh; clear; banner1; order; break;;
 11)	###################### HERCULES ###########################
 			cd $dir_malware_tools/HERCULES/
-			HERCULES; clear; Banner; order; break;;
+			HERCULES; clear; banner1; order; break;;
 12) 	###################### zirikatu ##########################
 		  	cd $dir_malware_tools/zirikatu/
 			function_config_mode2
-			./zirikatu.sh; clear;cd $Work_dir; Banner; order; break;;
+			./zirikatu.sh; clear;cd $Work_dir; banner1; order; break;;
 13)	###################### CHAOS ###########################
 			cd $dir_malware_tools/CHAOS/
-			go run CHAOS.go; clear; Banner; order; break;;
+			go run CHAOS.go; clear; banner1; order; break;;
 14)	###################### NXcrypt ###########################
 			cd $dir_malware_tools/NXcrypt/
-			python NXcrypt.py; clear; Banner; order; break;;	
+			python NXcrypt.py; clear; banner1; order; break;;	
 15)	###################### Reverse0x1 ###########################
 			cd $dir_malware_tools/Reverse0x1/
-			python reverse.py; clear; Banner; order; break;;
+			python reverse.py; clear; banner1; order; break;;
 17)	###################### Trolo ###########################
 			cd $dir_malware_tools/trolo/
 			function_config_mode2
-			./trolo.sh; clear;cd $Work_dir; Banner; order; break;;
+			./trolo.sh; clear;cd $Work_dir; banner1; order; break;;
 18)	###################### Metasploitavevasion ###########################
 			function_config_mode1
 			cd $Work_dir/$dir_malware_tools/metasploitavevasion/
-			./avoid.sh; clear;cd $Work_dir; Banner; order; break;;
+			./avoid.sh; clear;cd $Work_dir; banner1; order; break;;
 19)	###################### Terminator ###########################
 			cd $dir_malware_tools/Terminator/
-			python terminator.py; clear; Banner; order; break;;
+			python terminator.py; clear; banner1; order; break;;
 20)	###################### HackTheWorld ###########################
 			cd $dir_malware_tools/HackTheWorld/
-			python HackTheWorld.py; clear; Banner; order; break;;
+			python HackTheWorld.py; clear; banner1; order; break;;
 21)	###################### Avet ###########################
 			cd $dir_malware_tools/Reverse0x1/
-			python reverse.py; clear; Banner; order; break;;
+			python reverse.py; clear; banner1; order; break;;
 22)	###################### ZeroDoor ###########################
 			cd $dir_malware_tools/Zerodoor/
-			python zerodoor.py; clear; Banner; order; break;;
+			python zerodoor.py; clear; banner1; order; break;;
 23)	###################### Andspoilt ###########################
 			cd $dir_malware_tools/Andspoilt/
-			python andspoilt.py; clear; Banner; order; break;;
+			python andspoilt.py; clear; banner1; order; break;;
 24)	###################### Koadic ###########################
 			cd $dir_malware_tools/koadic/
-			./koadic; clear; Banner; order; break;;
+			./koadic; clear; banner1; order; break;;
 25)	###################### Mkvenom ###########################
 			cd $dir_malware_tools/mkvenom/
-			./mkvenom.sh; clear; Banner; order; break;;
+			./mkvenom.sh; clear; banner1; order; break;;
 99)	###################### back ###########################
-	clear; Banner; order; break;;
+	clear; banner1; order; break;;
 * ) echo -e "$error1";
 		echo  -ne "$input_choose";;
 		esac
@@ -288,10 +288,10 @@ function maware_tools {
 		case $choose in
 1)	###################### BeeLogger ###########################
 			cd $dir_malware_tools/BeeLogger/
-			python bee.py; clear; Banner; order; break;;			
+			python bee.py; clear; banner1; order; break;;			
 2)	###################### TheFatRat ######################
 			cd $dir_malware_tools/sAINT/
-			java -jar sAINT.jar; clear; Banner; order; break;;
+			java -jar sAINT.jar; clear; banner1; order; break;;
 99)	order; break;;
 * ) echo -e "$error1";
 		echo  -ne "$input_choose";;
@@ -308,16 +308,16 @@ function WiFiAttacks {
 				1 )	echo $not_yet_developed;;
 				2 ) 	echo $not_yet_developed;;
 				4 )     cd $Work_dir/Tools/Wireless-Attacks/pmkcrack/;
-					./pmkcrack.sh; clear; Banner; order; break;;
+					./pmkcrack.sh; clear; banner1; order; break;;
 				5 ) 	cd $Work_dir/Tools/Wireless-Attacks/wifiphisher/;
-						clear; Banner; order; break;;
+						clear; banner1; order; break;;
 				6 ) 	cd $Work_dir/Tools/Wireless-Attacks/airgeddon/
-					./airgeddon.sh; clear; Banner; order; break;;
+					./airgeddon.sh; clear; banner1; order; break;;
 				7 ) 	cd $Work_dir/Tools/Wireless-Attacks/fluxion/
-					./fluxion.sh; clear; Banner; order; break;;
+					./fluxion.sh; clear; banner1; order; break;;
 				8 ) echo $not_yet_developed;;
 				9 ) echo $not_yet_developed;;
-				99 ) clear; Banner; order; break;;
+				99 ) clear; banner1; order; break;;
 				* ) echo -e "$error1";
 				echo  -ne "$input_choose";;
 		esac
