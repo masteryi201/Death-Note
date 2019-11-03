@@ -103,8 +103,8 @@ echo -e "${cyan}	Clean and Update System${RESET}"
 ##################################################################
 function cve201711882 {	
 cve201711882=`find $Folder_exploitTools -name CVE-2017-11882 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2017-11882"`
-cve201711882_sh=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2017-11882 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-11882_office_rce.sh"`
-	if [[ "$cve201711882" = "Tools/Vulnerability-Exploit/CVE-2017-11882" ]] || [[ "$cve201711882_sh" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-11882_office_rce.sh" ]]; then
+cve201711882_exc=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2017-11882 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-11882_office_rce.sh"`
+	if [[ "$cve201711882" = "Tools/Vulnerability-Exploit/CVE-2017-11882" ]] || [[ "$cve201711882_exc" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-11882_office_rce.sh" ]]; then
 		echo -e "[ ✔ ]   CVE-2017-11882 tool ${white}................ ${yellow}$Installed ${RESET}"
 	else    echo -e "[ ! ]   CVE-2017-11882 tool ${white}................ ${red}$NotInstalled ${RESET}"
 		cd $Folder_exploitTools
@@ -120,8 +120,8 @@ cve201711882_sh=`find $direxploit_expframework/exploit/windows/fileformat -name 
 }
 function cve20170199 {	
 cve20170199=`find $Folder_exploitTools -name CVE-2017-0199 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2017-0199"`
-cve20170199_sh=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2017-0199 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-0199_office_rce.sh"`
-	if [[ "$cve20170199" = "Tools/Vulnerability-Exploit/CVE-2017-0199" ]] || [[ "$cve20170199_sh" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-0199_office_rce.sh" ]]; then
+cve20170199_exc=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2017-0199 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-0199_office_rce.sh"`
+	if [[ "$cve20170199" = "Tools/Vulnerability-Exploit/CVE-2017-0199" ]] || [[ "$cve20170199_exc" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-0199_office_rce.sh" ]]; then
 		echo -e "[ ✔ ]   CVE-2017-0199 tool ${white}................ ${yellow}$Installed ${RESET}"
 	else    echo -e "[ ! ]   CVE-2017-0199 tool ${white}................ ${red}$NotInstalled ${RESET}"
 		cd $Folder_exploitTools
@@ -136,8 +136,8 @@ cve20170199_sh=`find $direxploit_expframework/exploit/windows/fileformat -name C
 }
 function cve20178570 {	
 cve20178570=`find $Folder_exploitTools -name CVE-2017-8570 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2017-8570"`
-cve20178570_sh=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2017-8570 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-8570_office_rce.sh"`
-	if [[ "$cve20178570" = "Tools/Vulnerability-Exploit/CVE-2017-8570" ]] || [[ "$cve20178570_sh" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-8570_office_rce.sh" ]]; then
+cve20178570_exc=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2017-8570 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-8570_office_rce.sh"`
+	if [[ "$cve20178570" = "Tools/Vulnerability-Exploit/CVE-2017-8570" ]] || [[ "$cve20178570_exc" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2017-8570_office_rce.sh" ]]; then
 		echo -e "[ ✔ ]   CVE-2017-8570 tool ${white}................ ${yellow}$Installed ${RESET}"
 	else    echo -e "[ ! ]   CVE-2017-8570 tool ${white}................ ${red}$NotInstalled ${RESET}"
 		cd $Folder_exploitTools
@@ -154,8 +154,8 @@ cve20178570_sh=`find $direxploit_expframework/exploit/windows/fileformat -name C
 }
 function cve20180802 {	
 cve20180802=`find $Folder_exploitTools -name CVE-2018-0802 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2018-0802"`
-cve20180802_sh=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2018-0802 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2018-0802_office_rce.sh"`
-	if [[ "$cve20180802" = "Tools/Vulnerability-Exploit/CVE-2018-0802" ]] || [[ "$cve20180802" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2018-0802_office_rce.sh" ]]; then
+cve20180802_exc=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2018-0802 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2018-0802_office_rce.sh"`
+	if [[ "$cve20180802" = "Tools/Vulnerability-Exploit/CVE-2018-0802" ]] || [[ "$cve20180802_exc" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2018-0802_office_rce.sh" ]]; then
 		echo -e "[ ✔ ]   CVE-2018-0802 tool ${white}................ ${yellow}$Installed ${RESET}"
 	else    echo -e "[ ! ]   CVE-2018-0802 tool ${white}................ ${red}$NotInstalled ${RESET}"
 		cd $Folder_exploitTools
@@ -169,8 +169,8 @@ cve20180802_sh=`find $direxploit_expframework/exploit/windows/fileformat -name C
 }
 function cve201820250 {	
 cve201820250=`find $Folder_exploitTools -name CVE-2018-20250 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2018-20250"`
-cve201820250_sh=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2018-20250 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2018-20250_winrar_rce.sh"`
-	if [[ "$cve201820250" = "Tools/Vulnerability-Exploit/CVE-2018-20250" ]] || [[ "$cve201820250_sh" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2018-20250_winrar_rce.sh" ]]; then
+cve201820250_exc=`find $direxploit_expframework/exploit/windows/fileformat -name CVE-2018-20250 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2018-20250_winrar_rce.sh"`
+	if [[ "$cve201820250" = "Tools/Vulnerability-Exploit/CVE-2018-20250" ]] || [[ "$cve201820250_exc" = "Modules/Vuln/Framework/exploit/windows/fileformat/CVE-2018-20250_winrar_rce.sh" ]]; then
 		echo -e "[ ✔ ]   CVE-2018-20250 tool ${white}................ ${yellow}$Installed ${RESET}"
 	else    echo -e "[ ! ]   CVE-2018-20250 tool ${white}................ ${red}$NotInstalled ${RESET}"
 		cd $Folder_exploitTools
@@ -185,8 +185,8 @@ cve201820250_sh=`find $direxploit_expframework/exploit/windows/fileformat -name 
 }
 function cve201915107 {	
 cve201915107=`find $Folder_exploitTools -name CVE-2019-15107 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2019-15107"`
-cve201915107_sh=`find $direxploit_expframework/exploit/unix/webapp -name CVE-2019-15107 -type d | grep -w "Modules/Vuln/Framework/exploit/unix/webapp/CVE-2019-15107_webmin_rce.sh"`
-	if [[ "$cve201915107" = "Tools/Vulnerability-Exploit/CVE-2019-15107" ]] || [[ "$cve201915107_sh" = "Modules/Vuln/Framework/exploit/unix/webapp/CVE-2019-15107_webmin_rce.sh" ]]; then
+cve201915107_exc=`find $direxploit_expframework/exploit/unix/webapp -name CVE-2019-15107 -type d | grep -w "Modules/Vuln/Framework/exploit/unix/webapp/CVE-2019-15107_webmin_rce.sh"`
+	if [[ "$cve201915107" = "Tools/Vulnerability-Exploit/CVE-2019-15107" ]] || [[ "$cve201915107_exc" = "Modules/Vuln/Framework/exploit/unix/webapp/CVE-2019-15107_webmin_rce.sh" ]]; then
 		echo -e "[ ✔ ]   CVE-2019-15107 tool ${white}................ ${yellow}$Installed ${RESET}"
 	else    echo -e "[ ! ]   CVE-2019-15107 tool ${white}................ ${red}$NotInstalled ${RESET}"
 		cd $Folder_exploitTools
@@ -194,9 +194,26 @@ cve201915107_sh=`find $direxploit_expframework/exploit/unix/webapp -name CVE-201
 		cd CVE-2019-15107
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-15107/CVE-2019-15107.py CVE-2019-15107.py
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-15107/CVE-2019-15107_check.sh CVE-2019-15107_check.sh
-		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-15107/CVE-2019-15107_webmin_scan.sh $Work_dir/$direxploit_expframework/auxiliary/scanner/webapp/CVE-2019-15107_webmin_rce.sh
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-15107/CVE-2019-15107_webmin_scan.sh $Work_dir/$direxploit_expframework/auxiliary/scanner/webapp/CVE-2019-15107_webmin_scan.sh
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-15107/CVE-2019-15107_webmin_rce.sh $Work_dir/$direxploit_expframework/exploit/unix/webapp/CVE-2019-15107_webmin_rce.sh
 		echo -e "[ ✔ ]   CVE-2019-15107 tool ${white}................ ${yellow}$Installed ${RESET}"
+		cd $Work_dir
+	fi
+}
+function cve20190708 {	
+cve20190708=`find $Folder_exploitTools -name CVE-2019-0708 -type d | grep -w "Tools/Vulnerability-Exploit/CVE-2019-0708"`
+cve20190708_exc=`find $direxploit_expframework/exploit/windows/rdp -name CVE-2019-0708 -type d | grep -w "Modules/Vuln/Framework/exploit/windows/rdp/CVE-2019-0708_rdp_rce.sh"`
+	if [[ "$cve20190708" = "Tools/Vulnerability-Exploit/CVE-2019-0708" ]] || [[ "$cve20190708_exc" = "Modules/Vuln/Framework/exploit/windows/rdp/CVE-2019-0708_rdp_rce.sh" ]]; then
+		echo -e "[ ✔ ]   CVE-2019-0708 tool ${white}................ ${yellow}$Installed ${RESET}"
+	else    echo -e "[ ! ]   CVE-2019-0708 tool ${white}................ ${red}$NotInstalled ${RESET}"
+		cd $Folder_exploitTools
+		mkdir CVE-2019-0708
+		cd CVE-2019-0708
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/CVE_2019_0708_scan.py CVE_2019_0708_scan.py
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/CVE-2019-0708_rdp_check.sh CVE-2019-0708_rdp_check.sh
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/CVE-2019-15107_webmin_scan.sh $Work_dir/$direxploit_expframework/auxiliary/scanner/webapp/CVE-2019-15107_webmin_rce.sh
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/CVE-2019-15107_webmin_rce.sh $Work_dir/$direxploit_expframework/exploit/unix/webapp/CVE-2019-15107_webmin_rce.sh
+		echo -e "[ ✔ ]   CVE-2019-0708 tool ${white}................ ${yellow}$Installed ${RESET}"
 		cd $Work_dir
 	fi
 }
@@ -902,6 +919,8 @@ cat << !
 	4 ) Install CVE-2018-0802  (Office Remote Code Execution)
 	5 ) Install CVE-2018-20250 (Winrar Remote Code Execution)
 	6 ) Install CVE-2019-15107 (Webmin Remote Code Execution)
+	7 ) Install CVE-2019-0708 (Windows RDP Remote Code Execution)
+	8 ) Install MS17-010 (Windows SMB Remote Code Execution)
 !
 }
 ShowVunlTable
