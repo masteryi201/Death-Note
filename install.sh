@@ -210,9 +210,10 @@ cve20190708_exc=`find $direxploit_expframework/exploit/windows/rdp -name CVE-201
 		mkdir CVE-2019-0708
 		cd CVE-2019-0708
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/CVE_2019_0708_scan.py CVE_2019_0708_scan.py
-		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/CVE-2019-0708_rdp_check.sh CVE-2019-0708_rdp_check.sh
-		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/CVE-2019-15107_webmin_scan.sh $Work_dir/$direxploit_expframework/auxiliary/scanner/webapp/CVE-2019-15107_webmin_rce.sh
-		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/CVE-2019-15107_webmin_rce.sh $Work_dir/$direxploit_expframework/exploit/unix/webapp/CVE-2019-15107_webmin_rce.sh
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/checkvuln.sh checkvuln.sh
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/bluekeep_dos.py bluekeep_dos.py
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/CVE-2019-0708_rdp_scan.sh $Work_dir/$direxploit_expframework/auxiliary/scanner/rdp/CVE-2019-0708_rdp_scan.sh
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/CVE-2019-0708_rdp_dos.sh $Work_dir/$direxploit_expframework/exploit/windows/rdp/CVE-2019-0708_rdp_dos.sh
 		echo -e "[ ✔ ]   CVE-2019-0708 tool ${white}................ ${yellow}$Installed ${RESET}"
 		cd $Work_dir
 	fi
@@ -899,6 +900,7 @@ function ShowAndInstall_ExploitTools {
 		echo ""
 	else
 		mkdir -p $direxploit_expframework/auxiliary/scanner/webapp
+		mkdir -p $direxploit_expframework/auxiliary/scanner/rdp
 	fi
 clear
 function all_exploit_tools {
@@ -907,6 +909,7 @@ cve20180802
 cve20178570
 cve201820250
 cve201915107
+cve20190708
 }
 function ShowVunlTable {
 echo -e "${cyan}			Install Vulnerability Exploit Tools${RESET}"
@@ -934,6 +937,7 @@ ShowVunlTable
 		4) cve20180802;;
 		5) cve201820250;;
 		6) cve201915107;;
+		7) cve20190708;;
 		all) all_exploit_tools;;
 		99) break;;
 		*) echo -e "$error1";
