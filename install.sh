@@ -214,6 +214,23 @@ cve20190708_exc=`find $direxploit_expframework/exploit/windows/rdp -name CVE-201
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/bluekeep_dos.py bluekeep_dos.py
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/CVE-2019-0708_rdp_scan.sh $Work_dir/$direxploit_expframework/auxiliary/scanner/rdp/CVE-2019-0708_rdp_scan.sh
 		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/CVE-2019-0708_rdp_dos.sh $Work_dir/$direxploit_expframework/exploit/windows/rdp/CVE-2019-0708_rdp_dos.sh
+		cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/CVE-2019-0708_rdp_rce.sh $Work_dir/$direxploit_expframework/exploit/windows/rdp/CVE-2019-0708_rdp_rce.sh
+		if [[ "$dist0" = "Kali" ]] || [[ "$dist0" = "Parrot" ]]; then
+			0708_Module_Metasploit="/usr/share/metasploit-framework/modules/exploits/windows/rdp"
+			msf_path="/usr/share/metasploit-framework"
+		else [ "$dist0" = "Ubuntu" ]
+			0708_Module_Metasploit="/opt/metasploit-framework/embedded/framework/modules/exploits/windows/rdp"
+			msf_path="/opt/metasploit-framework/embedded"
+		fi
+		0708_msf_check=`find $0708_Module_Metasploit -name cve_2019_0708_bluekeep_rce.rb -type f`
+		if [[ "$0708_msf_check" = "" ]]; then
+			mkdir $msf_path/modules/auxiliary/scanner/rdp
+			mkdir $msf_path/modules/exploits/windows/rdp
+			cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/rdp.rb $msf_path/lib/msf/core/exploit/rdp.rb
+			cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/rdp_scanner.rb $msf_path/modules/auxiliary/scanner/rdp/rdp_scanner.rb
+			cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/cve_2019_0708_bluekeep.rb $msf_path/modules/auxiliary/scanner/rdp/cve_2019_0708_bluekeep.rb
+			cp $Work_dir/$dirbackup_vulexploit/CVE-2019-0708/cve_2019_0708_bluekeep_rce.rb $msf_path/modules/exploits/windows/rdp/cve_2019_0708_bluekeep_rce.rb
+		fi
 		echo -e "[ ✔ ]   CVE-2019-0708 tool ${white}................ ${yellow}$Installed ${RESET}"
 		cd $Work_dir
 	fi
