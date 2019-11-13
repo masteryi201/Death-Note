@@ -5,6 +5,7 @@ vesion=1.0
 revision=3
 Work_dir=`pwd`
 scriptname="Death-Note.sh"
+config="$Work_dir/config/config"
 config_language="$Work_dir/config/config-language"
 Metasploit_Config="$Work_dir/config/metasploit-config"
 dir_malware_tools="Tools/Synthetic-Malware"
@@ -14,8 +15,8 @@ source install.sh
 source $banner_script
 source $update_script
 #
-IP=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/'`
-WANIP=`dig +short myip.opendns.com @resolver1.opendns.com`  	
+rm -rf $config
+touch $config
 rm -rf $config_language
 touch $config_language
 resize -s 30 98 > /dev/null
@@ -52,6 +53,36 @@ function language {
 					echo  -ne "           Choose :"
                 esac
        		done
+}
+function check_network {
+	IP=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/'`
+	github_user="masteryi201"
+	github_repository="Death-Note"
+	branch="master"
+	script_filename="Death-Note.sh"
+	url_directlink="https://raw.githubusercontent.com/${github_user}/${github_repository}/${branch}/${script_filename}"
+	DUMP_PATH="/tmp/deathnote"
+	mkdir $DUMP_PATH > /dev/null 2>&1
+	revision_online="$(timeout -s SIGTERM 20 curl "$url_directlink" 2>/dev/null| grep "^revision" | cut -d "=" -f2)"
+	if [ -z "$revision_online" ]; then
+		echo "?">$DUMP_PATH/Irev
+	else
+		echo "$revision_online">$DUMP_PATH/Irev
+	fi
+	check=`cat $DUMP_PATH/Irev` > /dev/null 2>&1
+	if [[ "$check" != "?" ]]; then
+		echo "check_internet=1" > $config
+	else echo "check_internet=0" > $config
+	fi
+	source $config
+	if [[ "$check_internet" = "1" ]]; then
+		WANIP=`dig +short myip.opendns.com @resolver1.opendns.com`
+		echo "public_ip='$WANIP'" > $config
+	else
+		WANIP=""
+		echo "public_ip=''" > $config
+	fi
+		echo "local_ip='$IP'" >> $config
 }
 function order {
 cd $Work_dir
@@ -340,5 +371,6 @@ exit
 } 
 check_privilegies
 check_folder
+check_network
 language
 order
