@@ -7,7 +7,8 @@ branch="master"
 script_filename="Death-Note.sh"
 urlgithub="https://${repository_hostname}/${github_user}/${github_repository}"
 url_directlink="https://raw.githubusercontent.com/${github_user}/${github_repository}/${branch}/${script_filename}"
-
+DUMP_PATH="/tmp/deathnote"
+mkdir $DUMP_PATH > /dev/null 2>&1
 
 ########### check update ##########
 function checkupdate {
