@@ -279,6 +279,16 @@
    solaris/x86/shell_bind_tcp         			Solaris Command Shell, kết nối trực tiếp bằng kết nối TCP
    solaris/x86/shell_reverse_tcp      			Solaris Command Shell, kết nối ngược trực tiếp bằng kết nối TCP
    tty/unix/interact 					Unix TTY, Tương tác với kết nối được thiết lập
+   windows/auto/meterpreter/bind_ipv6_tcp        	Windows Meterpreter (Reflective Injection), Windows IPv6 và Windows x64 IPv6 kết nối trực tiếp bằng kết nối TCP
+   windows/auto/meterpreter/bind_ipv6_tcp_uuid   	Windows Meterpreter (Reflective Injection), Windows IPv6 và Windows x64 IPv6 kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID
+   windows/auto/meterpreter/bind_tcp   			Windows Meterpreter (Reflective Injection), Windows x86 và Windows x64 kết nối trực tiếp bằng kết nối TCP
+   windows/auto/meterpreter/bind_tcp_uuid        	Windows Meterpreter (Reflective Injection), Windows x86 và Windows x64 kết nối trực tiếp bằng kết nối TCP với hỗ trợ UUID
+   windows/auto/meterpreter/reverse_http         	Windows Meterpreter (Reflective Injection), Windows x86 và Windows x64 kết nối ngược bằng kết nối HTTP  (wininet)
+   windows/auto/meterpreter/reverse_https        	Windows Meterpreter (Reflective Injection), Windows x86 và Windows x64 kết nối ngược bằng kết nối HTTP  (wininet)
+   windows/auto/meterpreter/reverse_tcp			Windows Meterpreter (Reflective Injection)), Windows x86 và Windows x64 kết nối ngược bằng kết nối TCP
+   windows/auto/meterpreter/reverse_tcp_uuid     	Windows Meterpreter (Reflective Injection), Windows x86 và Windows x64 kết nối ngược bằng kết nối TCP với hỗ trợ UUID (Windows auto)
+   windows/auto/meterpreter/reverse_winhttp      	Windows Meterpreter (Reflective Injection), Windows x86 và Windows x64 kết nối ngược bằng kết nối HTTP  (winhttp)
+   windows/auto/meterpreter/reverse_winhttps     	Windows Meterpreter (Reflective Injection), Windows x86 và Windows x64 kết nối ngược bằng kết nối HTTPS (winhttp)
    windows/dllinject/bind_hidden_ipknock_tcp    	Reflective DLL Injection, Ẩn kết nối trực tiếp bằng Ipknock TCP
    windows/dllinject/bind_hidden_tcp  			Reflective DLL Injection, Ẩn kết nối trực tiếp bằng kết nối TCP
    windows/dllinject/bind_ipv6_tcp    			Reflective DLL Injection, kết nối trực tiếp bằng kết nối TCP IPv6 (Windows x86)
