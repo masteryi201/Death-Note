@@ -1,11 +1,10 @@
 function defaul_payload_options {
-	lhost=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/'`
+	lhost=$local_ip
 	lport="4444"
 	exitfunc="process"
 }
 function payload_compare {
-lhost_lenght=`echo "$lhost" | awk '{print length}'`
-echo $lhost_lenght
+lhost_lenght=`echo $lhost | awk '{print length}'`
 	if  [ "$lhost_lenght" -le 18 ]; then
 		payload1
 	else

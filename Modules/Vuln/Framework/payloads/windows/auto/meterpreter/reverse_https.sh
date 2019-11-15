@@ -1,6 +1,7 @@
 function defaul_payload_options {
 	lhost=$local_ip
-	lport="4444"
+	lport1="4444"
+	lport2="5555"
 	exitfunc="process"
 	luri=""
 }
@@ -16,9 +17,12 @@ function set_payload {
 		if [[ "$new_processing_variables" = "lhost" ]] || [[ "$new_processing_variables" = "LHOST" ]] || [[ "$new_processing_variables" = "Lhost" ]]; then
 			unset lhost
 			lhost=$module_set
-		elif [[ "$new_processing_variables" = "lport" ]] || [[ "$new_processing_variables" = "LPORT" ]] || [[ "$new_processing_variables" = "Lport" ]]; then
-			unset lport
-			lport="$module_set"
+		elif [[ "$new_processing_variables" = "lport1" ]] || [[ "$new_processing_variables" = "LPORT1" ]] || [[ "$new_processing_variables" = "Lport1" ]]; then
+			unset lport1
+			lport1="$module_set"
+		elif [[ "$new_processing_variables" = "lport2" ]] || [[ "$new_processing_variables" = "LPORT2" ]] || [[ "$new_processing_variables" = "Lport2" ]]; then
+			unset lport2
+			lport2="$module_set"
 		elif [[ "$new_processing_variables" = "exitfunc" ]] || [[ "$new_processing_variables" = "EXITFUNC" ]] || [[ "$new_processing_variables" = "Exitfunc" ]]; then
 			if [[ "$module_set" = "" ]] || [[ "$module_set" = "" ]] || [[ "$module_set" = "" ]]; then
 				unset exitfunc
@@ -61,15 +65,25 @@ lhost_lenght=`echo $lhost | awk '{print length}'`
 	done
 	lhost=$lhost$myvar
 unset_value
-lport=`echo $lport`
-lport_lenght=`echo $lport | awk '{print length}'`
+lport1=`echo $lport1`
+lport1_lenght=`echo $lport1 | awk '{print length}'`
 	none=" "
 	myvar=""
-	integer=`expr 18 - $lport_lenght`			
+	integer=`expr 18 - $lport1_lenght`			
 	for (( i = 0 ; i < $integer; i++ )) do
 	myvar=$myvar$none
 	done
-	lport=$lport$myvar
+	lport1=$lport1$myvar
+unset_value
+lport2=`echo $lport2`
+lport2_lenght=`echo $lport2 | awk '{print length}'`
+	none=" "
+	myvar=""
+	integer=`expr 18 - $lport2_lenght`			
+	for (( i = 0 ; i < $integer; i++ )) do
+	myvar=$myvar$none
+	done
+	lport2=$lport2$myvar
 unset_value
 exitfunc=`echo $exitfunc`
 exitfunc_lenght=`echo $exitfunc | awk '{print length}'`
@@ -107,15 +121,25 @@ lhost_lenght=`echo $lhost | awk '{print length}'`
 	done
 	lhost=$lhost$myvar
 unset_value
-lport=`echo $lport`
-lport_lenght=`echo $lport | awk '{print length}'`
+lport1=`echo $lport1`
+lport1_lenght=`echo $lport1 | awk '{print length}'`
 	none=" "
 	myvar=""
-	integer=`expr 27 - $lport_lenght`			
+	integer=`expr 27 - $lport1_lenght`			
 	for (( i = 0 ; i < $integer; i++ )) do
 	myvar=$myvar$none
 	done
-	lport=$lport$myvar
+	lport1=$lport1$myvar
+unset_value
+lport2=`echo $lport2`
+lport2_lenght=`echo $lport2 | awk '{print length}'`
+	none=" "
+	myvar=""
+	integer=`expr 27 - $lport2_lenght`			
+	for (( i = 0 ; i < $integer; i++ )) do
+	myvar=$myvar$none
+	done
+	lport2=$lport2$myvar
 unset_value
 exitfunc=`echo $exitfunc`
 exitfunc_lenght=`echo $exitfunc | awk '{print length}'`
@@ -140,26 +164,29 @@ if [ "$language" = "VN" ]; then
 yes="     Có   "
 no="     Không "
 cat << !
-Các tùy chọn của tải trọng (windows/meterpreter/reverse_https):
+Các tùy chọn của tải trọng (windows/auto/meterpreter/reverse_https):
 
    Tên            Thiết lập hiện tại    Yêu cầu   Miêu tả
    ----           ----------------      --------  -----------
    EXITFUNC       $exitfunc$no   Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none).
    LHOST          $lhost$yes    Địa chỉ lắng nghe.
-   LPORT          $lport$yes    Cổng lắng nghe.
+   LPORT1         $lport1$yes    Cổng lắng nghe 1. 
+   LPORT2         $lport2$yes    Cổng lắng nghe 2.
    LURI           $luri$no   Đường dẫn HTTP.
+   
 !
 elif [ "$language" = "EN" ]; then
 yes="     yes"
 no="     no "
 cat << !
-Payload options (windows/meterpreter/reverse_https):
+Payload options (windows/auto/meterpreter/reverse_https):
 
    Name           Current Setting       Required  Description
    ----           ---------------       --------  -----------
    EXITFUNC       $exitfunc$no      Exit technique (Accepted: '', seh, thread, process, none).
    LHOST          $lhost$yes      The listen address.
-   LPORT          $lport$yes      The listen port.
+   LPORT1         $lport1$yes      The listen port 1.
+   LPORT2         $lport2$yes      The listen port 2.
    LURI           $luri$no      The HTTP Path.
 
 !
@@ -170,13 +197,14 @@ if [ "$language" = "VN" ]; then
 yes="   Có  "
 no="   Không "
 cat << !
-Các tùy chọn của tải trọng (windows/meterpreter/reverse_https):
+Các tùy chọn của tải trọng (windows/auto/meterpreter/reverse_https):
 
    Tên            Thiết lập hiện tại	       Yêu cầu    Miêu tả
    ----      	  ---------------  	       --------  -----------
    EXITFUNC       $exitfunc$no   Biện pháp tạo lối thoát (Được chấp nhận: '', seh, thread, process, none).
    LHOST          $lhost$yes     Địa chỉ lắng nghe.
-   LPORT          $lport$yes     Cổng lắng nghe.
+   LPORT1         $lport1$yes     Cổng lắng nghe 1. 
+   LPORT2         $lport2$yes     Cổng lắng nghe 2. 
    LURI           $luri$no   Đường dẫn HTTP.
 
 !
@@ -184,27 +212,30 @@ elif [ "$language" = "EN" ]; then
 yes="   yes"
 no="   no "
 cat << !
-Payload options (windows/meterpreter/reverse_https):
+Payload options (windows/auto/meterpreter/reverse_https):
 
    Name           Current Setting  	       Required  Description
    ----           ---------------  	       --------  -----------
    EXITFUNC       $exitfunc$no      Exit technique (Accepted: '', seh, thread, process, none).
    LHOST          $lhost$yes      The listen address.
-   LPORT          $lport$yes      The listen port.
+   LPORT1         $lport1$yes      The listen port 1.
+   LPORT2         $lport2$yes      The listen port 2.
    LURI           $luri$no      The HTTP Path.
 
 !
 fi
 }
 function payload_run {
-payload_path_present=`pwd`
-payload_path_rc_file="$payload_path_present/Config"
-rc_file="$payload_path_rc_file/file.rc"
-config_file="$payload_path_present/Config/config"
-	echo "set payload windows/meterpreter/reverse_https" >> $rc_file
-	echo "set EXITFUNC $exitfunc" >> $rc_file
-	echo "set LURI $luri" >> $rc_file
-	paylo="windows/meterpreter/reverse_https"
+	paylo="windows/auto/meterpreter/reverse_https"
+	paylo1="windows/meterpreter/reverse_https"
+	paylo2="windows/x64/meterpreter/reverse_https"
 	lhost=$lhost
-	lport=$lport
+	lport1=$lport1
+	lport2=$lport2
+	exitfunc=$exitfunc
+	if [[ "$luri" != "" ]]; then
+		luri=$luri
+	else
+		luri="''"
+	fi
 }

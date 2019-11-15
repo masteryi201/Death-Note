@@ -5,7 +5,6 @@ function defaul_payload_options {
 }
 function payload_compare {
 pipehost_lenght=`echo "$pipehost" | awk '{print length}'`
-echo $pipehost_lenght
 	if  [ "$pipehost_lenght" -le 18 ]; then
 		payload1
 	else

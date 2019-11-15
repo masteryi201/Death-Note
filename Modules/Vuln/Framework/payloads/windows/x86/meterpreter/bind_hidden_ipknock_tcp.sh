@@ -6,7 +6,6 @@ function defaul_payload_options {
 }
 function payload_compare {
 khost_lenght=`echo "$khost" | awk '{print length}'`
-echo $khost_lenght
 	if  [ "$khost_lenght" -le 18 ]; then
 		payload1
 	else

