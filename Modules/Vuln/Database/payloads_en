@@ -279,6 +279,16 @@
    solaris/x86/shell_bind_tcp         			Solaris Command Shell, Bind TCP Inline
    solaris/x86/shell_reverse_tcp      			Solaris Command Shell, Reverse TCP Inline
    tty/unix/interact 					Unix TTY, Interact with Established Connection
+   windows/auto/meterpreter/bind_ipv6_tcp        	Windows Meterpreter (Reflective Injection), Windows x86 IPv6 and Windows x64 IPv6 Bind TCP Stager
+   windows/auto/meterpreter/bind_ipv6_tcp_uuid   	Windows Meterpreter (Reflective Injection), Windows x86 IPv6 and Windows x64 IPv6 Bind TCP Stager with UUID Support
+   windows/auto/meterpreter/bind_tcp   			Windows Meterpreter (Reflective Injection), Windows x86 and Windows x64 Bind TCP Stager
+   windows/auto/meterpreter/bind_tcp_uuid        	Windows Meterpreter (Reflective Injection), Windows x86 and Windows x64 Bind TCP Stager with UUID Support
+   windows/auto/meterpreter/reverse_http         	Windows Meterpreter (Reflective Injection), Windows x86 and Windows x64 Reverse HTTP Stager (wininet)
+   windows/auto/meterpreter/reverse_https        	Windows Meterpreter (Reflective Injection), Windows x86 and Windows x64 Reverse HTTP Stager (wininet)
+   windows/auto/meterpreter/reverse_tcp			Windows Meterpreter (Reflective Injection), Windows x86 and Windows x64 Reverse TCP Stager
+   windows/auto/meterpreter/reverse_tcp_uuid     	Windows Meterpreter (Reflective Injection), Windows x86 and Windows x64 Reverse TCP Stager with UUID Support
+   windows/auto/meterpreter/reverse_winhttp      	Windows Meterpreter (Reflective Injection), Windows x86 and Windows x64 Reverse HTTP Stager (winhttp)
+   windows/auto/meterpreter/reverse_winhttps     	Windows Meterpreter (Reflective Injection), Windows x86 and Windows x64 Reverse HTTPS Stager (winhttp)
    windows/dllinject/bind_hidden_ipknock_tcp    	Reflective DLL Injection, Hidden Bind Ipknock TCP Stager
    windows/dllinject/bind_hidden_tcp  			Reflective DLL Injection, Hidden Bind TCP Stager
    windows/dllinject/bind_ipv6_tcp    			Reflective DLL Injection, Bind IPv6 TCP Stager (Windows x86)
