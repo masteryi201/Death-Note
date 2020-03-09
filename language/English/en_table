@@ -4,60 +4,60 @@
 function order_table {
 cat << !
  _________________________________________________ 
-|    |						  |
-| ID | Attack Type 				  |
+|    |                                            |
+| ID | Attack Type                                |
 |----+--------------------------------------------|
 | 1  |Information gathering and scanning(on-going)|
 |----+--------------------------------------------|
-| 2  | Exploiting CVE & Zero-day vulnerabilities  |
+| 2  | Exploiting CVE vulnerabilities & PoC       |
 |----+--------------------------------------------|
 | 3  | Malware and Threats                        |
 |----+--------------------------------------------|
 | 4  | Backdoor listening                         |
 |----+--------------------------------------------|
-| 5  | Password attack				  |
+| 5  | Password attack                            |
 |----+--------------------------------------------|
-| 6  | Wireless attack				  |
+| 6  | Wireless attack                            |
 |----+--------------------------------------------|
-| 7  | Website attack				  |
+| 7  | Website attack                             |
 |----+--------------------------------------------|
-| 8  | Sniffing and spoofing attack 		  |
+| 8  | Sniffing and spoofing attack               |
 |----+--------------------------------------------|
-| i  | Install tools 		  		  |
+| i  | Install tools                              |
 |----+--------------------------------------------|
-| u  | Check for updates 		  	  |
+| u  | Check for updates                          |
 |----+--------------------------------------------|
-| e  | Exit				  	  |
+| e  | Exit                                       |
 |----+--------------------------------------------|
-| #  | Ryuk Shinigami          |
+| #  | Ryuk Shinigami                             |
  -------------------------------------------------
 !
 }
 function install_table {
 cat << !
  _____________________________________________________________ 
-|    |	     						      |
-| ID | Type of attack tool	               		      |
+|    |                                                        |
+| ID | Type of attack tool                                    |
 |----+--------------------------------------------------------|
 | 1  | Tools Information gathering and scanning (on-going)    |
 |----+--------------------------------------------------------|
 | 2  | Tools Exploiting CVE & Zero-day vulnerabilities        |
 |----+--------------------------------------------------------|
-| 3  | Tools Malware and Threats	              |
+| 3  | Tools Malware and Threats                              |
 |----+--------------------------------------------------------|
-| 5  | Tools Password attack  		                      |
+| 5  | Tools Password attack                                  |
 |----+--------------------------------------------------------|
-| 6  | Tools Wireless attack 		                      |
+| 6  | Tools Wireless attack                                  |
 |----+--------------------------------------------------------|
-| 7  | Tools Website attack  		      |
+| 7  | Tools Website attack                                   |
 |----+--------------------------------------------------------|
-| 7  | Tools Sniffing and spoofing attack  		      |
+| 7  | Tools Sniffing and spoofing attack                     |
 |----+--------------------------------------------------------|
-| 8  | Add module Metasploit	  		              |
+| 8  | Add module Metasploit                                  |
 |----+--------------------------------------------------------|
-| 9  | Create shortcut	  		              |
+| 9  | Create shortcut                                        |
 |----+--------------------------------------------------------|
-| 0  | Intall all tools		  		              |
+| 0  | Intall all tools                                       |
  ------------------------------------------------------------- 
 !
 }
@@ -173,8 +173,8 @@ cat << !
 function table {
 cat << ! 
  ______________________________________________________________________________________________________
-|    | 		      |										       |
-| ID |  Module name   |       			Description                                            |
+|    | 		      |                                                                                |
+| ID |  Module name   |                         Description                                            |
 |----+----------------+--------------------------------------------------------------------------------|
 | 1  | Persistence    | This module will install a load that is executed during startup.               |
 |    |                | It will be executed when the user logs on or boots the system.                 |
@@ -185,31 +185,31 @@ cat << !
 |----+----------------+--------------------------------------------------------------------------------|
 | 4  | Enable EPD     | This module will enable Remote Desktop and add a user on the victim machine.   |
 |----+----------------+--------------------------------------------------------------------------------|
-| 5  | Enable VNC     | This module will enable the human"'"s tracking screen of victim.	       |
+| 5  | Enable VNC     | This module will enable the human"'"s tracking screen of victim.               |
 |----+----------------+--------------------------------------------------------------------------------|
-| 6  | Check VM	      | This module will check if victim is a virtual environment.            	       |
+| 6  | Check VM	      | This module will check if victim is a virtual environment.                     |
 |----+----------------+--------------------------------------------------------------------------------|
 | 7  |Change Wallpaper| This module change the background image of the victim machine (not recommended)|
 |----+----------------+--------------------------------------------------------------------------------|
 | 8  |Auto run COMMAND| This module will run the command on cmd.                                       |
 |----+----------------+--------------------------------------------------------------------------------|
-| 9  | Auto Add Proxy | This module will add a proxy and Trust Certificate for public key 	       |
-|    |                |  and Trust CA on victim to exploit HTTPS on the Burp suite. 		       |
+| 9  | Auto Add Proxy | This module will add a proxy and Trust Certificate for public key              |
+|    |                |  and Trust CA on victim to exploit HTTPS on the Burp suite.                    |
 |----+----------------+--------------------------------------------------------------------------------|
 | 10 | OS environment | This module in the operating environment environment variable.                 |
 |----+----------------+--------------------------------------------------------------------------------|
-| 11 |			
+| 11 |                                                                                                 |
 |----+----------------+--------------------------------------------------------------------------------|
-| 12 |  Enum shares   | This module will list configuration and files used for recent sharing	       |
+| 12 |  Enum shares   | This module will list configuration and files used for recent sharing.         |
 |----+----------------+--------------------------------------------------------------------------------|
-| 13 |  Enum APPs     |	This module will list all installed applications                               |
+| 13 |  Enum APPs     |	This module will list all installed applications.                              |
 |----+----------------+--------------------------------------------------------------------------------|
-| 14 | Enum Powershell|	This module will list the Microsoft Powershell settings                        |
+| 14 | Enum Powershell|	This module will list the Microsoft Powershell settings.                       |
 |----+----------------+--------------------------------------------------------------------------------|
-| 15 |
+| 15 |                                                                                                 |
 |----+----------------+--------------------------------------------------------------------------------|
 | 16 | Wlan Geolocate |	List wireless networks. Locate the target by collecting local wireless networks| 
-|    |                |  and performing searches for Google APIs.				       |
+|    |                |  and performing searches for Google APIs.                                      |
 |----+----------------+--------------------------------------------------------------------------------|
 | 17 | Play Youtube   | This module will play YouTube video on victim in full screen mode.             |
 |----+----------------+--------------------------------------------------------------------------------|
@@ -224,11 +224,11 @@ cat << !
  _____________________________________________________________________________________________________________
 | ID | 	Module name  |           Description                                                                  |
 |----+---------------+----------------------------------------------------------------------------------------|
-| a  |	migrate	     |	This module will move Meterpreter from one process to another.		              |
+| a  |	migrate      |	This module will move Meterpreter from one process to another.                        |
 |----+---------------+----------------------------------------------------------------------------------------|
-| b  |		     | This module checks to see if the architecture is similar to the operating system       |
+| b  |               | This module checks to see if the architecture is similar to the operating system       |
 |    |  archmigrate  | architecture.If it is not compatible, it will generate a new process with accurate     |
-|    |	  	     | architecture and move into that process		   			              |
+|    |               | architecture and move into that process                                                |
 |----+---------------+----------------------------------------------------------------------------------------|
 | c  |  priv_migrate | This module will move the Meterpreter session based on the privilege session.          |
 |    |               | It will do everything possible to move, including generating a new user-level process. |
